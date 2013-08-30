@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.action.extension" value="do" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.ui.theme" value="xhtml"/>
+
+	<package name="system" extends="struts-default" namespace="/system">
+		<action name="fileAttachDetail" class="FileAttachDetailAction" >
+			<result>/pages/system/fileUploadImageDetailView.jsp</result>
+		</action>
+		<action name="*AppUser" class="AppUserAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="grantXmlAppRole" class="AppRoleAction" method="grantXml">
+			<result>/jsonXml.jsp</result>
+		</action>
+		<action name="*AppRole" class="AppRoleAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Department" class="DepartmentAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>    
+		<action name="*FileAttach" class="FileAttachAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Company" class="CompanyAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Diary" class="DiaryAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="check">/pages/task/diarydetail.jsp</result>
+			<result name="display">/pages/indexpages/diaryListPage.jsp</result>
+		</action>
+		<action name="*ReportTemplate" class="ReportTemplateAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ReportParam" class="ReportParamAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Region" class="RegionAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*UserSub" class="UserSubAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*SysConfig" class="SysConfigAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Dictionary" class="DictionaryAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*IndexDisplay" class="IndexDisplayAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*SystemLog" class="SystemLogAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*GlobalType" class="GlobalTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*OutMailSet" class="OutMailSetAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	</package>	
+	<package name="communicate" extends="struts-default" namespace="/communicate">
+		<action name="*PhoneGroup" class="PhoneGroupAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*PhoneBook" class="PhoneBookAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="detail">/pages/phonebook/PhoneBook.jsp</result>
+		</action>
+		<action name="*MailFolder" class="MailFolderAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Mail" class="MailAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="detail">/pages/mail/mail.jsp</result>
+			<result name="display">/pages/indexpages/mailListPage.jsp</result>
+		</action>
+		<action name="*OutMailUserSeting" class="OutMailUserSetingAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	    
+		<action name="*OutMailFolder_" class="OutMailFolderAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	    
+		<action name="*OutMail_" class="OutMailAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="detail">/pages/outmail/outmail.jsp</result>
+		</action>
+		<action name="*SmsMobile" class="SmsMobileAction" method="{1}">
+	    	<result>${successResultValue}</result>
+	    </action>
+	    <action name="*SmsHistory" class="SmsHistoryAction" method="{1}">
+	    	<result>${successResultValue}</result>
+	    </action>
+	</package>
+	<package name="info" extends="struts-default" namespace="/info">
+		<action name="*News" class="NewsAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="display">/pages/indexpages/newsListPage.jsp</result>
+			<result name="image">/pages/indexpages/deskNewsListPage.jsp</result>
+		</action>
+		<action name="*NewsType" class="NewsTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Notice" class="NoticeAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="display">/pages/indexpages/noticeListPage.jsp</result>
+			<result name="scroller">/pages/indexpages/noticeScrollPage.jsp</result>
+		</action>
+		<action name="*ShortMessage" class="ShortMessageAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*InMessage" class="InMessageAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="display">/pages/indexpages/messageListPage.jsp</result>
+			<result name="detail">/pages/info/messagedetail.jsp</result>
+		</action>
+		<action name="*NewsComment" class="NewsCommentAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*AppTips" class="AppTipsAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*SuggestBox" class="SuggestBoxAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+
+	<package name="document" extends="struts-default" namespace="/document">
+		<action name="*DocFolder" class="DocFolderAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Document" class="DocumentAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="detail">/pages/document/DocumentShared.jsp</result>
+			<result name="publicDetail">/pages/document/PublicDocument.jsp</result>
+			<result name="display">/pages/indexpages/documentListPage.jsp</result>
+		</action>
+		<action name="*DocPrivilege" class="DocPrivilegeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*PaintTemplate" class="PaintTemplateAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Seal" class="SealAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+	
+	<package name="flow" extends="struts-default" namespace="/flow">
+		<action name="*ProType" class="ProTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ProDefinition" class="ProDefinitionAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ProUserAssign" class="ProUserAssignAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ProcessActivity" class="ProcessActivityAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ProcessRun" class="ProcessRunAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*FormDef" class="FormDefAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Task" class="TaskAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="display">/pages/indexpages/taskListPage.jsp</result>
+			<result name="displayFinish">/pages/indexpages/processFinishPage.jsp</result>
+		</action>
+		<action name="processRunDetail" class="ProcessRunDetailAction">
+			<result>/pages/flow/processRunDetail.jsp</result>
+		</action>
+		<action name="processDetail" class="ProcessDetailAction">
+			<result>/pages/flow/processDetail.jsp</result>
+		</action>
+	</package>
+	
+	<package name="admin" extends="struts-default" namespace="/admin">
+		<action name="*ConfPrivilege" class="ConfPrivilegeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<!-- 新增会议室管理 -->
+		<action name="*BoardRoo" class="BoardRooAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<!-- 新增会议类型设置 -->
+		<action name="*BoardType" class="BoardTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<!-- 新增会议内容信息展示-->
+		<action name="*Conference" class="ConferenceAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="display">/pages/admin/myConferenceListPage.jsp</result>
+			<result name="displayApply">/pages/admin/applyConferenceListPage.jsp</result>
+		</action>
+		<action name="conferenceDetail" class="ConferenceDetailAction">
+			<result>/pages/admin/conferenceDetail.jsp</result>
+		</action>
+		<!-- 新增会议纪要查询展示-->
+		<action name="*ConfSummary" class="ConfSummaryAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="display">/pages/admin/confSummaryListPage.jsp</result>
+		</action>
+		<action name="confSummaryDetail" class="ConfSummaryDetailAction">
+			<result>/pages/admin/confSummaryDetail.jsp</result>
+		</action>
+		<action name="*OfficeGoods" class="OfficeGoodsAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*GoodsApply" class="GoodsApplyAction"  method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*InStock" class="InStockAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*OfficeGoodsType" class="OfficeGoodsTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Book" class="BookAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*BookType" class="BookTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*BookSn" class="BookSnAction"  method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*BookBorRet" class="BookBorRetAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Car" class="CarAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*CartRepair" class="CartRepairAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*CarApply" class="CarApplyAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*AssetsType" class="AssetsTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*DepreType" class="DepreTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*FixedAssets" class="FixedAssetsAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*DepreRecord" class="DepreRecordAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<!--<action name="*Regulation" class="RegulationAction" method="{1}">
+		    <result>${successResultValue}</result>
+		</action>-->
+	</package>
+	
+	<package name="customer" extends="struts-default" namespace="/customer">
+		<action name="*Customer" class="CustomerAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*CusLinkman" class="CusLinkmanAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*CusConnection" class="CusConnectionAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Project" class="ProjectAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Contract" class="ContractAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ContractConfig" class="ContractConfigAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Provider" class="ProviderAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Product" class="ProductAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="send" class="MutilMailAction" method="send">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="loadVm" class="MutilMailAction" method="loadVm">
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+	
+	<package name="task" extends="struts-default" namespace="/task">
+		<action name="*Appointment" class="AppointmentAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="display">/pages/indexpages/appointmentListPage.jsp</result>
+		</action>
+		<action name="*CalendarPlan" class="CalendarPlanAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="display">/pages/indexpages/calendarPlanListPage.jsp</result>
+		</action>
+		<action name="*PlanType" class="PlanTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*WorkPlan" class="WorkPlanAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="show">/pages/task/workplandetail.jsp</result>
+			<result name="display">/pages/indexpages/myPlanListPage.jsp</result>
+			<result name="displayDep">/pages/indexpages/depPlanListPage.jsp</result>
+		</action>
+	</package>
+	
+	<package name="personal" extends="struts-default" namespace="/personal">
+		<action name="*HolidayRecord" class="HolidayRecordAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*DutySection" class="DutySectionAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*DutySystem" class="DutySystemAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Duty" class="DutyAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*DutyRegister" class="DutyRegisterAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ErrandsRegister" class="ErrandsRegisterAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+	
+	<package name="archive" extends="struts-default" namespace="/archive">
+		<action name="*ArchivesType" class="ArchivesTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchTemplate" class="ArchTemplateAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*Archives" class="ArchivesAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchivesDep" class="ArchivesDepAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchivesDoc" class="ArchivesDocAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*DocHistory" class="DocHistoryAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchRecType" class="ArchRecTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchivesHandle" class="ArchivesHandleAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*LeaderRead" class="LeaderReadAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchDispatch" class="ArchDispatchAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchivesAttend" class="ArchivesAttendAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchFlowConf" class="ArchFlowConfAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchRecUser" class="ArchRecUserAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+	
+	<package name="hrm" extends="struts-default" namespace="/hrm">
+		<action name="*StandSalaryItem" class="StandSalaryItemAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*UserContract" class="UserContractAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ContractEvent" class="ContractEventAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*SalaryItem" class="SalaryItemAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*StandSalary" class="StandSalaryAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*HireIssue" class="HireIssueAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="load">/pages/hrm/hireIssueCheck.jsp</result>
+		</action>
+		<action name="*Resume" class="ResumeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*JobChange" class="JobChangeAction" method="{1}">
+			<result>${successResultValue}</result>
+			<result name="load">/pages/hrm/JobChangeCheck.jsp</result>
+		</action>
+		<action name="*Job" class="JobAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*EmpProfile" class="EmpProfileAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*SalaryPayoff" class="SalaryPayoffAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+	
+	<package name="arch" extends="struts-default" namespace="/arch">
+		<action name="*ArchFond" class="ArchFondAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*ArchRoll" class="ArchRollAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*RollFile" class="RollFileAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="*RollFileList" class="RollFileListAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		
+		<action name="*BorrowFileList" class="BorrowFileListAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		
+		<action name="*BorrowRecord" class="BorrowRecordAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+		
+		<action name="*ArchType" class="ArchTypeAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	
+		<action name="*ArchReport" class="ArchReportAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+	
+	<package name="default" extends="struts-default">
+		<default-action-ref name="defaultAction"/>
+		<action name="defaultAction" class="BaseAction">  
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+	
+	<package name="mobile" extends="struts-default" namespace="/mobile">
+		<action name="signIn" class="SignInAction">
+			<result type="redirect">/mobile/index.do</result>
+			<result name="input">/mobile/login.jsp</result>
+		</action>
+		<action name="index" class="IndexPageAction">
+			<result>/mobile/index.jsp</result>
+		</action>
+		
+		<action name="*MobileTask" class="MobileTaskAction" method="{1}">
+			<result>/mobile/flow/myTask.jsp</result>
+			<result name="next" type="velocity">/mobile/flow/FlowForm/${vmPath}.vm</result>
+			<result name="start" type="velocity">/mobile/flow/FlowForm/${vmPath}.vm</result>
+			<result name="list" type="redirect">/mobile/listMobileTask.do</result>
+		</action>
+		
+		<action name="*MobileProDef" class="MobileProDefAction" method="{1}">
+			<result>/mobile/flow/flowDefs.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="/" extends="struts-default" namespace="/">
+		<action name="login" class="LoginAction" method="login">
+			<result>${successResultValue}</result>
+			<result name="index">/index.jsp</result>
+			<result name="login">/login.jsp</result>
+		</action>
+		<action name="modelsMenu" class="MenuAction" method="models">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="itemsMenu" class="MenuAction" method="items">
+			<result>/jsonXml.jsp</result>
+		</action>
+		<action name="panelTreeMenu" class="MenuAction" method="panelTree">
+			<result>${successResultValue}</result>
+		</action>
+		
+		<action name="check" class="LoginAction" method="check">
+			<result>${successResultValue}</result>
+		</action>
+		<action name="fileDetail" class="FileDetailAction">
+			<result>/pages/document/fileDetail.jsp</result>
+		</action>
+	</package>
+	<package name="album" extends="struts-default" namespace="/album">
+	<action name="*Album" class="AlbumAction" method="{1}">
+			<result>${successResultValue}</result>
+		</action>
+	</package>
+	
+	
+</struts>
+
+		

@@ -1,0 +1,1 @@
+var FlowPoolView=Ext.extend(Ext.Panel,{constructor:function(a){Ext.applyIf(this,a);FlowPoolView.superclass.constructor.call(this,{id:"FlowP",title:"流程分配池",items:[]});}});

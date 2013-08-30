@@ -1,0 +1,11 @@
+[
+	{
+		width:400,
+		fieldLabel:'备注',
+		xtype : 'textarea',
+		name : 'note',
+		value:'${note}',
+		anchor:'98%,98%',
+		height:150
+	}
+]

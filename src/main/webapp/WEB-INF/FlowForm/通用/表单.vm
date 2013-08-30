@@ -1,0 +1,11 @@
+[
+	{
+		fieldLabel:'审批意见',
+		xtype : 'textarea',
+		name : 'approvalOption',
+		value:'',
+		anchor:'98%,98%',
+		height:150,
+		width:200
+	}
+]

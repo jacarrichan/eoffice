@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+</head>
+<body>
+	导航&nbsp;:&nbsp;<a href='index.do'>首页</a> &gt;&gt;我的流程
+	<h2>
+		某司发文流程--公文拟稿
+	</h2>
+	<form action="saveStartMobileTask.do" method="post">
+		<input type="hidden" name="defId" value="${defId}">
+		<input type="hidden" name="startFlow" value="true">
+		<table>
+			<tr>
+				<td>公文附件</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="file" name="archFile"/>
+				</td>
+			</tr>
+			<tr>
+				<td>公文标题</td>
+			</tr>
+			<tr>
+				<td><input type="text" name="subject"/></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="提交"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

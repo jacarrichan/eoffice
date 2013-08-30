@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+	<decorator name="mobile" page="decMobile.jsp">
+		<pattern>/mobile/*</pattern>
+	</decorator>
+	
+    <excludes>	
+    	<pattern>/403*</pattern>
+    	<pattern>/404*</pattern>
+    	<pattern>/500*</pattern>
+    	<pattern>/login*</pattern>
+    </excludes>
+</decorators>

@@ -1,0 +1,108 @@
+package com.cyjt.oa.model.archive;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
+
+import com.google.gson.annotations.Expose;
+import com.cyjt.core.model.BaseModel;
+
+@Entity
+@Table(name = "archives_type")
+public class ArchivesType extends BaseModel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5264169817848511211L;
+
+	@Expose
+	private Long typeId;
+
+	@Expose
+	private String typeName;
+
+	@Expose
+	private String typeDesc;
+	private Set<ArchTemplate> archTemplates = new HashSet<ArchTemplate>();
+
+	public ArchivesType() {
+	}
+
+	public ArchivesType(Long in_typeId) {
+		this.setTypeId(in_typeId);
+	}
+
+	// Property accessors
+	@Id
+	@GeneratedValue
+	@Column(name = "typeId", unique = true, nullable = false)
+	public Long getTypeId() {
+		return this.typeId;
+	}
+
+	public void setTypeId(Long typeId) {
+		this.typeId = typeId;
+	}
+
+	@Column(name = "typeName", nullable = false, length = 128)
+	public String getTypeName() {
+		return this.typeName;
+	}
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+
+	@Column(name = "typeDesc", length = 256)
+	public String getTypeDesc() {
+		return this.typeDesc;
+	}
+
+	public void setTypeDesc(String typeDesc) {
+		this.typeDesc = typeDesc;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "archivesType")
+	public Set<ArchTemplate> getArchTemplates() {
+		return this.archTemplates;
+	}
+
+	public void setArchTemplates(Set<ArchTemplate> archTemplates) {
+		this.archTemplates = archTemplates;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		if (!(object instanceof ArchivesType)) {
+			return false;
+		}
+		ArchivesType rhs = (ArchivesType) object;
+		return new EqualsBuilder().append(this.typeId, rhs.typeId).append(this.typeName, rhs.typeName)
+				.append(this.typeDesc, rhs.typeDesc).isEquals();
+	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(-82280557, -700257973).append(this.typeId).append(this.typeName)
+				.append(this.typeDesc).toHashCode();
+	}
+
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).append("typeId", this.typeId).append("typeName", this.typeName)
+				.append("typeDesc", this.typeDesc).toString();
+	}
+}

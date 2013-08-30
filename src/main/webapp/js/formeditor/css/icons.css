@@ -1,0 +1,203 @@
+/*!
+ * Ext GUI Designer
+ * Copyright(c) 2006-2009 Ext JS, LLC
+ * licensing@extjs.com
+ * This product is NOT licensed for production use.
+ */
+.icon-textfield {
+	background-image: url(../images/icons/field-all.gif) !important;
+}
+.icon-numfield {
+	background-image: url(../images/icons/field-int.gif) !important;
+}
+.icon-datefield {
+	background-image: url(../images/icons/field-date.gif) !important;
+}
+.icon-timefield {
+	background-image: url(../images/icons/field-time.gif) !important;
+}
+.icon-textarea {
+	background-image: url(../images/icons/field-textarea.gif) !important;
+}
+.icon-checkbox {
+	background-image: url(../images/icons/checked.gif) !important;
+}
+.icon-radio {
+	background-image: url(../images/icons/radio.gif) !important;
+}
+
+.icon-combobox {
+	background-image: url(../images/icons/combo.png) !important;
+}
+
+.icon-html {
+	background-image: url(../images/icons/field-html.gif) !important;
+}
+
+.icon-grid {
+	background-image: url(../images/icons/grid.png) !important;
+}
+.icon-grid-column {
+	background-image: url(../images/icons/grid-column.gif) !important;
+}
+.icon-auto-columns {
+	background-image: url(../images/icons/auto-columns.png) !important;
+}
+.icon-grid-date {
+	background-image: url(../images/icons/grid-date.png) !important;
+}
+.icon-grid-num {
+	background-image: url(../images/icons/grid-num.png) !important;
+}
+.icon-grid-bool {
+	background-image: url(../images/icons/grid-bool.png) !important;
+}
+.icon-grid-tpl {
+	background-image: url(../images/icons/grid-tpl.png) !important;
+}
+
+.icon-tree {
+	background-image: url(../images/icons/tree.png) !important;
+}
+
+.icon-menu {
+	background-image: url(../images/icons/menu.png) !important;
+}
+
+.icon-toolbar {
+	background-image: url(../images/icons/toolbar.png) !important;
+}
+
+.icon-button {
+	background-image: url(../images/icons/button.png) !important;
+}
+
+.icon-panel {
+	background-image: url(../images/icons/container.png) !important;
+}
+
+.icon-window {
+	background-image: url(../images/icons/window.png) !important;
+}
+
+.icon-form {
+	background-image: url(../images/icons/form.png) !important;
+}
+
+.icon-tabs {
+	background-image: url(../images/icons/tabs.gif) !important;
+}
+
+.icon-container {
+	background-image: url(../images/icons/panel.gif) !important;
+}
+.icon-canvas {
+	background-image: url(../images/icons/canvas.png) !important;
+}
+
+.icon-cmp {
+	background-image: url(../images/icons/cmp.gif) !important;
+}
+.icon-cmp-new {
+	background-image: url(../images/icons/component_new.png) !important;
+}
+
+.icon-cmp-delete {
+	background-image: url(../images/icons/component_delete.png) !important;
+}
+.icon-cmp-edit {
+	background-image: url(../images/icons/component_edit.png) !important;
+}
+.icon-cmp-view {
+	background-image: url(../images/icons/component_view.png) !important;
+}
+.icon-cmp-props {
+	background-image: url(../images/icons/component_preferences.png) !important;
+}
+.icon-refresh {
+	background-image: url(../images/icons/refresh.gif) !important;
+}
+
+.icon-delete {
+	background-image: url(../images/icons/delete.gif) !important;
+}
+.icon-grouped {
+	background-image: url(../images/icons/grouped.gif) !important;
+}
+.icon-sorted {
+	background-image: url(../images/icons/sorted.gif) !important;
+}
+.icon-hide-inherited {
+	background-image: url(../images/icons/hide-inherited.gif) !important;
+}
+.icon-config {
+	background-image: url(../images/icons/prop.gif) !important;
+}
+
+.icon-collapse-all {
+	background-image: url(../images/icons/collapse-all.gif) !important;
+}
+.icon-common {
+	background-image: url(../images/icons/common.gif) !important;
+}
+
+.icon-expand-all {
+	background-image: url(../images/icons/expand-all.gif) !important;
+}
+.icon-json {
+	background-image: url(../images/icons/json.png) !important;
+}
+.icon-array {
+	background-image: url(../images/icons/array.png) !important;
+}
+.icon-xml {
+	background-image: url(../images/icons/xml.png) !important;
+}
+.icon-load {
+	background-image: url(../images/icons/load.png) !important;
+}
+.icon-save {
+	background-image: url(../images/icons/save.gif) !important;
+}
+.icon-data-field {
+	background-image: url(../images/icons/column.png) !important;
+}
+.icon-fieldset {
+	background-image: url(../images/icons/fieldset.png) !important;
+}
+.icon-label {
+	background-image: url(../images/icons/label.gif) !important;
+}
+.icon-viewport {
+	background-image: url(../images/icons/viewport.png) !important;
+}
+.icon-project {
+	background-image: url(../images/icons/project.png) !important;
+}
+.icon-project-new {
+	background-image: url(../images/icons/project-new.png) !important;
+}
+.icon-project-open {
+	background-image: url(../images/icons/project-open.png) !important;
+}
+.icon-project-save {
+	background-image: url(../images/icons/project-save.png) !important;
+}
+.icon-project-saveas {
+	background-image: url(../images/icons/project-saveas.png) !important;
+}
+.icon-view-json {
+	background-image: url(../images/icons/view-json.png) !important;
+}
+.icon-copy{
+	background-image: url(../images/icons/copy.png) !important;
+}
+.icon-noid{
+	background-image: url(../images/icons/noid.png) !important;
+}
+.icon-about{
+	background-image: url(../images/icons/about.png) !important;
+}
+.icon-class{
+	background-image: url(../images/icons/ico-class.png) !important;
+}

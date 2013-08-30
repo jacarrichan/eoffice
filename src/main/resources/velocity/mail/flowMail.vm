@@ -1,0 +1,8 @@
+<html>
+	<title></title>
+	<body>
+		<p>${appUser.fullname}您好:</p>
+		<p>XX---办公系统于${curDateStr}产生了一项待办事项(${task.name})，请您在规定时间内完成审批~</p>
+		<br/>本邮件来自未城区办公管理系统自动产生，不需回复。
+	</body>
+</html>

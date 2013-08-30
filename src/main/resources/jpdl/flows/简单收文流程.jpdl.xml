@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<process xmlns="http://jbpm.org/4.0/jpdl" name="pd7122137483437165410">
+	<start name="开始" g="230,37,53,63">
+		<transition name="提交公文分发" to="公文分发" g="-24,-16" />
+	</start>
+	<end name="结束" g="237,374,53,63" />
+	<task name="公文分发" g="209,153,100,74">
+		<transition name="提交承办传阅" to="承办传阅" g="-24,-16" />
+	</task>
+	<task name="承办传阅" g="211,267,102,74">
+		<transition name="结束" to="结束" g="-24,-16" />
+	</task>
+</process>

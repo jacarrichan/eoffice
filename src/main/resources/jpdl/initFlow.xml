@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<def>
+	<!-- 放置初始化的流程 -->
+	<!-- 
+	<process name="流程示例1">
+		<description>初始化流程示例1</description>
+		<jpdlLocation>flows/example1.jpdl.xml</jpdlLocation>
+	</process>
+	<process name="流程示例2">
+		<description>初始化收文流程</description>
+		<jpdlLocation>flows/example2.jpdl.xml</jpdlLocation>
+	</process>
+	 -->
+	<process name="请假外出">
+		<description>系统内置的请假及外出流程</description>
+		<jpdlLocation>flows/HolidayRequest.jpdl.xml</jpdlLocation>
+	</process>
+	<process name="发文流程">
+		<description>公文内置发文流程</description>
+		<jpdlLocation>flows/发文流程.jpdl.xml</jpdlLocation>
+	</process>
+	<process name="简单发文流程">
+		<description>公文内置简单发文流程</description>
+		<jpdlLocation>flows/简单发文流程.jpdl.xml</jpdlLocation>
+	</process>
+	<process name="收文流程">
+		<description>公文内置收文流程</description>
+		<jpdlLocation>flows/收文流程.jpdl.xml</jpdlLocation>
+	</process>
+	<process name="简单收文流程">
+		<description>公文内置简单收文流程</description>
+		<jpdlLocation>flows/简单收文流程.jpdl.xml</jpdlLocation>
+	</process>
+</def>

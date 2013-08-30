@@ -1,0 +1,132 @@
+.container,.container * {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 100%;
+	background: white;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+.slider {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.newLi {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: inline;
+}
+
+.newLi a {
+	text-decoration: none;
+	color: blue;
+}
+
+.newLi a:hover {
+	color: #25e3fa;
+}
+
+.newsdisplay {
+	height: 292px;
+	padding: 4px;
+}
+
+.newsdisplayImg {
+	height: 292px;
+	width: 50%;
+	float: left;
+	border: none;
+	display: block;
+}
+
+.newsdisplayDiv {
+	overflow: hidden;
+	height: 292px;
+	width: 50%;
+	border: none;
+	float: right;
+}
+
+.newsdisplayDiv h2 {
+	font-size: 24px;
+}
+
+.newsdisplayDiv p {
+	line-height: 24px;
+	padding-left: 15px;
+}
+
+.num {
+	position: absolute;
+	left: 20px;
+	bottom: 5px;
+}
+
+.num li {
+	float: left;
+	color: #FF7300;
+	text-align: center;
+	line-height: 16px;
+	width: 16px;
+	height: 16px;
+	font-family: Arial;
+	font-size: 12px;
+	cursor: pointer;
+	overflow: hidden;
+	margin: 3px 1px;
+	border: 1px solid #FF7300;
+	background-color: #fff;
+}
+
+.num li.on {
+	color: #fff;
+	line-height: 21px;
+	width: 21px;
+	height: 21px;
+	font-size: 16px;
+	margin: 0 1px;
+	border: 0;
+	background-color: #FF7300;
+	font-weight: bold;
+}
+
+.noticeDisplayDive {
+	background: white;
+	height: 286px;
+	overflow: hidden;
+}
+
+.noticeItem {
+	height: 286px;
+	overflow: hidden;
+}
+
+.noticeSubject {
+	font-size: 24px;
+	width: 100%;
+	color: blue;
+}
+
+.noticesubSubject {
+	color: blue;
+}
+
+.noticeContent {
+	padding: 10px;
+	color: blue;
+}
+
+#rollText {
+	height: 286px;
+	width: 100%;
+	overflow: hidden;
+	color: blue;
+}

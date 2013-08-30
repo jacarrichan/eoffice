@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+	<bean id="genericDao" abstract="true"
+		class="com.cyjt.core.dao.impl.GenericDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="baseDao" abstract="true" class="com.cyjt.core.dao.impl.BaseDaoImpl"
+		parent="genericDao" />
+
+
+	<bean id="newsTypeDao" class="com.cyjt.oa.dao.info.impl.NewsTypeDaoImpl"
+		parent="baseDao" />
+	<bean id="noticeDao" class="com.cyjt.oa.dao.info.impl.NoticeDaoImpl"
+		parent="baseDao" />
+	<bean id="appRoleDao" class="com.cyjt.oa.dao.system.impl.AppRoleDaoImpl"
+		parent="baseDao" />
+
+	<bean id="companyDao" class="com.cyjt.oa.dao.system.impl.CompanyDaoImpl"
+		parent="baseDao" />
+	<bean id="departmentDao" class="com.cyjt.oa.dao.system.impl.DepartmentDaoImpl"
+		parent="baseDao" />
+	<bean id="shortMessageDao" class="com.cyjt.oa.dao.info.impl.ShortMessageDaoImpl"
+		parent="baseDao" />
+	<bean id="inMessageDao" class="com.cyjt.oa.dao.info.impl.InMessageDaoImpl"
+		parent="baseDao" />
+	<!-- start: Generated for Diary From Template: app-dao.xml.beansvm -->
+	<bean id="diaryDao" class="com.cyjt.oa.dao.system.impl.DiaryDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Diary From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for FileAttach From Template: app-dao.xml.beansvm -->
+	<bean id="fileAttachDao" class="com.cyjt.oa.dao.system.impl.FileAttachDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for FileAttach From Template: app-dao.xml.beansvm -->
+
+	<!-- start: Generated for AppUser From Template: app-dao.xml.beansvm -->
+	<bean id="appUserDao" class="com.cyjt.oa.dao.system.impl.AppUserDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for AppUser From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ReportTemplate From Template: app-dao.xml.beansvm -->
+	<bean id="reportTemplateDao" class="com.cyjt.oa.dao.system.impl.ReportTemplateDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ReportTemplate From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for DocFolder From Template: app-dao.xml.beansvm -->
+	<bean id="docFolderDao" class="com.cyjt.oa.dao.document.impl.DocFolderDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for DocFolder From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Document From Template: app-dao.xml.beansvm -->
+	<bean id="documentDao" class="com.cyjt.oa.dao.document.impl.DocumentDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Document From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for News From Template: app-dao.xml.beansvm -->
+	<bean id="newsDao" class="com.cyjt.oa.dao.info.impl.NewsDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for News From Template: app-dao.xml.beansvm -->
+
+	<!-- start: Generated for MailFolder From Template: app-dao.xml.beansvm -->
+	<bean id="mailFolderDao" class="com.cyjt.oa.dao.communicate.impl.MailFolderDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for MailFolder From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Mail From Template: app-dao.xml.beansvm -->
+	<bean id="mailDao" class="com.cyjt.oa.dao.communicate.impl.MailDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Mail From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for MailBox From Template: app-dao.xml.beansvm -->
+	<bean id="mailBoxDao" class="com.cyjt.oa.dao.communicate.impl.MailBoxDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for MailBox From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for PhoneBook From Template: app-dao.xml.beansvm -->
+	<bean id="phoneBookDao" class="com.cyjt.oa.dao.communicate.impl.PhoneBookDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for PhoneBook From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for PhoneGroup From Template: app-dao.xml.beansvm -->
+	<bean id="phoneGroupDao" class="com.cyjt.oa.dao.communicate.impl.PhoneGroupDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for PhoneGroup From Template: app-dao.xml.beansvm -->
+
+	<!-- start: Generated for ProType From Template: app-dao.xml.beansvm -->
+	<bean id="proTypeDao" class="com.cyjt.oa.dao.flow.impl.ProTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ProType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ProDefinition From Template: app-dao.xml.beansvm -->
+	<bean id="proDefinitionDao" class="com.cyjt.oa.dao.flow.impl.ProDefinitionDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ProDefinition From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ProUserAssign From Template: app-dao.xml.beansvm -->
+	<bean id="proUserAssignDao" class="com.cyjt.oa.dao.flow.impl.ProUserAssignDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ProUserAssign From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ProcessRun From Template: app-dao.xml.beansvm -->
+	<bean id="processRunDao" class="com.cyjt.oa.dao.flow.impl.ProcessRunDaoImpl"
+		parent="baseDao">
+		<property name="querys">
+			<map>
+				<entry key="MyAttendProcessRun">
+					<value>select distinct vo from ProcessRun as vo join
+						vo.processForms as pf where pf.creatorId=? order by vo.createtime
+						desc</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<!-- end: Generated for ProcessRun From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for FormData From Template: app-dao.xml.beansvm -->
+	<bean id="formDataDao" class="com.cyjt.oa.dao.flow.impl.FormDataDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for FormData From Template: app-dao.xml.beansvm -->
+	<bean id="taskDao" class="com.cyjt.oa.dao.flow.impl.TaskDaoImpl"
+		parent="baseDao" />
+	<!-- start: Generated for ProcessForm From Template: app-dao.xml.beansvm -->
+	<bean id="processFormDao" class="com.cyjt.oa.dao.flow.impl.ProcessFormDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ProcessForm From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for DocPrivilege From Template: app-dao.xml.beansvm -->
+	<bean id="docPrivilegeDao" class="com.cyjt.oa.dao.document.impl.DocPrivilegeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for DocPrivilege From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for OfficeGoodsType From Template: app-dao.xml.beansvm -->
+	<bean id="officeGoodsTypeDao" class="com.cyjt.oa.dao.admin.impl.OfficeGoodsTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for OfficeGoodsType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for OfficeGoods From Template: app-dao.xml.beansvm -->
+	<bean id="officeGoodsDao" class="com.cyjt.oa.dao.admin.impl.OfficeGoodsDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for OfficeGoods From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for GoodsApply From Template: app-dao.xml.beansvm -->
+	<bean id="goodsApplyDao" class="com.cyjt.oa.dao.admin.impl.GoodsApplyDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for GoodsApply From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for InStock From Template: app-dao.xml.beansvm -->
+	<bean id="inStockDao" class="com.cyjt.oa.dao.admin.impl.InStockDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for InStock From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Book From Template: app-dao.xml.beansvm -->
+	<bean id="bookDao" class="com.cyjt.oa.dao.admin.impl.BookDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Book From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for BookBorRet From Template: app-dao.xml.beansvm -->
+	<bean id="bookBorRetDao" class="com.cyjt.oa.dao.admin.impl.BookBorRetDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for BookBorRet From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for BookSn From Template: app-dao.xml.beansvm -->
+	<bean id="bookSnDao" class="com.cyjt.oa.dao.admin.impl.BookSnDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for BookSn From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for BookType From Template: app-dao.xml.beansvm -->
+	<bean id="bookTypeDao" class="com.cyjt.oa.dao.admin.impl.BookTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for BookType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Region From Template: app-dao.xml.beansvm -->
+	<bean id="regionDao" class="com.cyjt.oa.dao.system.impl.RegionDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Region From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Customer From Template: app-dao.xml.beansvm -->
+	<bean id="customerDao" class="com.cyjt.oa.dao.customer.impl.CustomerDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Customer From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for CusLinkman From Template: app-dao.xml.beansvm -->
+	<bean id="cusLinkmanDao" class="com.cyjt.oa.dao.customer.impl.CusLinkmanDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for CusLinkman From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Appointment From Template: app-dao.xml.beansvm -->
+	<bean id="appointmentDao" class="com.cyjt.oa.dao.task.impl.AppointmentDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Appointment From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for CalendarPlan From Template: app-dao.xml.beansvm -->
+	<bean id="calendarPlanDao" class="com.cyjt.oa.dao.task.impl.CalendarPlanDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for CalendarPlan From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Car From Template: app-dao.xml.beansvm -->
+	<bean id="carDao" class="com.cyjt.oa.dao.admin.impl.CarDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Car From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for CartRepair From Template: app-dao.xml.beansvm -->
+	<bean id="cartRepairDao" class="com.cyjt.oa.dao.admin.impl.CartRepairDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for CartRepair From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for CarApply From Template: app-dao.xml.beansvm -->
+	<bean id="carApplyDao" class="com.cyjt.oa.dao.admin.impl.CarApplyDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for CarApply From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for DepreType From Template: app-dao.xml.beansvm -->
+	<bean id="depreTypeDao" class="com.cyjt.oa.dao.admin.impl.DepreTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for DepreType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for AssetsType From Template: app-dao.xml.beansvm -->
+	<bean id="assetsTypeDao" class="com.cyjt.oa.dao.admin.impl.AssetsTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for AssetsType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for FixedAssets From Template: app-dao.xml.beansvm -->
+	<bean id="fixedAssetsDao" class="com.cyjt.oa.dao.admin.impl.FixedAssetsDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for FixedAssets From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for DepreRecord From Template: app-dao.xml.beansvm -->
+	<bean id="depreRecordDao" class="com.cyjt.oa.dao.admin.impl.DepreRecordDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for DepreRecord From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for CusConnection From Template: app-dao.xml.beansvm -->
+	<bean id="cusConnectionDao" class="com.cyjt.oa.dao.customer.impl.CusConnectionDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for CusConnection From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Project From Template: app-dao.xml.beansvm -->
+	<bean id="projectDao" class="com.cyjt.oa.dao.customer.impl.ProjectDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Project From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Contract From Template: app-dao.xml.beansvm -->
+	<bean id="contractDao" class="com.cyjt.oa.dao.customer.impl.ContractDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Contract From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ContractConfig From Template: app-dao.xml.beansvm -->
+	<bean id="contractConfigDao" class="com.cyjt.oa.dao.customer.impl.ContractConfigDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ContractConfig From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for PlanType From Template: app-dao.xml.beansvm -->
+	<bean id="planTypeDao" class="com.cyjt.oa.dao.task.impl.PlanTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for PlanType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for WorkPlan From Template: app-dao.xml.beansvm -->
+	<bean id="workPlanDao" class="com.cyjt.oa.dao.task.impl.WorkPlanDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for WorkPlan From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for AppFunction From Template: app-dao.xml.beansvm -->
+	<bean id="appFunctionDao" class="com.cyjt.oa.dao.system.impl.AppFunctionDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for AppFunction From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for FunUrl From Template: app-dao.xml.beansvm -->
+	<bean id="funUrlDao" class="com.cyjt.oa.dao.system.impl.FunUrlDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for FunUrl From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for HolidayRecord From Template: app-dao.xml.beansvm -->
+	<bean id="holidayRecordDao" class="com.cyjt.oa.dao.personal.impl.HolidayRecordDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for HolidayRecord From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for DutySection From Template: app-dao.xml.beansvm -->
+	<bean id="dutySectionDao" class="com.cyjt.oa.dao.personal.impl.DutySectionDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for DutySection From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for DutySystem From Template: app-dao.xml.beansvm -->
+	<bean id="dutySystemDao" class="com.cyjt.oa.dao.personal.impl.DutySystemDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for DutySystem From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Duty From Template: app-dao.xml.beansvm -->
+	<bean id="dutyDao" class="com.cyjt.oa.dao.personal.impl.DutyDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Duty From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for DutyRegister From Template: app-dao.xml.beansvm -->
+	<bean id="dutyRegisterDao" class="com.cyjt.oa.dao.personal.impl.DutyRegisterDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for DutyRegister From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for PlanAttend From Template: app-dao.xml.beansvm -->
+	<bean id="planAttendDao" class="com.cyjt.oa.dao.task.impl.PlanAttendDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for PlanAttend From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for UserSub From Template: app-dao.xml.beansvm -->
+	<bean id="userSubDao" class="com.cyjt.oa.dao.system.impl.UserSubDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for UserSub From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ErrandsRegister From Template: app-dao.xml.beansvm -->
+	<bean id="errandsRegisterDao" class="com.cyjt.oa.dao.personal.impl.ErrandsRegisterDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ErrandsRegister From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Provider From Template: app-dao.xml.beansvm -->
+	<bean id="providerDao" class="com.cyjt.oa.dao.customer.impl.ProviderDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Provider From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Product From Template: app-dao.xml.beansvm -->
+	<bean id="productDao" class="com.cyjt.oa.dao.customer.impl.ProductDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Product From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for SysConfig From Template: app-dao.xml.beansvm -->
+	<bean id="sysConfigDao" class="com.cyjt.oa.dao.system.impl.SysConfigDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for SysConfig From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for NewsComment From Template: app-dao.xml.beansvm -->
+	<bean id="newsCommentDao" class="com.cyjt.oa.dao.info.impl.NewsCommentDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for NewsComment From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ReportParam From Template: app-dao.xml.beansvm -->
+	<bean id="reportParamDao" class="com.cyjt.oa.dao.system.impl.ReportParamDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ReportParam From Template: app-dao.xml.beansvm -->
+
+	<!-- start: Generated for Dictionary From Template: app-dao.xml.beansvm -->
+	<bean id="dictionaryDao" class="com.cyjt.oa.dao.system.impl.DictionaryDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Dictionary From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for StandSalary From Template: app-dao.xml.beansvm -->
+	<bean id="standSalaryDao" class="com.cyjt.oa.dao.hrm.impl.StandSalaryDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for StandSalary From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for SalaryItem From Template: app-dao.xml.beansvm -->
+	<bean id="salaryItemDao" class="com.cyjt.oa.dao.hrm.impl.SalaryItemDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for SalaryItem From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for StandSalaryItem From Template: app-dao.xml.beansvm -->
+	<bean id="standSalaryItemDao" class="com.cyjt.oa.dao.hrm.impl.StandSalaryItemDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for StandSalaryItem From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for HireIssue From Template: app-dao.xml.beansvm -->
+	<bean id="hireIssueDao" class="com.cyjt.oa.dao.hrm.impl.HireIssueDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for HireIssue From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Resume From Template: app-dao.xml.beansvm -->
+	<bean id="resumeDao" class="com.cyjt.oa.dao.hrm.impl.ResumeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Resume From Template: app-dao.xml.beansvm -->
+
+	<!-- start: Generated for ArchivesType From Template: app-dao.xml.beansvm -->
+	<bean id="archivesTypeDao" class="com.cyjt.oa.dao.archive.impl.ArchivesTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchivesType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchTemplate From Template: app-dao.xml.beansvm -->
+	<bean id="archTemplateDao" class="com.cyjt.oa.dao.archive.impl.ArchTemplateDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchTemplate From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchRecType From Template: app-dao.xml.beansvm -->
+	<bean id="archRecTypeDao" class="com.cyjt.oa.dao.archive.impl.ArchRecTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchRecType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for JobChange From Template: app-dao.xml.beansvm -->
+	<bean id="jobChangeDao" class="com.cyjt.oa.dao.hrm.impl.JobChangeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for JobChange From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for EmpProfile From Template: app-dao.xml.beansvm -->
+	<bean id="empProfileDao" class="com.cyjt.oa.dao.hrm.impl.EmpProfileDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for EmpProfile From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Job From Template: app-dao.xml.beansvm -->
+	<bean id="jobDao" class="com.cyjt.oa.dao.hrm.impl.JobDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Job From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchivesDep From Template: app-dao.xml.beansvm -->
+	<bean id="archivesDepDao" class="com.cyjt.oa.dao.archive.impl.ArchivesDepDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchivesDep From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchivesDoc From Template: app-dao.xml.beansvm -->
+	<bean id="archivesDocDao" class="com.cyjt.oa.dao.archive.impl.ArchivesDocDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchivesDoc From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for DocHistory From Template: app-dao.xml.beansvm -->
+	<bean id="docHistoryDao" class="com.cyjt.oa.dao.archive.impl.DocHistoryDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for DocHistory From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for SalaryPayoff From Template: app-dao.xml.beansvm -->
+	<bean id="salaryPayoffDao" class="com.cyjt.oa.dao.hrm.impl.SalaryPayoffDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for SalaryPayoff From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for FormDef From Template: app-dao.xml.beansvm -->
+	<bean id="formDefDao" class="com.cyjt.oa.dao.flow.impl.FormDefDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for FormDef From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Archives From Template: app-dao.xml.beansvm -->
+	<bean id="archivesDao" class="com.cyjt.oa.dao.archive.impl.ArchivesDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Archives From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchivesHandle From Template: app-dao.xml.beansvm -->
+	<bean id="archivesHandleDao" class="com.cyjt.oa.dao.archive.impl.ArchivesHandleDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchivesHandle From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for LeaderRead From Template: app-dao.xml.beansvm -->
+	<bean id="leaderReadDao" class="com.cyjt.oa.dao.archive.impl.LeaderReadDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for LeaderRead From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchDispatch From Template: app-dao.xml.beansvm -->
+	<bean id="archDispatchDao" class="com.cyjt.oa.dao.archive.impl.ArchDispatchDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchDispatch From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchivesAttend From Template: app-dao.xml.beansvm -->
+	<bean id="archivesAttendDao" class="com.cyjt.oa.dao.archive.impl.ArchivesAttendDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchivesAttend From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchFlowConf From Template: app-dao.xml.beansvm -->
+	<bean id="archFlowConfDao" class="com.cyjt.oa.dao.archive.impl.ArchFlowConfDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchFlowConf From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchRecUser From Template: app-dao.xml.beansvm -->
+	<bean id="archRecUserDao" class="com.cyjt.oa.dao.archive.impl.ArchRecUserDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchRecUser From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchHasten From Template: app-dao.xml.beansvm -->
+	<bean id="archHastenDao" class="com.cyjt.oa.dao.archive.impl.ArchHastenDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchHasten From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for IndexDisplay From Template: app-dao.xml.beansvm -->
+	<bean id="indexDisplayDao" class="com.cyjt.oa.dao.system.impl.IndexDisplayDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for IndexDisplay From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for SystemLog From Template: app-dao.xml.beansvm -->
+	<bean id="systemLogDao" class="com.cyjt.oa.dao.system.impl.SystemLogDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for SystemLog From Template: app-dao.xml.beansvm -->
+	<bean id="appTipsDao" class="com.cyjt.oa.dao.info.impl.AppTipsDaoImpl"
+		parent="baseDao" />
+	<!-- start: Generated for OutMailUserSeting From Template: app-dao.xml.beansvm -->
+	<bean id="outMailUserSetingDao"
+		class="com.cyjt.oa.dao.communicate.impl.OutMailUserSetingDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for OutMailUserSeting From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for OutMail From Template: app-dao.xml.beansvm -->
+	<bean id="outMailDao" class="com.cyjt.oa.dao.communicate.impl.OutMailDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for OutMail From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for OutMailFolder From Template: app-dao.xml.beansvm -->
+	<bean id="outMailFolderDao" class="com.cyjt.oa.dao.communicate.impl.OutMailFolderDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for OutMailFolder From Template: app-dao.xml.beansvm -->
+
+	<!-- start: Generated for UserAgent From Template: app-dao.xml.beansvm -->
+	<bean id="userAgentDao" class="com.cyjt.oa.dao.system.impl.UserAgentDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for UserAgent From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for MobileMsg From Template: app-dao.xml.beansvm -->
+	<bean id="mobileMsgDao" class="com.cyjt.oa.dao.communicate.impl.MobileMsgDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for MobileMsg From Template: app-dao.xml.beansvm -->
+	<!-- 新增 行政管理-会议管理-会议室管理 -->
+	<bean id="boardRooDao" class="com.cyjt.oa.dao.admin.impl.BoardRooDaoImpl"
+		parent="baseDao" />
+	<!-- 新增 行政管理-会议类型设置 -->
+	<bean id="boardTypeDao" class="com.cyjt.oa.dao.admin.impl.BoardTypeDaoImpl"
+		parent="baseDao" />
+	<!-- start: Generated for Conference From Template: app-dao.xml.beansvm -->
+	<bean id="conferenceDao" class="com.cyjt.oa.dao.admin.impl.ConferenceDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Conference From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ConfPrivilege From Template: app-dao.xml.beansvm -->
+	<bean id="confPrivilegeDao" class="com.cyjt.oa.dao.admin.impl.ConfPrivilegeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ConfPrivilege From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ConfAttend From Template: app-dao.xml.beansvm -->
+	<bean id="confAttendDao" class="com.cyjt.oa.dao.admin.impl.ConfAttendDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ConfAttend From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ConfSummary From Template: app-dao.xml.beansvm -->
+	<bean id="confSummaryDao" class="com.cyjt.oa.dao.admin.impl.ConfSummaryDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ConfSummary From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for GlobalType From Template: app-dao.xml.beansvm -->
+	<bean id="globalTypeDao" class="com.cyjt.oa.dao.system.impl.GlobalTypeDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for GlobalType From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchFond From Template: app-dao.xml.beansvm -->
+	<bean id="archFondDao" class="com.cyjt.oa.dao.arch.impl.ArchFondDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchFond From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ArchRoll From Template: app-dao.xml.beansvm -->
+	<bean id="archRollDao" class="com.cyjt.oa.dao.arch.impl.ArchRollDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ArchRoll From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for RollFile From Template: app-dao.xml.beansvm -->
+	<bean id="rollFileDao" class="com.cyjt.oa.dao.arch.impl.RollFileDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for RollFile From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for RollFileList From Template: app-dao.xml.beansvm -->
+	<bean id="rollFileListDao" class="com.cyjt.oa.dao.arch.impl.RollFileListDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for RollFileList From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for SuggestBox From Template: app-dao.xml.beansvm -->
+	<bean id="suggestBoxDao" class="com.cyjt.oa.dao.info.impl.SuggestBoxDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for SuggestBox From Template: app-dao.xml.beansvm -->
+
+	<!-- start: Generated for ContractEvent From Template: app-dao.xml.beansvm -->
+	<bean id="contractEventDao" class="com.cyjt.oa.dao.hrm.impl.ContractEventDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ContractEvent From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for ContractAttach From Template: app-dao.xml.beansvm -->
+	<bean id="contractAttachDao" class="com.cyjt.oa.dao.hrm.impl.ContractAttachDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for ContractAttach From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for UserContract From Template: app-dao.xml.beansvm -->
+	<bean id="userContractDao" class="com.cyjt.oa.dao.hrm.impl.UserContractDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for UserContract From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for BorrowFileList From Template: app-dao.xml.beansvm -->
+	<bean id="borrowFileListDao" class="com.cyjt.oa.dao.arch.impl.BorrowFileListDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for BorrowFileList From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for BorrowRecord From Template: app-dao.xml.beansvm -->
+	<bean id="borrowRecordDao" class="com.cyjt.oa.dao.arch.impl.BorrowRecordDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for BorrowRecord From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for Regulation From Template: app-dao.xml.beansvm -->
+	<bean id="regulationDao" class="com.cyjt.oa.dao.admin.impl.RegulationDaoImpl"
+		parent="baseDao">
+		<property name="querys">
+			<map>
+				<entry key="GetRegulationWithRights">
+					<value>select vo from Regulation vo where vo.status = ? and
+						(vo.recDepIds like ? or vo.recUserIds like ? )</value>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<!-- end: Generated for Regulation From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for PaintTemplate From Template: app-dao.xml.beansvm -->
+	<bean id="paintTemplateDao" class="com.cyjt.oa.dao.document.impl.PaintTemplateDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for PaintTemplate From Template: app-dao.xml.beansvm -->
+
+	<!-- start: Generated for Seal From Template: app-dao.xml.beansvm -->
+	<bean id="sealDao" class="com.cyjt.oa.dao.document.impl.SealDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for Seal From Template: app-dao.xml.beansvm -->
+
+	<!-- app-dao.xml start -->
+	<bean id="albumDao" class="com.cyjt.oa.dao.album.impl.AlbumDaoImpl"
+		parent="baseDao" />
+	<!-- app-dao.xml end -->
+
+	<!-- app-dao.xml start -->
+	<bean id="pictureDao" class="com.cyjt.oa.dao.picture.impl.PictureDaoImpl"
+		parent="baseDao" />
+	<!-- app-dao.xml end -->
+	<!-- start: Generated for SmsMobile From Template: app-dao.xml.beansvm -->
+	<bean id="smsMobileDao" class="com.cyjt.oa.dao.communicate.impl.SmsMobileDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for SmsMobile From Template: app-dao.xml.beansvm -->
+	<!-- start: Generated for SmsHistory From Template: app-dao.xml.beansvm -->
+	<bean id="smsHistoryDao" class="com.cyjt.oa.dao.communicate.impl.SmsHistoryDaoImpl"
+		parent="baseDao" />
+	<!-- end: Generated for SmsHistory From Template: app-dao.xml.beansvm -->
+</beans>

@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<!-- 为缺省的Action处理 -->
+	<bean id="BaseAction" class="com.cyjt.core.web.action.BaseAction" />
+
+	<bean id="LoginAction" class="com.cyjt.oa.action.system.LoginAction"
+		scope="prototype" />
+	<bean id="AppUserAction" class="com.cyjt.oa.action.system.AppUserAction"
+		scope="prototype" />
+	<bean id="NewsTypeAction" class="com.cyjt.oa.action.info.NewsTypeAction"
+		scope="prototype" />
+	<bean id="NoticeAction" class="com.cyjt.oa.action.info.NoticeAction"
+		scope="prototype" />
+	<bean id="CompanyAction" class="com.cyjt.oa.action.system.CompanyAction"
+		scope="prototype" />
+	<bean id="DepartmentAction" class="com.cyjt.oa.action.system.DepartmentAction"
+		scope="prototype" />
+	<bean id="ShortMessageAction" class="com.cyjt.oa.action.info.ShortMessageAction"
+		scope="prototype" />
+	<bean id="InMessageAction" class="com.cyjt.oa.action.info.InMessageAction"
+		scope="prototype" />
+	<bean id="AppRoleAction" class="com.cyjt.oa.action.system.AppRoleAction"
+		scope="prototype" />
+	<!-- start: Generated for FileAttach From Template: app-action.xml.beansvm -->
+	<bean id="FileAttachAction" class="com.cyjt.oa.action.system.FileAttachAction"
+		scope="prototype" />
+	<bean id="FileDetailAction" class="com.cyjt.oa.action.document.FileDetailAction"
+		scope="prototype" />
+	<!-- end: Generated for FileAttach From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Diary From Template: app-action.xml.beansvm -->
+	<bean id="DiaryAction" class="com.cyjt.oa.action.system.DiaryAction"
+		scope="prototype" />
+	<!-- end: Generated for Diary From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Diary From Template: app-action.xml.beansvm -->
+	<bean id="OutMailSetAction" class="com.cyjt.oa.action.system.OutMailSetAction"
+		scope="prototype" />
+	<!-- end: Generated for Diary From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ReportTemplate From Template: app-action.xml.beansvm -->
+	<bean id="ReportTemplateAction" class="com.cyjt.oa.action.system.ReportTemplateAction"
+		scope="prototype" />
+	<!-- end: Generated for ReportTemplate From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for DocFolder From Template: app-action.xml.beansvm -->
+	<bean id="DocFolderAction" class="com.cyjt.oa.action.document.DocFolderAction"
+		scope="prototype" />
+	<!-- end: Generated for DocFolder From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Document From Template: app-action.xml.beansvm -->
+	<bean id="DocumentAction" class="com.cyjt.oa.action.document.DocumentAction"
+		scope="prototype" />
+	<!-- end: Generated for Document From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for News From Template: app-action.xml.beansvm -->
+	<bean id="NewsAction" class="com.cyjt.oa.action.info.NewsAction"
+		scope="prototype" />
+	<!-- end: Generated for News From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for MailFolder From Template: app-action.xml.beansvm -->
+	<bean id="MailFolderAction" class="com.cyjt.oa.action.communicate.MailFolderAction"
+		scope="prototype" />
+	<!-- end: Generated for MailFolder From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Mail From Template: app-action.xml.beansvm -->
+	<bean id="MailAction" class="com.cyjt.oa.action.communicate.MailAction"
+		scope="prototype" />
+	<!-- end: Generated for Mail From Template: app-action.xml.beansvm -->
+
+	<!-- start: Generated for PhoneBook From Template: app-action.xml.beansvm -->
+	<bean id="PhoneBookAction" class="com.cyjt.oa.action.communicate.PhoneBookAction"
+		scope="prototype" />
+	<!-- end: Generated for PhoneBook From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for PhoneGroup From Template: app-action.xml.beansvm -->
+	<bean id="PhoneGroupAction" class="com.cyjt.oa.action.communicate.PhoneGroupAction"
+		scope="prototype" />
+	<!-- end: Generated for PhoneGroup From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for SmsMobile From Template: app-action.xml.beansvm -->
+	<bean id="SmsMobileAction" class="com.cyjt.oa.action.communicate.SmsMobileAction"
+		scope="prototype" />
+	<!-- end: Generated for SmsMobile From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for SmsHistory From Template: app-action.xml.beansvm -->
+	<bean id="SmsHistoryAction" class="com.cyjt.oa.action.communicate.SmsHistoryAction"
+		scope="prototype" />
+	<!-- end: Generated for SmsHistory From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ProType From Template: app-action.xml.beansvm -->
+	<bean id="ProTypeAction" class="com.cyjt.oa.action.flow.ProTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for ProType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ProDefinition From Template: app-action.xml.beansvm -->
+	<bean id="ProDefinitionAction" class="com.cyjt.oa.action.flow.ProDefinitionAction"
+		scope="prototype" />
+	<bean id="ProcessDetailAction" class="com.cyjt.oa.action.flow.ProcessDetailAction"
+		scope="prototype" />
+	<!-- end: Generated for ProDefinition From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ProUserAssign From Template: app-action.xml.beansvm -->
+	<bean id="ProUserAssignAction" class="com.cyjt.oa.action.flow.ProUserAssignAction"
+		scope="prototype" />
+	<!-- end: Generated for ProUserAssign From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ProcessRun From Template: app-action.xml.beansvm -->
+	<bean id="ProcessRunAction" class="com.cyjt.oa.action.flow.ProcessRunAction"
+		scope="prototype" />
+	<!-- end: Generated for ProcessRun From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for FormData From Template: app-action.xml.beansvm -->
+	<bean id="FormDataAction" class="com.cyjt.oa.action.flow.FormDataAction"
+		scope="prototype" />
+	<!-- end: Generated for FormData From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ProcessForm From Template: app-action.xml.beansvm -->
+	<bean id="ProcessFormAction" class="com.cyjt.oa.action.flow.ProcessFormAction"
+		scope="prototype" />
+
+	<bean id="ProcessActivityAction" class="com.cyjt.oa.action.flow.ProcessActivityAction"
+		scope="prototype" />
+
+	<bean id="TaskAction" class="com.cyjt.oa.action.flow.TaskAction"
+		scope="prototype" />
+
+	<bean id="ProcessRunDetailAction" class="com.cyjt.oa.action.flow.ProcessRunDetailAction"
+		scope="prototype" />
+
+	<!-- end: Generated for ProcessForm From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for DocPrivilege From Template: app-action.xml.beansvm -->
+	<bean id="DocPrivilegeAction" class="com.cyjt.oa.action.document.DocPrivilegeAction"
+		scope="prototype" />
+	<!-- end: Generated for DocPrivilege From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for OfficeGoodsType From Template: app-action.xml.beansvm -->
+	<bean id="OfficeGoodsTypeAction" class="com.cyjt.oa.action.admin.OfficeGoodsTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for OfficeGoodsType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for OfficeGoods From Template: app-action.xml.beansvm -->
+	<bean id="OfficeGoodsAction" class="com.cyjt.oa.action.admin.OfficeGoodsAction"
+		scope="prototype" />
+	<!-- end: Generated for OfficeGoods From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for GoodsApply From Template: app-action.xml.beansvm -->
+	<bean id="GoodsApplyAction" class="com.cyjt.oa.action.admin.GoodsApplyAction"
+		scope="prototype" />
+	<!-- end: Generated for GoodsApply From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for InStock From Template: app-action.xml.beansvm -->
+	<bean id="InStockAction" class="com.cyjt.oa.action.admin.InStockAction"
+		scope="prototype" />
+	<!-- end: Generated for InStock From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Book From Template: app-action.xml.beansvm -->
+	<bean id="BookAction" class="com.cyjt.oa.action.admin.BookAction"
+		scope="prototype" />
+	<!-- end: Generated for Book From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for BookBorRet From Template: app-action.xml.beansvm -->
+	<bean id="BookBorRetAction" class="com.cyjt.oa.action.admin.BookBorRetAction"
+		scope="prototype" />
+	<!-- end: Generated for BookBorRet From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for BookSn From Template: app-action.xml.beansvm -->
+	<bean id="BookSnAction" class="com.cyjt.oa.action.admin.BookSnAction"
+		scope="prototype" />
+	<!-- end: Generated for BookSn From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for BookType From Template: app-action.xml.beansvm -->
+	<bean id="BookTypeAction" class="com.cyjt.oa.action.admin.BookTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for BookType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Region From Template: app-action.xml.beansvm -->
+	<bean id="RegionAction" class="com.cyjt.oa.action.system.RegionAction"
+		scope="prototype" />
+	<!-- end: Generated for Region From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Customer From Template: app-action.xml.beansvm -->
+	<bean id="CustomerAction" class="com.cyjt.oa.action.customer.CustomerAction"
+		scope="prototype" />
+	<!-- end: Generated for Customer From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for CusLinkman From Template: app-action.xml.beansvm -->
+	<bean id="CusLinkmanAction" class="com.cyjt.oa.action.customer.CusLinkmanAction"
+		scope="prototype" />
+	<!-- end: Generated for CusLinkman From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Car From Template: app-action.xml.beansvm -->
+	<bean id="CarAction" class="com.cyjt.oa.action.admin.CarAction"
+		scope="prototype" />
+	<!-- end: Generated for Car From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for CartRepair From Template: app-action.xml.beansvm -->
+	<bean id="CartRepairAction" class="com.cyjt.oa.action.admin.CartRepairAction"
+		scope="prototype" />
+	<!-- end: Generated for CartRepair From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for CarApply From Template: app-action.xml.beansvm -->
+	<bean id="CarApplyAction" class="com.cyjt.oa.action.admin.CarApplyAction"
+		scope="prototype" />
+	<!-- end: Generated for CarApply From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Appointment From Template: app-action.xml.beansvm -->
+	<bean id="AppointmentAction" class="com.cyjt.oa.action.task.AppointmentAction"
+		scope="prototype" />
+	<!-- end: Generated for Appointment From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for CalendarPlan From Template: app-action.xml.beansvm -->
+	<bean id="CalendarPlanAction" class="com.cyjt.oa.action.task.CalendarPlanAction"
+		scope="prototype" />
+	<!-- end: Generated for CalendarPlan From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for DepreType From Template: app-action.xml.beansvm -->
+	<bean id="DepreTypeAction" class="com.cyjt.oa.action.admin.DepreTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for DepreType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for AssetsType From Template: app-action.xml.beansvm -->
+	<bean id="AssetsTypeAction" class="com.cyjt.oa.action.admin.AssetsTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for AssetsType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for FixedAssets From Template: app-action.xml.beansvm -->
+	<bean id="FixedAssetsAction" class="com.cyjt.oa.action.admin.FixedAssetsAction"
+		scope="prototype" />
+	<!-- end: Generated for FixedAssets From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for DepreRecord From Template: app-action.xml.beansvm -->
+	<bean id="DepreRecordAction" class="com.cyjt.oa.action.admin.DepreRecordAction"
+		scope="prototype" />
+	<!-- end: Generated for DepreRecord From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for CusConnection From Template: app-action.xml.beansvm -->
+	<bean id="CusConnectionAction" class="com.cyjt.oa.action.customer.CusConnectionAction"
+		scope="prototype" />
+	<!-- end: Generated for CusConnection From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Project From Template: app-action.xml.beansvm -->
+	<bean id="ProjectAction" class="com.cyjt.oa.action.customer.ProjectAction"
+		scope="prototype" />
+	<!-- end: Generated for Project From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Contract From Template: app-action.xml.beansvm -->
+	<bean id="ContractAction" class="com.cyjt.oa.action.customer.ContractAction"
+		scope="prototype" />
+	<!-- end: Generated for Contract From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ContractConfig From Template: app-action.xml.beansvm -->
+	<bean id="ContractConfigAction" class="com.cyjt.oa.action.customer.ContractConfigAction"
+		scope="prototype" />
+	<!-- end: Generated for ContractConfig From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for PlanType From Template: app-action.xml.beansvm -->
+	<bean id="PlanTypeAction" class="com.cyjt.oa.action.task.PlanTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for PlanType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for WorkPlan From Template: app-action.xml.beansvm -->
+	<bean id="WorkPlanAction" class="com.cyjt.oa.action.task.WorkPlanAction"
+		scope="prototype" />
+	<!-- end: Generated for WorkPlan From Template: app-action.xml.beansvm -->
+
+	<bean id="MenuAction" class="com.cyjt.oa.action.menu.MenuAction"
+		scope="prototype" />
+	<!-- start: Generated for AppFunction From Template: app-action.xml.beansvm -->
+	<bean id="AppFunctionAction" class="com.cyjt.oa.action.system.AppFunctionAction"
+		scope="prototype" />
+	<!-- end: Generated for AppFunction From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for FunUrl From Template: app-action.xml.beansvm -->
+	<bean id="FunUrlAction" class="com.cyjt.oa.action.system.FunUrlAction"
+		scope="prototype" />
+	<!-- end: Generated for FunUrl From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for HolidayRecord From Template: app-action.xml.beansvm -->
+	<bean id="HolidayRecordAction" class="com.cyjt.oa.action.personal.HolidayRecordAction"
+		scope="prototype" />
+	<!-- end: Generated for HolidayRecord From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for DutySection From Template: app-action.xml.beansvm -->
+	<bean id="DutySectionAction" class="com.cyjt.oa.action.personal.DutySectionAction"
+		scope="prototype" />
+	<!-- end: Generated for DutySection From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for DutySystem From Template: app-action.xml.beansvm -->
+	<bean id="DutySystemAction" class="com.cyjt.oa.action.personal.DutySystemAction"
+		scope="prototype" />
+	<!-- end: Generated for DutySystem From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Duty From Template: app-action.xml.beansvm -->
+	<bean id="DutyAction" class="com.cyjt.oa.action.personal.DutyAction"
+		scope="prototype" />
+	<!-- end: Generated for Duty From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for DutyRegister From Template: app-action.xml.beansvm -->
+	<bean id="DutyRegisterAction" class="com.cyjt.oa.action.personal.DutyRegisterAction"
+		scope="prototype" />
+	<!-- end: Generated for DutyRegister From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for UserSub From Template: app-action.xml.beansvm -->
+	<bean id="UserSubAction" class="com.cyjt.oa.action.system.UserSubAction"
+		scope="prototype" />
+	<!-- end: Generated for UserSub From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ErrandsRegister From Template: app-action.xml.beansvm -->
+	<bean id="ErrandsRegisterAction" class="com.cyjt.oa.action.personal.ErrandsRegisterAction"
+		scope="prototype" />
+	<!-- end: Generated for ErrandsRegister From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Provider From Template: app-action.xml.beansvm -->
+	<bean id="ProviderAction" class="com.cyjt.oa.action.customer.ProviderAction"
+		scope="prototype" />
+	<!-- end: Generated for Provider From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Product From Template: app-action.xml.beansvm -->
+	<bean id="ProductAction" class="com.cyjt.oa.action.customer.ProductAction"
+		scope="prototype" />
+	<!-- end: Generated for Product From Template: app-action.xml.beansvm -->
+	<bean id="MutilMailAction" class="com.cyjt.oa.action.customer.MutilMailAction"
+		scope="prototype" />
+	<!-- start: Generated for SysConfig From Template: app-action.xml.beansvm -->
+	<bean id="SysConfigAction" class="com.cyjt.oa.action.system.SysConfigAction"
+		scope="prototype" />
+	<!-- end: Generated for SysConfig From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for NewsComment From Template: app-action.xml.beansvm -->
+	<bean id="NewsCommentAction" class="com.cyjt.oa.action.info.NewsCommentAction"
+		scope="prototype" />
+	<!-- end: Generated for NewsComment From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ReportParam From Template: app-action.xml.beansvm -->
+	<bean id="ReportParamAction" class="com.cyjt.oa.action.system.ReportParamAction"
+		scope="prototype" />
+	<!-- end: Generated for ReportParam From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Dictionary From Template: app-action.xml.beansvm -->
+	<bean id="DictionaryAction" class="com.cyjt.oa.action.system.DictionaryAction"
+		scope="prototype" />
+	<!-- end: Generated for Dictionary From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for StandSalary From Template: app-action.xml.beansvm -->
+	<bean id="StandSalaryAction" class="com.cyjt.oa.action.hrm.StandSalaryAction"
+		scope="prototype" />
+	<!-- end: Generated for StandSalary From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for SalaryItem From Template: app-action.xml.beansvm -->
+	<bean id="SalaryItemAction" class="com.cyjt.oa.action.hrm.SalaryItemAction"
+		scope="prototype" />
+	<!-- end: Generated for SalaryItem From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for StandSalaryItem From Template: app-action.xml.beansvm -->
+	<bean id="StandSalaryItemAction" class="com.cyjt.oa.action.hrm.StandSalaryItemAction"
+		scope="prototype" />
+	<!-- end: Generated for StandSalaryItem From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for HireIssue From Template: app-action.xml.beansvm -->
+	<bean id="HireIssueAction" class="com.cyjt.oa.action.hrm.HireIssueAction"
+		scope="prototype" />
+	<!-- end: Generated for HireIssue From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Resume From Template: app-action.xml.beansvm -->
+	<bean id="ResumeAction" class="com.cyjt.oa.action.hrm.ResumeAction"
+		scope="prototype" />
+	<!-- end: Generated for Resume From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchivesType From Template: app-action.xml.beansvm -->
+	<bean id="ArchivesTypeAction" class="com.cyjt.oa.action.archive.ArchivesTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchivesType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchTemplate From Template: app-action.xml.beansvm -->
+	<bean id="ArchTemplateAction" class="com.cyjt.oa.action.archive.ArchTemplateAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchTemplate From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchRecType From Template: app-action.xml.beansvm -->
+	<bean id="ArchRecTypeAction" class="com.cyjt.oa.action.archive.ArchRecTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchRecType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for JobChange From Template: app-action.xml.beansvm -->
+	<bean id="JobChangeAction" class="com.cyjt.oa.action.hrm.JobChangeAction"
+		scope="prototype" />
+	<!-- end: Generated for JobChange From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for EmpProfile From Template: app-action.xml.beansvm -->
+	<bean id="EmpProfileAction" class="com.cyjt.oa.action.hrm.EmpProfileAction"
+		scope="prototype" />
+	<!-- end: Generated for EmpProfile From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Job From Template: app-action.xml.beansvm -->
+	<bean id="JobAction" class="com.cyjt.oa.action.hrm.JobAction"
+		scope="prototype" />
+	<!-- end: Generated for Job From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchivesDep From Template: app-action.xml.beansvm -->
+	<bean id="ArchivesDepAction" class="com.cyjt.oa.action.archive.ArchivesDepAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchivesDep From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchivesDoc From Template: app-action.xml.beansvm -->
+	<bean id="ArchivesDocAction" class="com.cyjt.oa.action.archive.ArchivesDocAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchivesDoc From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for DocHistory From Template: app-action.xml.beansvm -->
+	<bean id="DocHistoryAction" class="com.cyjt.oa.action.archive.DocHistoryAction"
+		scope="prototype" />
+	<!-- end: Generated for DocHistory From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for SalaryPayoff From Template: app-action.xml.beansvm -->
+	<bean id="SalaryPayoffAction" class="com.cyjt.oa.action.hrm.SalaryPayoffAction"
+		scope="prototype" />
+	<!-- end: Generated for SalaryPayoff From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for FormDef From Template: app-action.xml.beansvm -->
+	<bean id="FormDefAction" class="com.cyjt.oa.action.flow.FormDefAction"
+		scope="prototype" />
+	<!-- end: Generated for FormDef From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Archives From Template: app-action.xml.beansvm -->
+	<bean id="ArchivesAction" class="com.cyjt.oa.action.archive.ArchivesAction"
+		scope="prototype" />
+	<!-- end: Generated for Archives From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchivesHandle From Template: app-action.xml.beansvm -->
+	<bean id="ArchivesHandleAction" class="com.cyjt.oa.action.archive.ArchivesHandleAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchivesHandle From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for LeaderRead From Template: app-action.xml.beansvm -->
+	<bean id="LeaderReadAction" class="com.cyjt.oa.action.archive.LeaderReadAction"
+		scope="prototype" />
+	<!-- end: Generated for LeaderRead From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchDispatch From Template: app-action.xml.beansvm -->
+	<bean id="ArchDispatchAction" class="com.cyjt.oa.action.archive.ArchDispatchAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchDispatch From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchivesAttend From Template: app-action.xml.beansvm -->
+	<bean id="ArchivesAttendAction" class="com.cyjt.oa.action.archive.ArchivesAttendAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchivesAttend From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchFlowConf From Template: app-action.xml.beansvm -->
+	<bean id="ArchFlowConfAction" class="com.cyjt.oa.action.archive.ArchFlowConfAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchFlowConf From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchRecUser From Template: app-action.xml.beansvm -->
+	<bean id="ArchRecUserAction" class="com.cyjt.oa.action.archive.ArchRecUserAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchRecUser From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchHasten From Template: app-action.xml.beansvm -->
+	<bean id="ArchHastenAction" class="com.cyjt.oa.action.archive.ArchHastenAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchHasten From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for IndexDisplay From Template: app-action.xml.beansvm -->
+	<bean id="IndexDisplayAction" class="com.cyjt.oa.action.system.IndexDisplayAction"
+		scope="prototype" />
+	<!-- end: Generated for IndexDisplay From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for SystemLog From Template: app-action.xml.beansvm -->
+	<bean id="SystemLogAction" class="com.cyjt.oa.action.system.SystemLogAction"
+		scope="prototype" />
+	<!-- end: Generated for SystemLog From Template: app-action.xml.beansvm -->
+	<bean id="AppTipsAction" class="com.cyjt.oa.action.info.AppTipsAction"
+		scope="prototype" />
+
+	<!--Login in action -->
+	<bean id="SignInAction" class="com.cyjt.oa.action.mobile.SignInAction"
+		scope="prototype" />
+
+	<bean id="IndexPageAction" class="com.cyjt.oa.action.mobile.IndexPageAction"
+		scope="prototype" />
+
+	<bean id="MobileTaskAction" class="com.cyjt.oa.action.mobile.flow.MobileTaskAction"
+		scope="prototype" />
+
+	<bean id="MobileProDefAction" class="com.cyjt.oa.action.mobile.flow.MobileProDefAction"
+		scope="prototype" />
+	<!-- start: Generated for OutMailUserSeting From Template: app-action.xml.beansvm -->
+	<bean id="OutMailUserSetingAction"
+		class="com.cyjt.oa.action.communicate.OutMailUserSetingAction"
+		scope="prototype" />
+	<!-- end: Generated for OutMailUserSeting From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for OutMail From Template: app-action.xml.beansvm -->
+	<bean id="OutMailAction" class="com.cyjt.oa.action.communicate.OutMailAction"
+		scope="prototype" />
+	<!-- end: Generated for OutMail From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for OutMailFolder From Template: app-action.xml.beansvm -->
+	<bean id="OutMailFolderAction" class="com.cyjt.oa.action.communicate.OutMailFolderAction"
+		scope="prototype" />
+	<!-- end: Generated for OutMailFolder From Template: app-action.xml.beansvm -->
+
+
+	<!-- 新增 行政管理-会议类型设置 -->
+	<bean id="BoardTypeAction" class="com.cyjt.oa.action.admin.BoardTypeAction"
+		scope="prototype" />
+	<!-- start: Generated for Conference From Template: app-action.xml.beansvm -->
+	<bean id="ConferenceAction" class="com.cyjt.oa.action.admin.ConferenceAction"
+		scope="prototype" />
+	<!-- end: Generated for Conference From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ConfAttend From Template: app-action.xml.beansvm -->
+	<bean id="ConfAttendAction" class="com.cyjt.oa.action.admin.ConfAttendAction"
+		scope="prototype" />
+	<!-- end: Generated for ConfAttend From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ConfSummary From Template: app-action.xml.beansvm -->
+	<bean id="ConfSummaryAction" class="com.cyjt.oa.action.admin.ConfSummaryAction"
+		scope="prototype" />
+	<!-- end: Generated for ConfSummary From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for GlobalType From Template: app-action.xml.beansvm -->
+	<bean id="GlobalTypeAction" class="com.cyjt.oa.action.system.GlobalTypeAction"
+		scope="prototype" />
+	<!-- end: Generated for GlobalType From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchFond From Template: app-action.xml.beansvm -->
+	<bean id="ArchFondAction" class="com.cyjt.oa.action.arch.ArchFondAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchFond From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ArchRoll From Template: app-action.xml.beansvm -->
+	<bean id="ArchRollAction" class="com.cyjt.oa.action.arch.ArchRollAction"
+		scope="prototype" />
+	<!-- end: Generated for ArchRoll From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for RollFile From Template: app-action.xml.beansvm -->
+	<bean id="RollFileAction" class="com.cyjt.oa.action.arch.RollFileAction"
+		scope="prototype" />
+	<!-- end: Generated for RollFile From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for RollFileList From Template: app-action.xml.beansvm -->
+	<bean id="RollFileListAction" class="com.cyjt.oa.action.arch.RollFileListAction"
+		scope="prototype" />
+	<!-- end: Generated for RollFileList From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for SuggestBox From Template: app-action.xml.beansvm -->
+	<bean id="SuggestBoxAction" class="com.cyjt.oa.action.info.SuggestBoxAction"
+		scope="prototype" />
+	<!-- end: Generated for SuggestBox From Template: app-action.xml.beansvm -->
+	<bean id="ConferenceDetailAction" class="com.cyjt.oa.action.admin.ConferenceDetailAction"
+		scope="prototype" />
+
+	<!-- start: Generated for UserAgent From Template: app-action.xml.beansvm -->
+	<bean id="UserAgentAction" class="com.cyjt.oa.action.system.UserAgentAction"
+		scope="prototype" />
+	<!-- end: Generated for UserAgent From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for MobileMsg From Template: app-action.xml.beansvm -->
+	<bean id="MobileMsgAction" class="com.cyjt.oa.action.communicate.MobileMsgAction"
+		scope="prototype" />
+	<!-- end: Generated for MobileMsg From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ContractEvent From Template: app-action.xml.beansvm -->
+	<bean id="ContractEventAction" class="com.cyjt.oa.action.hrm.ContractEventAction"
+		scope="prototype" />
+	<!-- end: Generated for ContractEvent From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for ContractAttach From Template: app-action.xml.beansvm -->
+	<bean id="ContractAttachAction" class="com.cyjt.oa.action.hrm.ContractAttachAction"
+		scope="prototype" />
+	<!-- end: Generated for ContractAttach From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for UserContract From Template: app-action.xml.beansvm -->
+	<bean id="UserContractAction" class="com.cyjt.oa.action.hrm.UserContractAction"
+		scope="prototype" />
+	<!-- end: Generated for UserContract From Template: app-action.xml.beansvm -->
+	<bean id="BoardRooAction" class="com.cyjt.oa.action.admin.BoardRooAction"
+		scope="prototype" />
+	<!-- start: Generated for BorrowFileList From Template: app-action.xml.beansvm -->
+	<bean id="BorrowFileListAction" class="com.cyjt.oa.action.arch.BorrowFileListAction"
+		scope="prototype" />
+	<!-- end: Generated for BorrowFileList From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for BorrowRecord From Template: app-action.xml.beansvm -->
+	<bean id="BorrowRecordAction" class="com.cyjt.oa.action.arch.BorrowRecordAction"
+		scope="prototype" />
+	<bean id="ConfSummaryDetailAction" class="com.cyjt.oa.action.admin.ConfSummaryDetailAction"
+		scope="prototype" />
+	<bean id="ConfPrivilegeAction" class="com.cyjt.oa.action.admin.ConfPrivilegeAction"
+		scope="prototype" />
+	<bean id="FileAttachDetailAction" class="com.cyjt.oa.action.system.FileAttachDetailAction"
+		scope="prototype" />
+	<bean id="ArchTypeAction" class="com.cyjt.oa.action.arch.ArchTypeAction"
+		scope="prototype" />
+	<!-- start: Generated for Regulation From Template: app-action.xml.beansvm -->
+	<bean id="RegulationAction" class="com.cyjt.oa.action.admin.RegulationAction"
+		scope="prototype" />
+	<!-- end: Generated for Regulation From Template: app-action.xml.beansvm -->
+	<bean id="ArchReportAction" class="com.cyjt.oa.action.arch.ArchReportAction"
+		scope="prototype" />
+	<!-- start: Generated for PaintTemplate From Template: app-action.xml.beansvm -->
+	<bean id="PaintTemplateAction" class="com.cyjt.oa.action.document.PaintTemplateAction"
+		scope="prototype" />
+	<!-- end: Generated for PaintTemplate From Template: app-action.xml.beansvm -->
+	<!-- start: Generated for Seal From Template: app-action.xml.beansvm -->
+	<bean id="SealAction" class="com.cyjt.oa.action.document.SealAction"
+		scope="prototype" />
+	<!-- end: Generated for Seal From Template: app-action.xml.beansvm -->
+	<!-- app-action.xml start -->
+	<bean id="AlbumAction" class="com.cyjt.oa.action.album.AlbumAction"
+		scope="prototype" />
+	<!-- app-action.xml end -->
+	<!-- app-action.xml start -->
+	<bean id="PictureAction" class="com.cyjt.oa.action.picture.PictureAction"
+		scope="prototype" />
+	<!-- app-action.xml end -->
+</beans>

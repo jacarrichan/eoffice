@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<process name="signAll2" xmlns="http://jbpm.org/4.0/jpdl">
+   <start name="start1" g="157,41,48,48">
+      <transition name="to 会签" to="会签" g="-47,-17"/>
+   </start>
+   <task name="会签" g="137,147,92,52">
+      <transition name="to end1" to="end1" g="-47,-17"/>
+   </task>
+   <end name="end1" g="162,260,48,48"/>
+</process>

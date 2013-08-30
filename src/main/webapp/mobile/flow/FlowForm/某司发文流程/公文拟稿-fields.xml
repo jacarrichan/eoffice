@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="archFile" label="公文文件" type="file"/>
+	<field name="subject" label="公文标题" type="varchar" length="128"/>
+</fields>

@@ -1,0 +1,1891 @@
+.x-layout-collapsed-west {
+	background-image: url(../images/collapse-bg.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.x-layout-collapsed-north {
+	background-image: url(../images/top-collapse-bg.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+body {
+	font-size: 12px;
+	font-family: '宋体';
+}
+
+.clear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#loading-mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 20000;
+	background-color: white;
+}
+
+#loading {
+	position: absolute;
+	left: 45%;
+	top: 40%;
+	padding: 2px;
+	z-index: 20001;
+	height: auto;
+}
+
+#loading a {
+	color: #258;
+}
+
+#loading .loading-indicator {
+	background: white;
+	color: #444;
+	font: bold 13px tahoma, arial, helvetica;
+	padding: 10px;
+	margin: 0;
+	height: auto;
+}
+
+#loading-msg {
+	font: normal 14px arial, tahoma, sans-serif;
+	color: blue;
+	padding-top: 18px;
+}
+
+div button {
+	border: none;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+}
+
+#app-header {
+	width: 100%;
+	height: 72px;
+	overflow: hidden;
+	background: url(../images/oa_banner_big_bj.jpg) repeat-x 0 0;
+}
+
+.oa_banner {
+	width: 1004px;
+	height: 72px;
+	background: url(../images/OA_banner.jpg) no-repeat 0 0;
+	margin: 0 auto;
+}
+
+#header-left {
+	width: 230px;
+	float: left;
+}
+
+#header-main {
+	width: 560px;
+	float: left;
+	margin-left: 6px;
+}
+
+#header-right {
+	width: 260px;
+	float: right;
+}
+
+.oa_banner_menu {
+	margin-top: 33px;
+	height: auto;
+	float: left;
+	margin-left: 300px;
+}
+
+.oa_banner_menu a {
+	float: left;
+	margin: 0 7px;
+	display: block;
+}
+
+.wel {
+	width: 320px;
+	float: right;
+	color: #FFF;
+	line-height: 24px;
+	margin-top: 43px;
+}
+
+.wel a {
+	color: #3FF;
+	text-decoration: underline;
+	padding-left: 5px;
+}
+
+.wel a:hover {
+	color: #FC0;
+	text-decoration: underline
+}
+
+.wel span {
+	margin-left: 15px;
+}
+
+#setting {
+	float: right;
+	width: 80px;
+	padding-top: 6px;
+	padding-right: 6px;
+}
+
+#welcomeMsg {
+	float: left;
+	width: 200px;
+	padding-top: 6px;
+}
+
+#currentTime {
+	float: left;
+	width: 360px;
+	padding-top: 6px;
+}
+
+#header-topnav {
+	display: inline;
+	padding-top: 4px;
+}
+
+#header-topnav .activeli {
+	display: block;
+	float: left;
+}
+
+#header-topnav li {
+	background: url('../images/header-li.png') no-repeat;
+}
+
+#header-topnav li a {
+	color: #1E3A65;
+	display: block;
+	text-align: left;
+	text-indent: 25px;
+	height: 30px;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 30px;
+	position: relative;
+	text-decoration: none;
+	width: 80px;
+}
+
+#header-topnav .commonli {
+	display: block;
+	float: left;
+	color: #4B6888;
+}
+
+.add-user {
+	background-image: url('../images/system/adduser.gif') !important;
+}
+
+.btn-super {
+	background-image: url('../images/btn/system/super.gif') !important;
+}
+
+.btn-print {
+	background-image: url('../images/btn/print.png') !important;
+}
+
+.excel-cls {
+	background: url('../images/btn/excel.png') no-repeat !important;
+	padding-left: 18px;
+	text-decoration: none;
+}
+
+.btn-clock {
+	background-image: url('../images/btn/clock.png') !important;
+}
+
+.btn-signIn {
+	background-image: url('../images/btn/personal/signIn.gif') !important;
+}
+
+.btn-signOff {
+	background-image: url('../images/btn/personal/signOff.gif') !important;
+}
+
+.btn-showDetail {
+	background-image: url('../images/btn/showDetail.png') !important;
+}
+
+.btn-relax {
+	background-image: url('../images/btn/relax.png') !important;
+}
+
+.btn-del {
+	background: url(../images/btn/remove.png) no-repeat !important;
+}
+
+.btn-un_del {
+	background: url(../images/system/un_delete.gif) no-repeat !important;
+}
+
+.btn-preview {
+	background: url(../images/system/preview.png) no-repeat !important;
+}
+
+.btn-edit {
+	background: url(../images/system/edit.gif) no-repeat !important;
+}
+
+.btn-borrow {
+	background: url(../images/menus/admin/book_go.png) no-repeat !important;
+}
+
+.btn-grant {
+	background: url(../images/btn/system/grant.gif) no-repeat !important;
+}
+
+.btn-un_edit {
+	background: url(../images/system/un_edit.gif) no-repeat !important;
+}
+
+.btn-sendM {
+	background: url(../images/btn/info/write.png) no-repeat !important;
+}
+
+.btn-receiveMessage {
+	background: url(../images/btn/info/receive.gif) no-repeat !important;
+}
+
+.btn-sendMessage {
+	background: url(../images/btn/info/send.gif) no-repeat !important;
+}
+
+.btn-setting {
+	background: url(../images/btn/setting.gif) no-repeat !important;
+}
+
+.btn-newFlow {
+	background: url(../images/btn/flow/newFlow.gif) no-repeat !important;
+}
+
+.btn-lockTask {
+	background: url(../images/btn/flow/lockTask.png) no-repeat !important;
+}
+
+.btn-unlockTask {
+	background: url(../images/btn/flow/unlockTask.png) no-repeat !important;
+}
+
+.btn-approvalTask {
+	background: url(../images/btn/flow/approvalTask.png) no-repeat
+		!important;
+}
+
+.btn-changeTask {
+	background: url(../images/btn/flow/changeTask.png) no-repeat !important;
+}
+
+.btn-flowView {
+	background: url(../images/btn/flow/view.png) no-repeat !important;
+}
+
+.btn-transition {
+	background: url(../images/btn/flow/transition.png) no-repeat !important;
+}
+
+.btn-form-design {
+	background: url(../images/btn/flow/form.png) no-repeat !important;
+}
+
+.btn-form-tag {
+	background: url(../images/btn/flow/form-tag.png) no-repeat !important;
+}
+
+.btn-user-sel {
+	background: url(../images/btn/user-sel.png) no-repeat !important;
+}
+
+.btn-users-sel {
+	background: url(../images/btn/users-sel.png) no-repeat !important;
+}
+
+.btn-next {
+	background: url(../images/btn/next.gif) no-repeat !important;
+}
+
+.btn-update {
+	background: url(../images/btn/info/update.gif) no-repeat !important;
+}
+
+.btn-top {
+	background: url(../images/btn/top.gif) no-repeat !important;
+}
+
+.btn-up {
+	background: url(../images/btn/up.gif) no-repeat !important;
+}
+
+.btn-down {
+	background: url(../images/btn/down.gif) no-repeat !important;
+}
+
+.btn-last {
+	background: url(../images/btn/last.gif) no-repeat !important;
+}
+
+.btn-logout {
+	background-image: url('../images/btn/logout.png') !important;
+}
+
+.btn-onlineUser {
+	background-image: url('../images/btn/eyes.png') !important;
+}
+
+.btn-readdocument {
+	background: url(../images/btn/read_document.png) no-repeat !important;
+}
+
+.btn-task {
+	background: url(../images/btn/task/task.gif) no-repeat !important;
+}
+
+.btn-myAssign {
+	background: url(../images/btn/task/myAssign.png) no-repeat !important;
+}
+
+.btn-addCusLinkman {
+	background: url('../images/system/adduser.gif') no-repeat !important;
+}
+
+.btn-editCusLinkman {
+	background: url('../images/btn/customer/group.png') no-repeat !important;
+}
+
+.btn-system-setting {
+	background: url('../images/btn/customer/system-setting.png') no-repeat
+		!important;
+}
+
+.btn-confApply-yes {
+	background: url('../images/btn/admin/confApply_yes.png') no-repeat
+		!important;
+}
+
+.btn-confApply-no {
+	background: url('../images/btn/admin/confApply_no.png') no-repeat
+		!important;
+}
+
+.btn-apply {
+	background: url('../images/btn/admin/confApply.png') no-repeat
+		!important;
+}
+
+.search {
+	background-image: url('../images/btn/info/search.png') !important;
+}
+
+.reset {
+	background-image: url('../images/btn/info/reset.png') !important;
+}
+
+.refresh {
+	background-image: url('../images/btn/ref_16.gif') !important;
+}
+
+.menu-file {
+	background-image: url('../images/menus/file.png') !important;
+}
+
+.menu-info {
+	background-image: url('../images/menus/info/comment.png') !important;
+}
+
+.menu-news {
+	background-image: url('../images/menus/info/news_menu.png') !important;
+}
+
+.menu-news_type {
+	background-image: url('../images/menus/info/newsType_menu.png')
+		!important;
+}
+
+.menu-notice {
+	background-image: url('../images/menus/info/notice_menu.png') !important;
+}
+
+.menu-add {
+	background-image: url('../images/menus/add.png') !important;
+}
+
+.menu-del {
+	background-image: url('../images/menus/del.png') !important;
+}
+
+.menu-list {
+	background-image: url('../images/menus/list.png') !important;
+}
+
+.menu-manage {
+	background-image: url('../images/menus/manage.png') !important;
+}
+
+.menu-goods {
+	background-image: url('../images/menus/admin/office-tackle.png')
+		!important;
+}
+
+.menu-regulation {
+	background-image: url('../images/menus/admin/regulation.png') !important;
+}
+
+.menu-instock {
+	background-image: url('../images/menus/admin/tackle-db.png') !important;
+}
+
+.menu-goods-apply {
+	background-image: url('../images/menus/admin/tackle-apply.png')
+		!important;
+}
+
+.menu-car-manage {
+	background-image: url('../images/menus/admin/car.png') !important;
+}
+
+.menu-car {
+	background-image: url('../images/menus/admin/car.png') !important;
+}
+
+.menu-car_repair {
+	background-image: url('../images/menus/admin/car_repair.png') !important;
+}
+
+.menu-car_apply {
+	background-image: url('../images/menus/admin/car_apply.png') !important;
+}
+
+.menu-confSummary {
+	background-image: url('../images/menus/admin/confSummary.png')
+		!important;
+}
+
+.menu-conf-summary {
+	background-image: url('../images/menus/admin/conf_summary.png')
+		!important;
+}
+
+.menu-confSummary_add {
+	background-image: url('../images/menus/admin/confSummary_add.png')
+		!important;
+}
+
+.menu-conference {
+	background-image: url('../images/menus/admin/conference.png') !important;
+}
+
+.menu-conference_add {
+	background-image: url('../images/menus/admin/conference_add.png')
+		!important;
+}
+
+.menu-conference_myjoin {
+	background-image: url('../images/menus/admin/conference_myjoin.png')
+		!important;
+}
+
+.menu-conference_myjoined {
+	background-image: url('../images/menus/admin/conference_myjoined.png')
+		!important;
+}
+
+.menu-conference_yikai {
+	background-image: url('../images/menus/admin/conference_yikai.png')
+		!important;
+}
+
+.menu-conference_daikai {
+	background-image: url('../images/menus/admin/conference_daikai.png')
+		!important;
+}
+
+.menu-conference_zancun {
+	background-image: url('../images/menus/admin/conference_zancun.png')
+		!important;
+}
+
+.menu-conference_boardRoom {
+	background-image: url('../images/menus/admin/boardRoom.png') !important;
+}
+
+.menu-confernece_boardType {
+	background-image: url('../images/menus/admin/boardType.png') !important;
+}
+
+.menu-confApply {
+	background-image: url('../images/menus/admin/confApply.png') !important;
+}
+
+.menu-daiConfApply {
+	background-image: url('../images/menus/admin/daiconfApply.png')
+		!important;
+}
+
+.menu-conferen_myjoin {
+	background-image: url('../images/menus/admin/conference_myjoin.png')
+		!important;
+}
+
+.temp {
+	background-image: url('../images/menus/admin/conference_zancun.png')
+		!important;
+}
+
+--
+end YHZ .btn-car_add {
+	background-image: url('../images/btn/admin/car_add.png') !important;
+}
+
+.btn-car_del {
+	background-image: url('../images/btn/admin/car_delete.png') !important;
+}
+
+.btn-car {
+	background-image: url('../images/btn/admin/car.png') !important;
+}
+
+.btn-carapply-add {
+	background-image: url('../images/btn/admin/apply_add.png') !important;
+}
+
+.btn-carapply-del {
+	background-image: url('../images/btn/admin/apply_delete.png') !important;
+}
+
+.btn-dep-sel {
+	background-image: url('../images/btn/admin/dep-sel.png') !important;
+}
+
+.menu-assets {
+	background-image: url('../images/flag/customer/rmb.png') !important;
+}
+
+.menu-depre-type {
+	background-image: url('../images/menus/admin/bricks.png') !important;
+}
+
+.menu-book {
+	background-image: url('../images/menus/admin/book_menu.png') !important;
+}
+
+.menu-book-type {
+	background-image: url('../images/menus/admin/books.png') !important;
+}
+
+.menu-book-manage {
+	background-image: url('../images/menus/admin/book_manage.png')
+		!important;
+}
+
+.menu-book-borrow {
+	background-image: url('../images/menus/admin/book_go.png') !important;
+}
+
+.menu-book-return {
+	background-image: url('../images/menus/admin/book_link.png') !important;
+}
+
+.btn-add {
+	background-image: url('../images/system/add_16.gif') !important;
+}
+
+.btn-delete {
+	background-image: url('../images/system/delete.gif') !important;
+}
+
+.btn-shared {
+	background-image: url('../images/system/shared.gif') !important;
+}
+
+.btn-query {
+	background-image: url('../images/btn/query.gif') !important;
+}
+
+.btn-upload {
+	background-image: url('../images/btn/info/upload.png') !important;
+}
+
+.btn-downLoad {
+	background-image: url('../images/btn/system/download.png') !important;
+}
+
+.btn-save {
+	background-image: url('../images/btn/info/save.png') !important;
+}
+
+.add {
+	background-image: url('../images/btn/query.gif') !important;
+}
+
+.btn-expand {
+	background-image: url('../images/btn/expand.png') !important;
+}
+
+.btn-collapse {
+	background-image: url('../images/btn/collapse.png') !important;
+}
+
+.btn-refresh {
+	background-image: url('../images/btn/refresh.png') !important;
+}
+
+.btn-ok {
+	background-image: url('../images/btn/ok.png') !important;
+}
+
+.btn-cancel {
+	background-image: url('../images/btn/cancel.png') !important;
+}
+
+.btn-close {
+	background-image: url('../images/btn/cancel.png') !important;
+}
+
+.btn-search {
+	background-image: url('../images/btn/search.png') !important;
+}
+
+.btn-users {
+	background-image: url('../images/btn/users.png') !important;
+}
+
+.btn-select {
+	background-image: url('../images/btn/select.png') !important;
+}
+
+.btn-save {
+	background-image: url('../images/btn/btn-save.png') !important;
+}
+
+.btn-cancel {
+	background-image: url('../images/btn/btn-cancel.png') !important;
+}
+
+.btn-clear {
+	background-image: url('../images/btn/clear.png') !important;
+}
+
+.btn-password {
+	background-image: url('../images/btn/password.gif') !important;
+}
+
+.btn-mail_resend {
+	background-image: url('../images/btn/mail/mail_resend.png') !important;
+}
+
+.btn-mail_receive {
+	background-image: url('../images/btn/mail/mail_receive.png') !important;
+}
+
+.btn-mail_remove {
+	background-image: url('../images/btn/mail/mail_remove.png') !important;
+}
+
+.btn-mail_send {
+	background-image: url('../images/btn/mail/mail_send.png') !important;
+}
+
+.btn-mail_save {
+	background-image: url('../images/btn/mail/mail_save.png') !important;
+}
+
+.btn-mail_move {
+	background-image: url('../images/btn/mail/mail_move.png') !important;
+}
+
+.btn-mail_reply {
+	background-image: url('../images/btn/mail/mail_reply.png') !important;
+}
+
+.btn-mail_refresh {
+	background-image: url('../images/btn/mail/mail_refresh.gif') !important;
+}
+
+.btn-mail_recipient {
+	background-image: url('../images/btn/mail/mail_recipient.png')
+		!important;
+}
+
+.btn-mail_copy {
+	background-image: url('../images/btn/mail/mail_copy.png') !important;
+}
+
+.btn-delete_copy {
+	background-image: url('../images/btn/mail/delete_copy.png') !important;
+}
+
+.btn-mail_edit {
+	background: url('../images/btn/mail/mail_edit.png') no-repeat !important;
+}
+
+.btn-mail_back {
+	background-image: url('../images/btn/mail/mail_back.png') !important;
+}
+
+.btn-pred {
+	background-image: url('../images/btn/admin/calculator.png') !important;
+}
+
+.btn-previous-message {
+	background-image: url('../images/btn/info/previous.png') !important;
+}
+
+.btn-next-message {
+	background-image: url('../images/btn/info/next.png') !important;
+}
+
+.menu-depRecord {
+	background-image: url('../images/menus/admin/disk_m.png') !important;
+}
+
+.menu-new-document {
+	background-image: url('../images/menus/document/new_document.png')
+		!important;
+}
+
+.menu-personal-doc {
+	background-image: url('../images/menus/document/personal_doc.png')
+		!important;
+}
+
+.menu-find-doc {
+	background-image: url('../images/menus/document/search_doc.png')
+		!important;
+}
+
+.menu-public-fol {
+	background-image: url('../images/menus/document/public_folder.png')
+		!important;
+}
+
+.menu-folder {
+	background-image: url('../images/menus/document/folder_manage.png')
+		!important;
+}
+
+.menu-folder-go {
+	background-image: url('../images/menus/document/folder_go.png')
+		!important;
+}
+
+.menu-folder-shared {
+	background-image: url('../images/menus/document/folder_shared.png')
+		!important;
+}
+
+.menu-destop {
+	background-image: url('../images/menus/destop.gif') !important;
+}
+
+.menu-system {
+	background-image: url('../images/menus/setting.png') !important;
+}
+
+.menu-role {
+	background-image: url('../images/menus/system/role_menu.png') !important;
+}
+
+.menu-department {
+	background-image: url('../images/menus/system/department_menu.png')
+		!important;
+}
+
+.menu-attachment {
+	background-image: url('../images/flag/attachment.png') !important;
+}
+
+.menu-company {
+	background-image: url('../images/menus/system/company_menu.png')
+		!important;
+}
+
+.menu-report {
+	background-image: url('../images/menus/system/report_menu.png')
+		!important;
+}
+
+.menu-dictionary {
+	background-image: url('../images/menus/system/dictionary.png')
+		!important;
+}
+
+.menu-communicate {
+	background-image: url('../images/communicate/communicate.png')
+		!important;
+}
+
+.menu-phonebook {
+	background-image: url('../images/menus/book_user.png') !important;
+}
+
+.menu-phonebook-shared {
+	background-image: url('../images/menus/phone_book.png') !important;
+}
+
+.menu-personal-phoneBook {
+	background-image: url('../images/menus/book_key.png') !important;
+}
+
+.menu-mail {
+	background-image: url('../images/menus/mail/mail_menu.png') !important;
+}
+
+.menu-mail_send {
+	background-image: url('../images/menus/mail/mail_new.png') !important;
+}
+
+.menu-mail_box {
+	background-image: url('../images/menus/mail/mail_box.png') !important;
+	background-repeat: no-repeat;
+	background-position: 10% 50%;
+}
+
+.menu-mail_inbox {
+	background-image: url('../images/menus/mail/mail_inbox.png') !important;
+}
+
+.menu-mail_outbox {
+	background-image: url('../images/menus/mail/mail_outbox.png') !important;
+}
+
+.menu-mail_drafts {
+	background-image: url('../images/menus/mail/mail_drafts.png') !important;
+}
+
+.menu-mail_trash {
+	background-image: url('../images/menus/mail/mail_trash.gif') !important;
+}
+
+.menu-mail_folder {
+	background-image: url('../images/menus/mail/mail_folder.png') !important;
+}
+
+.menu-message {
+	background-image: url('../images/menus/info/mobilephone_menu.png')
+		!important;
+}
+
+.menu-customer {
+	background-image: url('../images/menus/customer.png') !important;
+}
+
+.menu-customerView {
+	background-image: url('../images/menus/customer/customer_menu.png')
+		!important;
+}
+
+.menu-cusLinkman {
+	background-image: url('../images/menus/customer/cuslinkman_menu.png')
+		!important;
+}
+
+.menu-connection {
+	background-image: url('../images/menus/customer/note.png') !important;
+}
+
+.menu-project {
+	background-image: url('../images/menus/customer/briefcase.png')
+		!important;
+}
+
+.menu-contract {
+	background-image: url('../images/menus/customer/contract.png')
+		!important;
+}
+
+.menu-appointment {
+	background-image: url('../images/menus/task/appointment.png') !important;
+}
+
+.menu-cal-plan {
+	background-image: url('../images/menus/task/calendar_plan.png')
+		!important;
+}
+
+.menu-cal-plan-view {
+	background-image: url('../images/menus/task/calendar_plan_view.png')
+		!important;
+}
+
+.menu-diary {
+	background-image: url('../images/menus/task/diary.png') !important;
+}
+
+.menu-receiveMessage {
+	background-image: url('../images/newpm.gif') !important;
+}
+
+.menu-document {
+	background-image: url('../images/menus/document/documentation.gif')
+		!important;
+	background-repeat: no-repeat;
+	background-position: 10% 50%;
+}
+
+.menu-appuser {
+	background-image: url('../images/menus/system/user_menu.png') !important;
+}
+
+.menu-task {
+	background-image: url('../images/menus/task.png') !important;
+	background-repeat: no-repeat;
+	background-position: 10% 50%;
+}
+
+.menu-administrator {
+	background-image: url('../images/menus/administrator.png') !important;
+}
+
+.menu-flow {
+	background-image: url('../images/menus/flow.gif') !important;
+}
+
+a.attachment {
+	background: url('../images/flag/attachment.png') no-repeat !important;
+	padding-left: 18px;
+}
+
+img.img-delete {
+	cursor: pointer;
+	height: 12px;
+}
+
+span.opAttachFile {
+	line-height: 24px;
+	font-size: 12px;
+}
+
+.table-info {
+	margin: 5px 5px 5px 5px;
+	font-size: 12px;
+	color: #03386C;
+	background-color: #D4E1F2;
+}
+
+.table-info th {
+	font-weight: bold;
+}
+
+.table-info th,.table-info td {
+	background-color: white;
+	height: 28px;
+	padding: 2px 2px 2px 4px;
+}
+
+.dep-user {
+	background-image: url('../images/menus/selectors/dep-user.gif')
+		!important;
+}
+
+.online-user {
+	background-image: url('../images/menus/selectors/user_16.gif')
+		!important;
+}
+
+.role-user {
+	background-image: url('../images/menus/selectors/group_16.gif')
+		!important;
+}
+
+.x-form-field-wrap .x-form-browse-trigger {
+	background: transparent url(../images/btn/user-sel.png) no-repeat 0 0;
+	cursor: pointer;
+	right: 0;
+}
+
+.index-list a {
+	text-decoration: none;
+	font-size: 12px;
+	font-family: sans-serif;
+	font-color: black;
+}
+
+.home-ul {
+	display: block;
+}
+
+.home-ul li {
+	margin-top: 4px;
+	padding-left: 18px;
+	height: 22px;
+	background: url('../images/flag/home/noticeItem.png') no-repeat
+		!important;
+	border-bottom: dashed 1px #ccc;
+}
+
+.home-ul li a {
+	text-decoration: none;
+}
+
+.assets-type {
+	background-image: url('../images/btn/admin/assets_type.png') !important;
+}
+
+.goods-type {
+	background-image: url('../images/btn/admin/goods_type.png') !important;
+}
+
+li .right {
+	float: right;
+	padding-right: 6px;
+}
+
+.home-message-ul {
+	display: block;
+}
+
+.home-message-ul li {
+	margin-top: 4px;
+	padding-left: 18px;
+	height: 22px;
+	background: url('../images/menus/info/message_menu.png') no-repeat
+		!important;
+	border-bottom: dashed 1px #ccc;
+}
+
+.home-message-ul li a {
+	text-decoration: none;
+}
+
+.home-calendarplan-ul {
+	display: block;
+}
+
+.home-calendarplan-ul li {
+	margin-top: 4px;
+	padding-left: 18px;
+	height: 22px;
+	background: url('../images/menus/task/calendar_plan_view.png') no-repeat
+		!important;
+	border-bottom: dashed 1px #ccc;
+}
+
+.home-calendarplan-ul li a {
+	text-decoration: none;
+}
+
+.home-news-ul {
+	display: block;
+}
+
+.home-news-ul li {
+	margin-top: 4px;
+	padding-left: 18px;
+	height: 22px;
+	background: url('../images/menus/info/news_menu.png') no-repeat
+		!important;
+	border-bottom: dashed 1px #ccc;
+}
+
+.home-news-ul li a {
+	text-decoration: none;
+}
+
+.home-appointment-ul {
+	display: block;
+}
+
+.home-appointment-ul li {
+	margin-top: 4px;
+	padding-left: 18px;
+	height: 22px;
+	background: url('../images/menus/task/appointment.png') no-repeat
+		!important;
+	border-bottom: dashed 1px #ccc;
+}
+
+.home-appointment-ul li a {
+	text-decoration: none;
+}
+
+.ux-flag-blue {
+	background: url('../images/flag/task/flag_blue.png') no-repeat
+		!important;
+	width: 16px;
+	height: 16px;
+}
+
+.ux-flag-green {
+	background: url('../images/flag/task/flag_green.png') no-repeat
+		!important;
+	width: 16px;
+	height: 16px;
+}
+
+.ux-flag-orange {
+	background: url('../images/flag/task/flag_orange.png') no-repeat
+		!important;
+	width: 16px;
+	height: 16px;
+}
+
+.ux-flag-pink {
+	background: url('../images/flag/task/flag_pink.png') no-repeat
+		!important;
+	width: 16px;
+	height: 16px;
+}
+
+.ux-flag-purple {
+	background: url('../images/flag/task/flag_purple.png') no-repeat
+		!important;
+	width: 16px;
+	height: 16px;
+}
+
+.ux-flag-red {
+	background: url('../images/flag/task/flag_red.png') no-repeat !important;
+	width: 16px;
+	height: 16px;
+}
+
+.ux-flag-yellow {
+	background: url('../images/flag/task/flag_yellow.png') no-repeat
+		!important;
+	width: 16px;
+	height: 16px;
+}
+
+.x-icon-combo-icon {
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	width: 18px;
+	height: 14px;
+}
+
+.x-icon-combo-input {
+	padding-left: 25px;
+}
+
+.x-form-field-wrap .x-icon-combo-icon {
+	top: 3px;
+	left: 5px;
+}
+
+.x-icon-combo-item {
+	background-repeat: no-repeat;
+	background-position: 3px 50%;
+	padding-left: 24px;
+	width: auto;
+}
+
+.ux-icon-combo-icon {
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	width: 18px;
+	height: 14px;
+}
+
+.ux-icon-combo-input {
+	padding-left: 25px;
+}
+
+.x-form-field-wrap .ux-icon-combo-icon {
+	top: 3px;
+	left: 5px;
+	width: 50px;
+}
+
+.ux-icon-combo-item {
+	background-repeat: no-repeat !important;
+	background-position: 3px 50% !important;
+	padding-left: 24px !important;
+	height: 14px;
+	width: auto;
+}
+
+.menu-workPlan {
+	background-image: url('../images/menus/task/workplan.png') !important;
+	background-repeat: no-repeat;
+	background-position: 10% 50%;
+}
+
+.menu-plantype {
+	background-image: url('../images/menus/task/plantype.png') !important;
+}
+
+.menu-planmanage {
+	background-image: url('../images/menus/task/planmanage.png') !important;
+}
+
+.menu-newplan {
+	background-image: url('../images/menus/task/plan_add.png') !important;
+}
+
+.menu-myplan {
+	background-image: url('../images/menus/task/myplan.png') !important;
+}
+
+.menu-depplan {
+	background-image: url('../images/menus/task/depplan.png') !important;
+}
+
+.menu-desktop {
+	background-image: url('../images/menus/monitor.png') !important;
+	background-repeat: no-repeat;
+	background-position: 10% 50%;
+}
+
+.menu-subuser {
+	background-image: url('../images/menus/desktop/user_go.png') !important;
+}
+
+.btn-reseted {
+	background-image: url('../images/btn/reset.png') !important;
+}
+
+.btn-reset {
+	background-image: url('../images/btn/reset.png') !important;
+}
+
+.menu-personal {
+	background-image: url('../images/menus/personal/personal.png')
+		!important;
+}
+
+.menu-person {
+	background-image: url('../images/menus/personal/person.gif') !important;
+}
+
+.menu-signInOff {
+	background-image: url('../images/menus/personal/signInOff.png')
+		!important;
+}
+
+.menu-holiday {
+	background-image: url('../images/menus/personal/holiday.png') !important;
+}
+
+.menu-errands {
+	background-image: url('../images/menus/personal/errands.png') !important;
+}
+
+.menu-duty {
+	background-image: url('../images/menus/personal/duty.png') !important;
+}
+
+.menu-dutySetting {
+	background-image: url('../images/menus/personal/dutySetting.png')
+		!important;
+}
+
+.menu-holidayRecord {
+	background-image: url('../images/menus/personal/holidayRecord.png')
+		!important;
+}
+
+.menu-dutySection {
+	background-image: url('../images/menus/personal/dutySection.png')
+		!important;
+}
+
+.menu-dutySystem {
+	background-image: url('../images/menus/personal/dutySystem.png')
+		!important;
+}
+
+.menu-dutyStats {
+	background-image: url('../images/menus/personal/dutyStats.png')
+		!important;
+}
+
+.menu-dutyRegister {
+	background-image: url('../images/menus/personal/dutyRegister.gif')
+		!important;
+}
+
+.menu-subDiary {
+	background-image: url('../images/menus/system/subDiary.png') !important;
+}
+
+.menu-product {
+	background-image: url('../images/menus/customer/product.png') !important;
+}
+
+.menu-provider {
+	background-image: url('../images/menus/customer/provider.png')
+		!important;
+}
+
+.menu-flowManager {
+	background-image: url('../images/menus/flow/flowManager.png') !important;
+}
+
+.menu-flowNew {
+	background-image: url('../images/menus/flow/flowNew.png') !important;
+}
+
+.menu-flowWait {
+	background-image: url('../images/menus/flow/flowWait.png') !important;
+}
+
+.menu-flowEnd {
+	background-image: url('../images/menus/flow/flowEnd.png') !important;
+}
+
+.menu-flowPr {
+	background-image: url('../images/menus/flow/flowPr.png') !important;
+}
+
+.menu-flowMine {
+	background-image: url('../images/menus/flow/flowMine.png') !important;
+}
+
+.btn-copyrole {
+	background-image: url('../images/btn/system/role_copy.png') !important;
+}
+
+.x-grid3-row-with-body {
+	background: #f4f4f4;
+}
+
+.x-grid3-row-with-body .x-grid3-row-body {
+	padding: 5px 5px 5px 40px;
+	font-weight: bold;
+	-moz-user-select: text;
+	cursor: text;
+}
+
+.x-grid3-row td,.x-grid3-summary-row td {
+	-moz-user-select: -moz-none;
+}
+
+.btn-replyM {
+	background-image: url('../images/btn/info/reply.png') !important;
+}
+
+.menu-navigation {
+	background-image: url('../images/menus/navigation.png') !important;
+}
+
+.menu-system-setting {
+	background-image: url('../images/btn/customer/system-setting.png')
+		!important;
+}
+
+.btn-ie {
+	background-image: url('../images/btn/system/ie.png') !important;
+}
+
+.btn-pdf {
+	background-image: url('../images/btn/system/pdf.png') !important;
+}
+
+.btn-xls {
+	background-image: url('../images/btn/system/xls.png') !important;
+}
+
+.menu-resume {
+	background-image: url('../images/menus/hrm/resume.gif') !important;
+}
+
+.menu-hireIssue {
+	background-image: url('../images/menus/hrm/hireIssue.jpg') !important;
+}
+
+.menu-hrm {
+	background-image: url('../images/menus/hrm/hrm.png') !important;
+}
+
+.menu-hrm-briefcase {
+	background-image: url('../images/menus/hrm/hrm-briefcase.png')
+		!important;
+}
+
+.menu-salary {
+	background-image: url('../images/menus/hrm/salary.png') !important;
+}
+
+.menu-development {
+	background-image: url('../images/menus/hrm/development.png') !important;
+}
+
+.menu-job {
+	background-image: url('../images/menus/hrm/job.png') !important;
+}
+
+.menu-profile-create {
+	background-image: url('../images/menus/hrm/profile-create.png')
+		!important;
+}
+
+.menu-profile {
+	background-image: url('../images/menus/hrm/profile-menu.png') !important;
+}
+
+.btn-operation {
+	background: url(../images/btn/hrm/operation.png) no-repeat !important;
+}
+
+.btn-empProfile-recovery {
+	background: url(../images/btn/hrm/profile-recovery.png) no-repeat
+		!important;
+}
+
+.btn-salary-apply {
+	background: url(../images/menus/admin/tackle-apply.png) no-repeat
+		!important;
+}
+
+.btn-empProfile-check {
+	background: url(../images/menus/admin/tackle-apply.png) no-repeat
+		!important;
+}
+
+.btn-empProfile-pass {
+	background: url(../images/menus/hrm/check_salay.gif) no-repeat
+		!important;
+}
+
+.btn-empProfile-notpass {
+	background: url(../images/btn/info/reset.png) no-repeat !important;
+}
+
+.btn-salary-pay {
+	background: url(../images/menus/admin/tackle-apply.png) no-repeat
+		!important;
+}
+
+.btn-salaryPayoff-pass {
+	background: url(../images/menus/hrm/check_salay.gif) no-repeat
+		!important;
+}
+
+.btn-salaryPayoff-notpass {
+	background: url(../images/btn/info/reset.png) no-repeat !important;
+}
+
+.menu-archive {
+	background-image: url('../images/menus/archive/archives.png') !important;
+}
+
+.menu-archive-setting {
+	background-image: url('../images/menus/archive/archives_setting.png')
+		!important;
+}
+
+.menu-archive-template {
+	background-image: url('../images/menus/archive/arch_template.png')
+		!important;
+}
+
+.menu-archive-handout {
+	background-image: url('../images/menus/archive/hand_paper.png')
+		!important;
+}
+
+.menu-archive-issue {
+	background-image: url('../images/menus/archive/archives_issue.png')
+		!important;
+}
+
+.menu-archive-draft {
+	background-image: url('../images/menus/archive/archives_draft.png')
+		!important;
+}
+
+.menu-archive-receive {
+	background-image: url('../images/menus/archive/archives_receive.png')
+		!important;
+}
+
+.menu-archive-sign {
+	background-image: url('../images/menus/archive/archives_sign.png')
+		!important;
+}
+
+.menu-archive-monitor {
+	background-image: url('../images/menus/archive/webcam.png') !important;
+}
+
+.menu-archive-draft-manage {
+	background-image: url('../images/menus/archive/draft_manage.png')
+		!important;
+}
+
+.menu-archive-history {
+	background-image: url('../images/menus/archive/archives_history.png')
+		!important;
+}
+
+.menu-archive-search {
+	background-image: url('../images/menus/archive/archives_search.png')
+		!important;
+}
+
+.menu-archive-proof {
+	background-image: url('../images/menus/archive/archives_proof.png')
+		!important;
+}
+
+.menu-archive-charge {
+	background-image: url('../images/menus/archive/archives_charge.png')
+		!important;
+}
+
+.menu-archive-lead {
+	background-image: url('../images/menus/archive/archives_lead.png')
+		!important;
+}
+
+.menu-archive-department {
+	background-image: url('../images/menus/archive/archives_department.png')
+		!important;
+}
+
+.menu-archive-issue-manage {
+	background-image: url('../images/menus/archive/archives_manage.png')
+		!important;
+}
+
+.btn-edit-online {
+	background: url(../images/btn/archive/edit_online.png) no-repeat
+		!important;
+}
+
+.btn-archive-draft {
+	background: url(../images/menus/archive/archives_draft.png) no-repeat
+		!important;
+}
+
+.btn-beready-save {
+	background: url(../images/btn/archive/archives_save.png) no-repeat
+		!important;
+}
+
+.btn-archives-finish {
+	background: url(../images/flag/task/finish.png) no-repeat !important;
+}
+
+.btn-archives-remind {
+	background: url(../images/btn/archive/archives_remind.png) no-repeat
+		!important;
+}
+
+.menu-archives-remind {
+	background-image: url('../images/btn/archive/archives_remind.png')
+		!important;
+}
+
+.btn-archives-detail {
+	background: url(../images/btn/archive/archives_detail.png) no-repeat
+		!important;
+}
+
+.btn-archive-sign {
+	background: url(../images/menus/archive/archives_sign.png) no-repeat
+		!important;
+}
+
+.btn-archive-attachment {
+	background: url(../images/flag/attachment.png) no-repeat !important;
+}
+
+.btn-archive-save-trace {
+	background: url(../images/btn/archive/save_trace.png) no-repeat
+		!important;
+}
+
+.btn-archive-cancel-trace {
+	background: url(../images/btn/archive/cancel_trace.png) no-repeat
+		!important;
+}
+
+.btn-archive-eraser {
+	background: url(../images/btn/archive/eraser.png) no-repeat !important;
+}
+
+.btn-archive-history {
+	background: url(../images/menus/archive/archives_history.png) no-repeat
+		!important;
+}
+
+.btn-archive-copy {
+	background: url(../images/btn/archive/doc_copy.png) no-repeat !important;
+}
+
+.btn-archive-white-word {
+	background: url(../images/btn/archive/white_word.png) no-repeat
+		!important;
+}
+
+.btn-check {
+	background-image: url('../images/menus/admin/tackle-apply.png')
+		!important;
+}
+
+.menu-jobchange {
+	background-image: url('../images/menus/hrm/job_change.gif') !important;
+}
+
+.menu-job-reg {
+	background-image: url('../images/menus/hrm/job_reg.gif') !important;
+}
+
+.menu-job-check {
+	background-image: url('../images/menus/hrm/job_check.png') !important;
+}
+
+.menu-add-salay {
+	background-image: url('../images/menus/hrm/add_salay.gif') !important;
+}
+
+.menu-check-salay {
+	background-image: url('../images/menus/hrm/check_salay.gif') !important;
+}
+
+.menu-personal-salary {
+	background-image: url('../images/menus/personal/personal-salary.png')
+		!important;
+}
+
+.btn-flow-start {
+	background-image: url('../images/btn/flow/flow_start.png') !important;
+}
+
+.btn-flow-design {
+	background-image: url(../images/btn/flow/flow_design.png) !important;
+}
+
+.btn-flow-chart {
+	background-image: url(../images/btn/flow/flow_chart.png) !important;
+}
+
+.menu-arch-rec-type {
+	background-image: url('../images/menus/archive/arch_rec_type.png')
+		!important;
+}
+
+.menu-arch-reader {
+	background-image: url('../images/menus/archive/arch_reader.png')
+		!important;
+}
+
+.menu-arch-reg {
+	background-image: url('../images/menus/archive/arch_rec.png') !important;
+}
+
+.menu-arch-handler {
+	background-image: url('../images/menus/archive/arch_handler.png')
+		!important;
+}
+
+.menu-arch-leader {
+	background-image: url('../images/menus/archive/user_leader.png')
+		!important;
+}
+
+.menu-arch-dispatch {
+	background-image: url('../images/menus/archive/arch_dispatch.png')
+		!important;
+}
+
+.menu-arch-undertake {
+	background-image: url('../images/menus/archive/arch_undertake.png')
+		!important;
+}
+
+.menu-arch-controll {
+	background-image: url('../images/menus/archive/arch_controll.png')
+		!important;
+}
+
+.menu-arch-detail {
+	background-image: url('../images/menus/archive/arch_detail.png')
+		!important;
+}
+
+.thumb-wrap {
+	width: 31%;
+	border: 1px solid #c7e3fa;
+	float: left;
+	margin: 4px;
+	margin-right: 0;
+	padding: 4px;
+}
+
+.thumb-wrap span {
+	display: block;
+	margin: 1px;
+	overflow: hidden;
+	height: 18px;
+}
+
+.thumb-wrap span font {
+	color: #2A4D8F;
+	font-weight: bolder;
+	font-size: 12px;
+}
+
+.x-view-over {
+	border: 1px solid #ddd;
+	background: #efefef;
+	padding: 4px;
+}
+
+.x-view-selected {
+	background: #DFEDFF;
+	border: 1px solid #6593cf;
+	padding: 4px;
+}
+
+.x-view-selected .thumb {
+	background: transparent;
+}
+
+.x-view-selected span {
+	color: #1A4D8F;
+}
+
+.contentDiv {
+	padding-left: 3px;
+	padding-right: 3px;
+	background: white;
+	border: none;
+}
+
+.newsList {
+	border: 0 dashed #c7e3fa;
+	width: 100%;
+}
+
+.newsList tr {
+	border: 0 dashed #c7e3fa;
+}
+
+.newsList tr td {
+	height: 28px;
+	border: none;
+	border-buttom: 1px dashed #c7e3fa;
+	border-top: 1px dashed #c7e3fa;
+	color: #c3e3fa;
+}
+
+.newsList tr td a {
+	text-decoration: none;
+	overflow: hidden;
+	color: blue;
+}
+
+.newsList tr td a:hover {
+	color: #25e3fa;
+}
+
+.newsList tr td img {
+	border: 0;
+	width: 16px;
+	height: 16px;
+}
+
+.moreDiv {
+	width: 100%;
+}
+
+.moreDiv span {
+	float: right;
+	margin-right: 12px;
+}
+
+.moreDiv span a {
+	text-decoration: none;
+	color: blue;
+}
+
+.tipDiv {
+	padding: 0;
+	margin: 0;
+	background: #fff;
+}
+
+.resizable {
+	position: absolute;
+}
+
+.setDiv {
+	background: #f4ffff;
+}
+
+.x-editable {
+	font: bold 13px tahoma, verdana, helvetica;
+	text-align: center;
+	padding: 0;
+	padding-top: 20px;
+}
+
+.x-timelabel {
+	text-align: center;
+	padding-top: 20px;
+}
+
+.x-linkdel {
+	position: absolute;
+	visibility: hidden;
+	text-align: right;
+	width: 100%;
+}
+
+.tipsClose {
+	padding-right: 5px;
+	background: url(../images/btn/info/tips_close.jpg) no-repeat !important;
+}
+
+.tipsTile {
+	background-image: url('../images/btn/info/tips.jpg') !important;
+}
+
+.add-all {
+	background-image: url('../images/btn/system/add-all.gif') !important;
+}
+
+.rem-all {
+	background-image: url('../images/btn/system/rem-all.gif') !important;
+}
+
+.mod-report {
+	background-image: url('../images/menus/system/nav-report.png')
+		!important;
+}
+
+.menu-suggestbox {
+	background-image: url('../images/menus/info/suggest_box.png') !important;
+}
+
+.btn-suggest-scan {
+	background: url('../images/btn/info/scan.png') no-repeat !important;
+}
+
+.btn-suggest-reply {
+	background: url('../images/btn/info/suggest_reply.png') no-repeat
+		!important;
+}
+
+.btn-suggest-box {
+	background: url('../images/menus/mail/mail_inbox.png') no-repeat
+		!important;
+}
+
+.menu-arch {
+	background-image: url('../images/menus/arch/files.png') !important;
+}
+
+.menu-template {
+	background-image: url('../images/menus/document/template_edit.png')
+		!important;
+}
+
+.menu-seal {
+	background-image: url('../images/menus/document/seal.png') !important;
+}

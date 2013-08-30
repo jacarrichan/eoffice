@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="archivesAttend.attendId" label="primaryKey" type="long" isShowed="false" />
+    <field name="archivesAttend.memo" label="校对意见" type="varchar" length="1024"/>
+	<field name="archivesAttend.attendType" label="参与类型" type="short" isShowed="false"/>
+	<field name="archives.archivesId" label="所属公文ID" type="long" isShowed="false"/>
+</fields>

@@ -1,0 +1,720 @@
+/**
+ * @createtime:2010-01-20
+ * @author csx
+ * @description 公文拟稿发文界面
+ * @class ArchivesDraftFolwView
+ * @extends Ext.Panel
+ */
+ArchivesDraftFolwView = Ext.extend(Ext.Panel, {
+	setDefId : function(vId){
+		this.defId = vId;
+	},
+	getDefId : function(){
+		return this.defId;
+	},
+	formPanel : null,
+	constructor : function(_cfg) {
+		Ext.applyIf(this, _cfg);
+		this.init();
+		ArchivesDraftFolwView.superclass.constructor.call(this, {
+					title : '公文拟稿发文',
+					id : 'ArchivesDraftFolwView',
+					iconCls : 'menu-archive-draft',
+					layout : 'form',
+					defaults : {
+						border : false,
+						autoScroll : true
+					},
+					width:800,
+					tbar : new Ext.Toolbar({
+								items : [{
+											text : '暂存',
+											iconCls : 'btn-beready-save',
+											handler : this.onDraft,
+											scope : this
+										},'-',{
+											text : '发送',
+											iconCls : 'btn-save',
+											handler : this.onSend,
+											scope : this
+										},'-',{
+											text : '完成',
+											iconCls : 'btn-archives-finish',
+											handler : this.finish,
+											scope : this
+										}
+										]
+							}),
+					items : [this.formPanel]
+				});
+				var jsArr=[__ctxPath+'/js/archive/ArchivesDocForm.js',
+				           __ctxPath+'/js/archive/ArchivesDocHistoryWin.js',
+				           __ctxPath+'/js/archive/ArchiveTypeTempView.js',
+				           __ctxPath+'/js/archive/ArchTemplateView.js',
+				           __ctxPath+'/js/archive/ArchivesDraftWin.js',
+				           __ctxPath+'/js/archive/ArchTemplateSelector.js'];
+				$ImportSimpleJs(jsArr,null);
+	},
+	/**
+	 * 保存公文的方法,传入公文状态作为参数
+	 * @param {} _status
+	 */
+	onSave : function(_status,panel) {
+		if (this.store.getCount() == 0) {// 公文正文附件为空
+			Ext.ux.Toast.msg('操作信息', '请添加公文正文附件!');
+		} else {
+			if (this.formPanel.getForm().isValid()) {
+	
+				// 发文的文档附件
+				var docParams = [];
+	
+				for (var i = 0, cnt = this.store.getCount(); i < cnt; i++) {
+					docParams.push(this.store.getAt(i).data);
+				}
+				
+				var formPanel = this.formPanel;
+				formPanel.getForm().submit({
+							method : 'POST',
+							waitMsg : '正在提交数据...',
+							params : {
+								status : _status,// 保存为拟稿状态,待核稿
+								docs : Ext.encode(docParams)
+							},
+							success : function(fp, action) {
+								Ext.ux.Toast.msg('操作信息', '成功保存信息！');
+								Ext.getCmp('archivesFlow.archivesId').setValue(action.result.archivesId);	
+								if(_status !=0){
+										formPanel.getForm().submit({
+										url : __ctxPath + '/flow/saveProcessActivity.do',
+										waitMsg : '正在提交流程表单信息...',
+										scope : this,
+										params:{
+											defId:panel.defId,
+											//runId:this.runId,
+											//activityName:this.activityName,
+											//启动工作流
+											startFlow:true
+										},
+										success : function(userform, o) {
+													Ext.ux.Toast.msg('操作信息','成功保存信息！');
+													AppUtil.removeTab(topPanel.getId());
+													var runGrid=Ext.getCmp('ProcessRunGrid');
+													if(runGrid!=null){
+														runGrid.getStore().reload();
+													}
+												}
+									});
+								}
+									
+								// TODO
+							},
+							failure : function(fp, action) {
+								Ext.MessageBox.show({
+											title : '操作信息',
+											msg : '信息保存出错，请联系管理员！',
+											buttons : Ext.MessageBox.OK,
+											icon : Ext.MessageBox.ERROR
+										});
+							}
+						});
+			}
+		}
+	},
+	/**
+	 * 保存为草稿
+	 */
+	onDraft : function() {
+		var status = 0;
+		this.onSave(status,this);
+	},
+	/**
+	 * 拟搞完成,发送给指定的人员核稿
+	 */
+	onSend : function(){
+		var status = 1;
+		this.onSave(status,this);
+	},
+	/**
+	 * 直接完成发文
+	 */
+	finish : function(){
+		if (this.formPanel.getForm().isValid()) {
+			
+			// 发文的文档附件
+			var docParams = [];
+
+			for (var i = 0, cnt = this.store.getCount(); i < cnt; i++) {
+				docParams.push(this.store.getAt(i).data);
+			}
+			var formPanel = this.formPanel;
+						
+						formPanel.getForm().submit({
+							method : 'POST',
+							waitMsg : '正在提交数据...',
+							params : {
+								status : 7,// 直接完成发文
+								docs : Ext.encode(docParams)
+							},
+							success : function(fp, action) {
+								var archivesId = action.result.archivesId;
+								Ext.ux.Toast.msg('操作信息', '成功发文！');
+								AppUtil.removeTab(Ext.getCmp('ArchivesDraftView'));
+							},
+							failure : function(fp, action) {
+								Ext.MessageBox.show({
+											title : '操作信息',
+											msg : '信息保存出错，请联系管理员！',
+											buttons : Ext.MessageBox.OK,
+											icon : Ext.MessageBox.ERROR
+										});
+							}
+
+						});
+		}					
+	},
+	/**
+	 * 添加附件文档
+	 */
+	addArchiveDoc : function() {
+		
+		// 判断是否选择了文档分类
+		var archiveTypeId = Ext.getCmp('archiveTypeId');
+		new ArchTemplateSelector({
+					callback : function(fileId,tempPath) {
+						var store = Ext.getCmp('archiveDocGrid').getStore();
+						var curView = Ext.getCmp('ArchivesDraftFolwView');
+						// 返回文档附加记录
+						var callback = function(archivesDoc) {
+							curView.insertNewDoc(store, archivesDoc);
+						};
+						new ArchivesDocForm({
+									fileId:fileId,
+									docPath : tempPath,
+									callback : callback
+								}).show();
+					}
+				}).show();
+
+	},
+	/**
+	 * 插入附加文件记录
+	 * 
+	 * @param {}
+	 *            store
+	 * @param {}
+	 *            archivesDoc
+	 */
+	insertNewDoc : function(store, archivesDoc) {
+		var orec;
+		// alert(archivesDoc.fileId);
+		if (store.recordType) {
+			orec = new store.recordType();
+			orec.data = {};
+			orec.data['docId'] = archivesDoc.docId;
+			orec.data['fileId'] = archivesDoc.fileId;
+			orec.data['docPath'] = archivesDoc.docPath;
+			orec.data['docName'] = archivesDoc.docName;
+			orec.data['curVersion'] = archivesDoc.curVersion
+					? archivesDoc.curVersion
+					: 1;
+			orec.data.newRecord = true;
+			orec.commit();
+			store.add(orec);
+		}
+	},
+
+	/**
+	 * 添加新的公文文档，以一个空白的文档开始
+	 */
+	addNewArchiveDoc : function() {
+		var store = this.store;
+		var curView = this;
+		// 返回文档附加记录
+		var callback = function(archivesDoc) {
+			curView.insertNewDoc(store, archivesDoc);
+		};
+		new ArchivesDocForm({
+					callback : callback
+				}).show();
+	},
+	/**
+	 * 上传附件
+	 */
+	uploadArchiveDoc : function() {
+		var store = this.store;
+		var curView = this;
+		var callback = function(data) {
+			for (var i = 0; i < data.length; i++) {
+				var archivesDoc = {
+					docId : 0,// 用于标记尚未持久化的记录
+					fileId : data[i].fileId,
+					docPath : data[i].filepath,
+					docName : data[i].filename,
+					curVersion : 1
+				};
+				curView.insertNewDoc(store, archivesDoc);
+			}
+		};
+		var dialog = App.createUploadDialog({
+					file_cat : 'archive',
+					callback : callback
+				});
+		dialog.show();
+	},
+	/**
+	 * 删除公文附件
+	 */
+	deleteArchiveDoc : function() {
+		var grid = Ext.getCmp("archiveDocGrid");
+
+		var selectRecords = grid.getSelectionModel().getSelections();
+
+		if (selectRecords.length == 0) {
+			Ext.Msg.alert("信息", "请选择要查看的文档！");
+			return;
+		}
+
+		var record = selectRecords[0];
+		var store = grid.getStore();
+
+		var docId = record.data.docId;
+
+		Ext.Msg.confirm('信息确认', '您确认要删除所选记录吗？', function(btn) {
+			if (btn == 'yes') {
+				Ext.Ajax.request({
+							url : __ctxPath + '/archive/multiDelArchivesDoc.do',
+							params : {
+								ids : docId
+							},
+							method : 'POST',
+							success : function(response, options) {
+								Ext.ux.Toast.msg('操作信息', '成功删除该文档附件！');
+								// Ext.getCmp('ArchivesGrid').getStore().reload();
+								store.remove(record);
+							},
+							failure : function(response, options) {
+								Ext.ux.Toast.msg('操作信息', '操作出错，请联系管理员！');
+							}
+						});
+			}
+		});// end of comfirm
+		
+	},
+	/**
+	 * 查看公文附件
+	 */
+	detailArchivesDoc : function() {
+		var grid = Ext.getCmp("archiveDocGrid");
+
+		var selectRecords = grid.getSelectionModel().getSelections();
+
+		if (selectRecords.length == 0) {
+			Ext.Msg.alert("信息", "请选择要查看的文档！");
+			return;
+		}
+		var record = selectRecords[0];
+		var path = record.data.docPath;
+		var docId = record.data.docId;
+        var fileId=null;
+        if(record.data.fileAttach){
+         	fileId = record.data.fileAttach.fileId;
+        }else{
+        	fileId=record.data.fileId;
+        }
+		var store = grid.getStore();
+		var curView = Ext.getCmp('ArchivesDraftFolwView');
+		// 返回文档附加记录
+		var callback = function(archivesDoc) {
+			store.remove(record);
+			curView.insertNewDoc(store, archivesDoc);
+		};
+		new ArchivesDocForm({
+			        fileId:fileId,
+					docId : docId,
+					docPath : path,
+					callback : callback
+				}).show();
+	},
+
+	/**
+	 * init the components
+	 */
+	init : function() {
+		// 加载数据至store TODO change the archiveIds
+		this.store = new Ext.data.JsonStore({
+					url : __ctxPath+ '/archive/listArchivesDoc.do?archivesId='+ this.archivesId,
+					root : 'result',
+					totalProperty : 'totalCounts',
+					remoteSort : true,
+					fields : [{
+								name : 'docId',
+								type : 'int'
+							}, 'fileAttach', 'creator', 'creatorId', 'menderId',
+							'mender', 'docName', 'docStatus', 'curVersion',
+							'docPath', 'updatetime', 'createtime']
+				});
+		this.store.setDefaultSort('docId', 'desc');
+		if(this.archivesId !=null && this.archivesId !='' && this.archivesId != 'undefined'){
+			this.store.load();
+		}
+		this.toolbar = new Ext.Toolbar({
+					height : 30,
+					items : [{
+								text : '按模板在线添加',
+								iconCls : 'menu-archive-template',
+								handler : this.addArchiveDoc,
+								scope : this
+							}, {
+								text : '在线添加',
+								iconCls : 'btn-edit-online',
+								handler : this.addNewArchiveDoc,
+								scope : this
+							}, '-', {
+								text : '上传文档',
+								iconCls : 'btn-upload',
+								handler : this.uploadArchiveDoc,
+								scope : this
+							}, '-', {
+								text : '删除附件文档',
+								iconCls : 'btn-del',
+								scope : this,
+								handler : this.deleteArchiveDoc
+							}, '-', {
+								text : '查看文档',
+								iconCls : 'menu-archive-issue-manage',
+								scope : this,
+								handler : this.detailArchivesDoc
+							}]
+				});
+
+		var sm = new Ext.grid.CheckboxSelectionModel({
+					singleSelect : true
+				});
+		// 初始化附件文档
+		this.docGridPanel = new Ext.grid.EditorGridPanel({
+					title : '公文正文附件',
+					iconCls : 'menu-attachment',
+					columnWidth : .96,
+					border : true,
+					id : 'archiveDocGrid',
+					autoHeight : true,
+					store : this.store,
+					tbar : this.toolbar,
+					sm : sm,
+					columns : [new Ext.grid.RowNumberer(), sm, {
+								dataIndex : 'docId',
+								hidden : true
+							}, {
+								dataIndex : 'fileAttach',
+								hidden : true,
+								renderer : function(value){
+								//	return value.fileId;
+								}
+							}, {
+								dataIndex : 'docStatus',
+								hidden : true
+							},{
+								dataIndex : 'menderId',
+								hidden : true,
+								renderer : function(value){
+									//return '2';
+								}
+							},{
+								dataIndex : 'creatorId',
+								hidden :true
+							},{
+								dataIndex : 'docName',
+								width : 400,
+								header : '文档名称'
+							}, {
+								dataIndex : 'docPath',
+								header : '文档路径'// ,
+								// hidden:true
+						}	, {
+								dataIndex : 'curVersion',
+								header : '当前版本'
+							}, {
+								header : '管理',
+								width : 100,
+								dataIndex : 'docId',
+								sortable : false,
+								renderer : function(value, metadata, record, rowIndex,
+										colIndex) {
+									var str = '';
+									if(value !=null && value !=0){
+										str += '<button title="历史版本" value=" " class="btn-archive-history" onclick="ArchivesDraftWin.attach('
+											+ value + ')">&nbsp;&nbsp;</button>';
+									}
+									return str;
+								}
+							}]
+				});
+		// 初始化表单
+		this.formPanel = new Ext.FormPanel({
+			columnWidth : .96,
+			layout : 'form',
+			autoHeight : true,
+			style : 'padding:6px 6px 16px 5%',
+			url : __ctxPath + '/archive/saveIssueArchives.do',
+			//id : 'ArchivesForm',
+			defaults : {
+				anchor : '96%,96%'
+			},
+			reader : new Ext.data.JsonReader({
+					root : 'data'
+				}, [
+					{name : 'archives.archviesId' ,mapping : 'archivesId'},
+					{name : 'archives.typeName' ,mapping : 'typeName'},
+					{name : 'archives.typeId',mapping : 'typeId'},
+					{name : 'archives.archivesNo',mapping : 'archivesNo'},
+					{name : 'archives.privacyLevel',mapping : 'privacyLevel'},
+					{name : 'archives.urgentLevel',mapping : 'urgentLevel'},
+					{name : 'archives.subject',mapping : 'subject'},
+					{name : 'archives.issueDep',mapping : 'issueDep'},
+					{name : 'archives.depId',mapping : 'depId'},
+					{name : 'archives.keywords',mapping : 'keywords'},
+					{name : 'archives.shortContent',mapping : 'shortContent'},
+					{name : 'archives.handleOpinion',mapping : 'handleOpinion'},
+					{name : 'archives.fileCounts',mapping : 'fileCounts'},
+					{name : 'archives.recDepIds',mapping : 'recDepIds'},
+					{name : 'archives.recDepNames',mapping : 'recDepNames'},
+					{name : 'archives.sources',mapping : 'sources'}
+				]
+			),
+			items : [{
+						name : 'archives.archivesId',
+						id : 'archivesFlow.archivesId',
+						xtype : 'hidden',
+						value : this.archivesId == null ? '' : this.archivesId
+					},{
+						name : 'archives.typeName',
+						id : 'archivesFlow.typeName',
+						xtype : 'hidden'
+					}, {
+						layout : 'column',
+						border : false,
+						items : [{
+							columnWidth : .5,
+							border : false,
+							style : 'padding:0px 0px 0px 10px;',
+							layout : 'form',
+							items : {
+								fieldLabel : '公文类型',
+								hiddenName : 'archives.typeId',
+								xtype : 'combo',
+								allowBlank : false,
+								editable : false,
+								lazyInit : false,
+								allowBlank : false,
+								triggerAction : 'all',
+								store : new Ext.data.SimpleStore({
+											autoLoad : true,
+											url : __ctxPath
+													+ '/archive/comboArchivesType.do',
+											fields : ['typeId', 'typeName']
+										}),
+								displayField : 'typeName',
+								valueField : 'typeId',
+								listeners : {
+									select : function(combo, record, index) {
+										Ext.getCmp('archivesFlow.typeName').setValue(record.data.typeName);
+									}
+								}
+							}
+						}]
+					}, {
+						xtype : 'fieldset',
+						title : '发文设置',
+						border : true,
+						defaults : {
+							anchor : '98%,98%'
+						},
+						items : [{
+									layout : 'form',
+									// columnWidth : .4,
+									border : false,
+									items : {
+										fieldLabel : '发文字号',
+										name : 'archives.archivesNo',
+										id : 'archivesFlow.archivesNo',
+										xtype : 'textfield',
+										allowBlank : false,
+										anchor : '100%'
+									}
+								}, {
+									layout : 'form',
+									border : false,
+									style : 'padding:0px 0px 7px 0px;',
+									defaults : {
+										anchor : '96%,96%'
+									},
+									items : [{
+										layout : 'column',
+										border : false,
+										items : [{
+											layout : 'form',
+											anchor : '99%',
+											style : 'padding:0px 0px 0px 0px;',
+											border : false,
+											items : {
+												fieldLabel : '密级',
+												width : 140,
+												name : 'archives.privacyLevel',
+												id : 'archivesFlow.privacyLevel',
+												triggerAction : 'all',
+												lazyRender : true,
+												allowBlank : false,
+												emptyText : '选择密级',
+												xtype : 'combo',
+												store : ['普通', '秘密', '机密', '绝密']
+											}
+										}, {
+											layout : 'form',
+											border : false,
+											items : {
+												fieldLabel : '紧急程度',
+												width : 140,
+												name : 'archives.urgentLevel',
+												id : 'archivesFlow.urgentLevel',
+												triggerAction : 'all',
+												lazyRender : true,
+												allowBlank : false,
+												emptyText : '选择紧急程度',
+												xtype : 'combo',
+												store : ['普通', '紧急', '特急', '特提']
+											}
+										}]
+									}]
+								}, {
+									fieldLabel : '文件标题',
+									name : 'archives.subject',
+									id : 'archivesFlow.subject',
+									xtype : 'textfield',
+									allowBlank : false
+								}, {
+									xtype : 'container',
+									layout : 'column',
+									style : 'padding-left:0px;margin-left:0px;',
+									height : 30,
+									defaults : {
+										border : false
+									},
+									items : [{
+												xtype : 'label',
+												text : '发文机关或部门',
+												style : 'padding:0px 0px 0px 0px;',
+												width : 105
+											}, {
+												// columnWidth:.4,
+												name : 'archives.issueDep',
+												id : 'archivesFlow.issueDep',
+												xtype : 'textfield',
+												width : '70%',
+												value:curUserInfo.depName,
+												allowBlank : false,
+												readOnly : true
+											}, {
+												name : 'archives.depId',
+												id : 'archivesFlow.depId',
+												value:curUserInfo.depId,
+												xtype : 'hidden'
+											}, {
+												xtype : 'button',
+												iconCls : 'menu-department',
+												text : '选择部门',
+												handler : function() {
+													DepSelector.getView(
+															function(depId,
+																	depName) {
+																Ext
+																		.getCmp('archivesFlow.issueDep')
+																		.setValue(depName);
+																Ext
+																		.getCmp('archivesFlow.depId')
+																		.setValue(depId);
+															}, true).show();
+												}
+											}]
+								}, {
+									xtype : 'container',
+									layout : 'column',
+									style : 'padding:0px 0px 8px 0px;margin-left:0px;',
+									defaults : {
+										border : false
+									},
+									items : [{
+												xtype : 'label',
+												style : 'padding:0px 0px 0px 0px;',
+												text : '接收单位或部门',
+												width : 105
+											}, {
+												// columnWidth:.6,
+												xtype : 'textarea',
+												name : 'archives.recDepNames',
+												width : '70%',
+												readOnly : true,
+												id : 'archivesFlow.recDepNames'
+											}, {
+												xtype : 'hidden',
+												name : 'archives.recDepIds',
+												id : 'archivesFlow.recDepIds'
+											}, {
+												xtype : 'button',
+												iconCls : 'menu-department',
+												text : '选择部门',
+												handler : function() {
+													DepSelector.getView(
+															function(depIds,depNames) {
+																Ext.getCmp('archivesFlow.recDepIds').setValue(depIds);
+																Ext.getCmp('archivesFlow.recDepNames').setValue(depNames);
+															}, false).show();
+												}
+											}]
+								}, {
+									fieldLabel : '主题词',
+									name : 'archives.keywords',
+									id : 'archivesFlow.keywords',
+									xtype : 'textfield'
+								}, {
+									fieldLabel : '内容简介',
+									name : 'archives.shortContent',
+									id : 'archivesFlow.shortContent',
+									xtype : 'textarea'
+								}, {
+									fieldLabel : '公文来源',
+									name : 'archives.sources',
+									id : 'archivesFlow.sources',
+									xtype : 'textfield'
+								},{
+									fieldLabel : '拟办意见',
+									name : 'archives.handleOpinion',
+									id : 'archivesFlow.handleOpinion',
+									xtype : 'textarea'
+								}, {
+									name : 'archives.fileCounts',
+									id : 'archivesFlow.fileCounts',
+									xtype : 'hidden',
+									value : '0'
+								}]
+						// end of the field set items
+					},// end of fieldset
+					this.docGridPanel
+
+			]
+		});
+		// 加载表单对应的数据
+		if (this.archivesId != null && this.archivesId != 'undefined') {
+			this.formPanel.getForm().load({
+				deferredRender : false,
+				url : __ctxPath + '/archive/getIssueArchives.do?archivesId='
+						+ this.archivesId,
+				waitMsg : '正在载入数据...',
+				success : function(form, action) {
+
+				},
+				failure : function(form, action) {
+				}
+			});
+		}
+	}// end of init
+})

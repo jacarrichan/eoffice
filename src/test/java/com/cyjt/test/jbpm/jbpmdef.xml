@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<process name="test" >
+	<start g="171,14,48,48" name="start1">
+		<transition g="-31,-5" name="提交" to="支队"/>
+	</start>
+	<task g="140,100,107,52" name="支队">
+		<transition g="218,191:3,-15" name="提交办公室" to="办公室"/>
+		<transition g="173,197:-36,-16" name="提交分局" to="分管局领导"/>
+	</task>
+	<task g="59,218,91,52" name="分管局领导">
+		<transition g="-29,-17" name="普通文件" to="办公室"/>
+		<transition g="-47,2" name="加急文件" to="局领导"/>
+		<transition g="113,180:-50,-13" name="文件退回" to="支队"/>
+	</task>
+	<task g="246,216,88,52" name="办公室">
+		<transition g="15,-2" name="提交" to="局领导"/>
+		<transition g="291,171:5,-3" name="文件退回" to="支队"/>
+	</task>
+	<task g="147,317,89,52" name="局领导">
+		<transition g="5,0" name="结束" to="end1"/>
+	</task>
+	<end g="169,404,48,48" name="end1"/>
+</process>

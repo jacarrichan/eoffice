@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Menus>
+	<Items id="MyDesktop" text="个人日常办公桌面" iconCls="menu-desktop" isPublic="true">
+		<Item id="MySubUserDiaryView" text="下属工作日志" iconCls="menu-subDiary" />
+		<Item id="ProfileForm" text="修改个人资料" iconCls="menu-customer" />
+		<Item id="DiaryView" iconCls="menu-diary" text="我的日志" />
+		<Item id="MessageManageView" iconCls="menu-message" text="我的消息" />
+		<Item id="PersonalMailBoxView" iconCls="menu-mail_box" text="我的邮件" />
+		<Item id="MyTaskView" iconCls="menu-flowWait" text="我的待办事项" />
+		<Item id="CalendarPlanView" iconCls="menu-cal-plan-view" text="我的日程" />
+		<Item id="PersonalWorkPlanView" iconCls="menu-myplan" text="我的计划" />
+		<Item id="AlbumView" iconCls="menu-appointment" text="我的相册" />
+		<Item id="RegulationScanView" iconCls="menu-regulation" text="规章制度" />
+		<Item id="SuggestBoxView" iconCls="btn-suggest-box" text="我的意见箱" />
+	</Items>
+	<Items id="Archive" text="公文管理" iconCls="menu-archive" isPublic="false">
+		<Item id="ArchFlowConfView" text="公文配置" iconCls="menu-archive-setting">
+			<Function id="_ArchFlowConfEdit" text="修改配置" iconCls="btn-edit">
+				<url>/archive/saveArchFlowConf.do</url>
+				<url>/archive/getArchFlowConf.do</url>
+				<url>/archive/depListArchRecUser.do</url>
+				<url>/archive/selectArchRecUser.do</url>
+				<url>/archive/saveArchRecUser.do</url>
+				<url>/flow/listProDefinition.do</url>
+			</Function>
+		</Item>
+		<Items id="ArchiveIssue" text="发文系统" iconCls="menu-archive-issue">
+			<Item id="ArchiveTypeTempView" text="公文类别、模板管理" iconCls="menu-archive-template">
+				<Function id="_ArchiveTypeTempQuery" text="查看" iconCls="menu-list">
+					<url>/archive/treeArchivesType.do</url>
+					<url>/archive/listArchTemplate.do</url>
+				</Function>
+				<Function id="_ArchivesTypeAdd" text="添加类别" iconCls="menu-add">
+					<url>/archive/treeArchivesType.do</url>
+					<url>/archive/listArchTemplate.do</url>
+					<url>/archive/saveArchivesType.do</url>
+				</Function>
+				<Function id="_ArchivesTypeEdit" text="修改类别" iconCls="btn-edit">
+					<url>/archive/treeArchivesType.do</url>
+					<url>/archive/listArchTemplate.do</url>
+					<url>/archive/saveArchivesType.do</url>
+					<url>/archive/getArchivesType.do</url>
+				</Function>
+				<Function id="_ArchivesTypeDel" text="删除类别" iconCls="menu-del">
+					<url>/archive/treeArchivesType.do</url>
+					<url>/archive/listArchTemplate.do</url>
+					<url>/archive/multiDelArchivesType.do</url>
+				</Function>
+				<Function id="_ArchivesTempAdd" text="添加模板" iconCls="menu-add">
+					<url>/archive/treeArchivesType.do</url>
+					<url>/archive/listArchTemplate.do</url>
+					<url>/archive/saveArchTemplate.do</url>
+					<url>/archive/comboArchivesType.do</url>
+				</Function>
+				<Function id="_ArchivesTempEdit" text="编辑模板" iconCls="btn-edit">
+					<url>/archive/treeArchivesType.do</url>
+					<url>/archive/listArchTemplate.do</url>
+					<url>/archive/saveArchTemplate.do</url>
+					<url>/archive/comboArchivesType.do</url>
+					<url>/archive/getArchTemplate.do</url>
+				</Function>
+				<Function id="_ArchviesTempDel" text="删除模板" iconCls="menu-del">
+					<url>/archive/treeArchivesType.do</url>
+					<url>/archive/listArchTemplate.do</url>
+					<url>/archive/multiDelArchTemplate.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesDraftView" text="发文拟稿" iconCls="menu-archive-draft">
+				<Function id="_AchivesDrafAdd" text="发文" iconCls="menu-add">
+					<url>/archive/getFlowArchFlowConf.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesDraftManage" text="拟稿管理" iconCls="menu-archive-draft-manage">
+				<Function id="_ArchivesDrafmQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+				<Function id="_ArchivesDrafmEdit" text="编辑" iconCls="btn-edit">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/getFlowArchFlowConf.do</url>
+					<url>/archive/getArchives.do</url>
+				</Function>
+				<Function id="_ArchivesDrafmDel" text="删除" iconCls="menu-del">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/multiDelArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesIssueAudit" text="科室审核" iconCls="menu-archive-department">
+				<Function id="_ArchivesIssueQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+				<Function id="_ArchivesIssueEdit" text="编辑" iconCls="btn-edit">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/getArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesIssueLead" text="主管领导审批" iconCls="menu-archive-lead">
+				<Function id="_ArchivesIssueLeadQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+				<Function id="_ArchivesIssueLeadEdit" text="编辑" iconCls="btn-edit">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/getArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesIssueCharge" text="分管领导签发" iconCls="menu-archive-charge">
+				<Function id="_ArchivesIssueChargeQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+				<Function id="_ArchivesIssueChargeEdit" text="编辑" iconCls="btn-edit">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/getArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesIssueProof" text="发文校对" iconCls="menu-archive-proof">
+				<Function id="_ArchivesIssueProofQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+				<Function id="_ArchivesIssueProofEdit" text="管理附件" iconCls="btn-edit">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/getArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesDocument" text="文件分发" iconCls="menu-archive-handout">
+				<Function id="_ArchivesDocumentQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesIssueMonitor" text="发文监控" iconCls="menu-archive-monitor">
+				<Function id="_ArchivesIssueMonitorQuery" text="查看"
+					iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+				<Function id="_ArchivesIssueHasten" text="催办"
+					inconCls="menu-archives-remind">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/hastenArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesIssueManage" text="发文管理" iconCls="menu-archive-issue-manage">
+				<Function id="_ArchivesIssueManageQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesIssueSearch" text="发文查询" iconCls="menu-archive-search">
+				<Function id="_ArchivesIssueSearchQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="DocHistoryView" text="公文版本管理" iconCls="menu-archive-history">
+				<Function id="_DocHistoryQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listDocHistory.do</url>
+				</Function>
+				<Function id="_DocHistoryDel" text="删除" iconCls="menu-del">
+					<url>/archive/listDocHistory.do</url>
+					<url>/archive/multiDelDocHistory.do</url>
+				</Function>
+			</Item>
+		</Items>
+		<Items id="ArchiveReceive" text="收文系统" iconCls="menu-archive-receive"
+			isPublic="false">
+			<Item id="ArchivesSignView" text="公文签收待办" iconCls="menu-archive-sign">
+				<Function id="_ArchivesSignQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchivesDep.do</url>
+				</Function>
+				<Function id="_ArchivesSignUp" text="签收" iconCls="menu-add">
+					<url>/archive/getArchives.do</url>
+					<url>/archive/listArchivesDep.do</url>
+					<url>/archive/getFlowArchFlowConf.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesRecView" text="收文登记" iconCls="menu-arch-reg">
+				<Function id="_ArchivesRecQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+				<Function id="_ArchivesRecAdd" text="添加" iconCls="menu-add">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/getFlowArchFlowConf.do</url>
+				</Function>
+				<Function id="_ArchivesRecEdit" text="编辑" iconCls="btn-edit">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/getFlowArchFlowConf.do</url>
+					<url>/archive/getArchives.do</url>
+				</Function>
+				<Function id="_ArchivesRecDel" text="删除" iconCls="menu-del">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/multiDelArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesHandleView" text="收文拟办" iconCls="menu-arch-handler">
+				<Function id="_ArchivesHandleQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchivesHandle.do</url>
+				</Function>
+			</Item>
+			<Item id="LeaderReadView" text="领导批示" iconCls="menu-arch-leader">
+				<Function id="_LeaderReadQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listLeaderRead.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchDispatchView" text="文件分发" iconCls="menu-arch-dispatch">
+				<Function id="_ArchDispatchQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchDispatch.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchUndertakeView" text="收文承办" iconCls="menu-arch-undertake">
+				<Function id="_ArchUndertakeQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchDispatch.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchivesRecCtrlView" text="收文监控" iconCls="menu-arch-controll">
+				<Function id="_ArchivesRecCtrlQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchives.do</url>
+				</Function>
+				<Function id="_ArchivesRecHasten" text="催办"
+					inconCls="menu-archives-remind">
+					<url>/archive/listArchives.do</url>
+					<url>/archive/hastenArchives.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchReadView" text="收文阅读" iconCls="menu-arch-reader">
+				<Function id="_ArchReadQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchDispatch.do</url>
+				</Function>
+			</Item>
+			<Item id="ArchRecTypeView" text="收文类别" iconCls="menu-arch-rec-type">
+				<Function id="_ArchRecTypeQuery" text="查看" iconCls="menu-list">
+					<url>/archive/listArchRecType.do</url>
+				</Function>
+				<Function id="_ArchRecTypeAdd" text="添加" iconCls="menu-add">
+					<url>/archive/listArchRecType.do</url>
+					<url>/archive/saveArchRecType.do</url>
+				</Function>
+				<Function id="_ArchRecTypeEdit" text="编辑" iconCls="btn-edit">
+					<url>/archive/listArchRecType.do</url>
+					<url>/archive/saveArchRecType.do</url>
+					<url>/archive/getArchRecType.do</url>
+				</Function>
+				<Function id="_ArchRecTypeDel" text="删除" iconCls="menu-del">
+					<url>/archive/listArchRecType.do</url>
+					<url>/archive/multiDelArchRecType.do</url>
+				</Function>
+			</Item>
+		</Items>
+	</Items>
+	<Items id="SystemSetting" text="系统管理" iconCls="menu-system" isPublic="false">
+		<Item id="DicManager" iconCls="menu-dictionary" text="数据字典" />
+		<Item id="SystemLogView" text="系统日志"/>
+		<Item id="GlobalTypeManager" iconCls="" text="系统分类管理" />
+		<Item id="AppUserView" iconCls="menu-appuser" text="职员管理">
+			<Function id="_AppUserQuery" text="查看账号" iconCls="menu-list">
+				<url>/system/listAppUser.do</url>
+			</Function>
+			<Function id="_AppUserAdd" text="添加账号" iconCls="menu-add">
+				<url>/system/listAppUser.do</url>
+				<url>/system/chooseRolesAppUser.do</url>
+				<url>/system/selectedRolesAppUser.do</url>
+				<url>/system/listDepartment.do</url>
+			</Function>
+			<Function id="_AppUserEdit" text="编辑账号" iconCls="btn-edit">
+				<url>/system/listAppUser.do</url>
+				<url>/system/chooseRolesAppUser.do</url>
+				<url>/system/selectedRolesAppUser.do</url>
+				<url>/system/listDepartment.do</url>
+			</Function>
+			<Function id="_AppUserDel" text="删除账号" iconCls="menu-del">
+				<url>/system/listAppUser.do</url>
+				<url>/system/multiDelAppUser.do</url>
+			</Function>
+			<Function id="_AppUserReset" text="重置密码" iconCls="btn-password">
+				<url>/system/listAppUser.do</url>
+				<url>/system/chooseRolesAppUser.do</url>
+				<url>/system/selectedRolesAppUser.do</url>
+				<url>/system/createPasswordAppUser.do</url>
+			</Function>
+
+			<Function id="_AppUserAgent" text="代办账号设置" iconCls="btn-super">
+				<url>/system/saveAgentAppUser.do</url>
+			</Function>
+		</Item>
+		<Item id="AppRoleView" iconCls="menu-role" text="角色设置">
+			<Function id="_AppRoleList" text="查看角色" iconCls="menu-list">
+				<url>/system/listAppRole.do</url>
+			</Function>
+			<Function id="_AppRoleAdd" text="添加角色" iconCls="menu-add">
+				<url>/system/listAppRole.do</url>
+				<url>/system/saveAppRole.do</url>
+			</Function>
+			<Function id="_AppRoleEdit" text="编辑角色" iconCls="btn-edit">
+				<url>/system/listAppRole.do</url>
+				<url>/system/saveAppRole.do</url>
+				<url>/system/getAppRole.do</url>
+			</Function>
+			<Function id="_AppRoleDel" text="删除角色" iconCls="menu-del">
+				<url>/system/listAppRole.do</url>
+				<url>/system/mulDelAppRole.do</url>
+			</Function>
+			<Function id="_AppRoleGrant" text="授权角色" iconCls="btn-grant">
+				<url>/system/listAppRole.do</url>
+				<url>/system/grantXmlAppRole.do</url>
+				<url>/system/getAppRole.do</url>
+				<url>/system/grantAppRole.do</url>
+			</Function>
+		</Item>
+		<Item id="DepartmentView" iconCls="menu-department" text="部门管理">
+			<Function id="_DepartmentQuery" text="查看部门" iconCls="menu-list">
+				<url>/system/listDepartment.do</url>
+				<url>/system/selectAppUser.do</url>
+			</Function>
+			<Function id="_DepartmentAdd" text="新建部门" iconCls="menu-add">
+				<url>/system/listDepartment.do</url>
+				<url>/system/addDepartment.do</url>
+				<url>/system/selectAppUser.do</url>
+				<url>/system/saveAppUser.do</url>
+			</Function>
+			<Function id="_DepartmentEdit" text="修改部门" iconCls="btn-edit">
+				<url>/system/listDepartment.do</url>
+				<url>/system/addDepartment.do</url>
+				<url>/system/detailDepartment.do</url>
+				<url>/system/selectAppUser.do</url>
+				<url>/system/saveAppUser.do</url>
+			</Function>
+			<Function id="_DepartmentDel" text="删除部门" iconCls="menu-del">
+				<url>/system/listDepartment.do</url>
+				<url>/system/removeDepartment.do</url>
+				<url>/system/selectAppUser.do</url>
+				<url>/system/saveAppUser.do</url>
+			</Function>
+
+			<Function id="_UserSubAdd" text="添加下属" iconCls="menu-subuser">
+				<url>/system/myUserSub.do</url>
+				<url>/system/addMyUserSub.do</url>
+				<url>/system/selectAppUser.do</url>
+				<url>/system/saveAppUser.do</url>
+			</Function>
+		</Item>
+		<Item id="FileAttachView" iconCls="menu-attachment" text="附件管理">
+			<Function id="_FileAttachQuery" text="查看附件" iconCls="menu-list">
+				<url>/system/listFileAttach.do</url>
+			</Function>
+			<Function id="_FileAttachEdit" text="编辑附件" iconCls="btn-edit">
+				<url>/system/saveFileAttach.do</url>
+				<url>/system/listFileAttach.do</url>
+				<url>/system/getFileAttach.do</url>
+			</Function>
+			<Function id="_FileAttachDel" text="删除附件" iconCls="menu-del">
+				<url>/system/listFileAttach.do</url>
+				<url>/system/multiDelFileAttach.do</url>
+			</Function>
+		</Item>
+
+		<Item id="FlowManagerView" text="流程管理" iconCls="menu-flowManager">
+			<Function id="_FlowQuery" text="查看流程" iconCls="menu-list">
+				<url>/flow/rootProType.do</url>
+				<url>/flow/listProDefinition.do</url>
+				<url>/flow/processDetail.do</url>
+			</Function>
+			<Function id="_ProTypeManage" text="流程类型" iconCls="menu-manage">
+				<url>/flow/rootProType.do</url>
+				<url>/flow/saveProType.do</url>
+				<url>/flow/removeProType.do</url>
+				<url>/flow/getProType.do</url>
+			</Function>
+			<Function id="_FlowAdd" text="发布流程" iconCls="menu-add">
+				<url>/flow/rootProType.do</url>
+				<url>/flow/listProDefinition.do</url>
+				<url>/flow/saveProDefinition.do</url>
+				<url>/flow/listProType.do</url>
+				<url>/flow/getProDefinition.do</url>
+			</Function>
+			<Function id="_FlowEdit" text="编辑流程" iconCls="btn-edit">
+				<url>/flow/rootProType.do</url>
+				<url>/flow/listProDefinition.do</url>
+				<url>/flow/saveProDefinition.do</url>
+				<url>/flow/listProType.do</url>
+				<url>/flow/getProDefinition.do</url>
+			</Function>
+			<Function id="_FlowDel" text="删除流程" iconCls="menu-del">
+				<url>/flow/rootProType.do</url>
+				<url>/flow/listProDefinition.do</url>
+				<url>/flow/multiDelProDefinition.do</url>
+			</Function>
+			<Function id="_FlowCheck" text="查看" iconCls="menu-list">
+				<url>/flow/processDetail.do</url>
+			</Function>
+			<Function id="_FlowSetting" text="人员设置" iconCls="menu-manage">
+				<url>/flow/saveProUserAssign.do</url>
+				<url>/flow/listProUserAssign.do</url>
+			</Function>
+		</Item>
+		<Item id="CompanyView" iconCls="menu-company" text="单位信息">
+			<Function id="_CompanyEdit" text="单位信息修改" iconCls="btn-edit">
+				<url>/system/listCompany.do</url>
+				<url>/system/addCompany.do</url>
+				<url>/system/delphotoCompany.do</url>
+			</Function>
+		</Item>
+		<Items id="PublicDocument" iconCls="menu-folder" text="公共文档">
+			<Item id="NewPublicDocumentForm" iconCls="menu-new-document" text="新建公共文档" />
+
+			<Item id="DocFolderSharedView" iconCls="menu-public-fol" text="存储管理">
+				<Function id="_DocFolderSharedManage" text="存储管理" iconCls="menu-manage">
+					<url>/document/saveDocFolder.do</url>
+					<url>/document/getDocFolder.do</url>
+					<url>/document/removeDocFolder.do</url>
+				</Function>
+				<Function id="_DocPrivilegeQuery" text="查看权限" iconCls="menu-list">
+					<url>/document/listDocPrivilege.do</url>
+				</Function>
+				<Function id="_DocPrivilegeAdd" text="添加权限" iconCls="menu-add">
+					<url>/document/listDocPrivilege.do</url>
+					<url>/document/addDocPrivilege.do</url>
+				</Function>
+				<Function id="_DocPrivilegeEdit" text="编辑权限" iconCls="btn-edit">
+					<url>/document/listDocPrivilege.do</url>
+					<url>/document/changeDocPrivilege.do</url>
+				</Function>
+				<Function id="_DocPrivilegeDel" text="删除权限" iconCls="menu-del">
+					<url>/document/listDocPrivilege.do</url>
+					<url>/document/multiDelDocPrivilege.do</url>
+				</Function>
+			</Item>
+
+		</Items>
+		<Items id="Task" text="任务管理" iconCls="menu-task">
+			<Item id="PlanTypeView" text="任务计划类型" iconCls="menu-plantype">
+				<Function id="_PlanTypeQuery" text="查看类型" iconCls="menu-list">
+					<url>/task/listPlanType.do</url>
+				</Function>
+				<Function id="_PlanTypeAdd" text="添加类型" iconCls="menu-add">
+					<url>/task/listPlanType.do</url>
+					<url>/task/savePlanType.do</url>
+				</Function>
+				<Function id="_PlanTypeEdit" text="编辑类型" iconCls="btn-edit">
+					<url>/task/listPlanType.do</url>
+					<url>/task/savePlanType.do</url>
+					<url>/task/getPlanType.do</url>
+				</Function>
+				<Function id="_PlanTypeDel" text="删除类型" iconCls="menu-del">
+					<url>/task/listPlanType.do</url>
+					<url>/task/multiDelPlanType.do</url>
+				</Function>
+			</Item>
+			<Item id="NewWorkPlanForm" text="新建科室任务计划" iconCls="menu-newplan">
+				<Function id="_NewDepPlan" text="新建部门任务计划" iconCls="menu-add" />
+
+			</Item>
+		</Items>
+		<Item id="SealView" iconCls="menu-seal" text="印章管理" />
+		<Item id="PaintTemplateView" iconCls="menu-template" text="套红模板管理" />
+		<Item id="RegulationView" iconCls="menu-regulation" text="规章制度" />
+		<Item id="SysConfigView" iconCls="menu-regulation" text="系统参数设置" />
+	</Items>
+	<Items id="Info" text="信息管理" iconCls="menu-info" isPublic="false">
+		<Item id="NewsView" iconCls="menu-news" text="新闻管理">
+			<Function id="_NewsQuery" text="查看新闻" iconCls="menu-list">
+				<url>/info/categoryNews.do</url>
+				<url>/info/treeNewsType.do</url>
+			</Function>
+			<Function id="_NewsAdd" text="添加新闻" iconCls="menu-add">
+				<url>/info/categoryNews.do</url>
+				<url>/info/treeNewsType.do</url>
+				<url>/info/saveNews.do</url>
+			</Function>
+			<Function id="_NewsEdit" text="编辑新闻" iconCls="btn-edit">
+				<url>/info/categoryNews.do</url>
+				<url>/info/treeNewsType.do</url>
+				<url>/info/saveNews.do</url>
+			</Function>
+			<Function id="_NewsDel" text="删除新闻" iconCls="menu-del">
+				<url>/info/categoryNews.do</url>
+				<url>/info/treeNewsType.do</url>
+				<url>/info/multiDelNews.do</url>
+			</Function>
+		</Item>
+		<Item id="NewsCommentView" iconCls="menu-info" text="评论管理">
+			<Function id="_NewsCommentQuery" text="查看评论" iconCls="menu-list" />
+
+			<Function id="_NewsCommentDel" text="删除评论" iconCls="menu-del">
+				<url>/info/multiDelNewsComment.do</url>
+			</Function>
+		</Item>
+		<Item id="NewsTypeView" iconCls="menu-news_type" text="新闻类别">
+			<Function id="_NewsTypeQuery" text="查看新闻类型" iconCls="menu-list">
+				<url>/info/listNewsType.do</url>
+			</Function>
+			<Function id="_NewsTypeAdd" text="添加新闻类型" iconCls="menu-add">
+				<url>/info/listNewsType.do</url>
+				<url>/info/addNewsType.do</url>
+			</Function>
+			<Function id="_NewsTypeEdit" text="修改新闻类型" iconCls="btn-edit">
+				<url>/info/listNewsType.do</url>
+				<url>/info/addNewsType.do</url>
+				<url>/info/detailNewsType.do</url>
+				<url>/info/sortNewsType.do</url>
+			</Function>
+			<Function id="_NewsTypeDel" text="删除新闻类型" iconCls="menu-del">
+				<url>/info/listNewsType.do</url>
+				<url>/info/removeNewsType.do</url>
+			</Function>
+		</Item>
+		<Item id="NoticeView" iconCls="menu-notice" text="公告管理">
+			<Function id="_NoticeQuery" text="查看公告" iconCls="menu-list" />
+
+			<Function id="_NoticeAdd" text="添加公告" iconCls="menu-add">
+				<url>/info/saveNotice.do</url>
+			</Function>
+			<Function id="_NoticeEdit" text="编辑公告" iconCls="btn-edit">
+				<url>/info/saveNotice.do</url>
+			</Function>
+			<Function id="_NoticeDel" text="删除公告" iconCls="menu-del">
+				<url>/info/multiDelNotice.do</url>
+			</Function>
+		</Item>
+		<Item id="SuggestBoxView" iconCls="menu-suggestbox" text="意见箱" />
+	</Items>
+	<Items id="Communication" text="通讯管理" iconCls="menu-communicate" isPublic="true">
+		<Items id="PhoneBook" iconCls="menu-phonebook" text="通讯簿">
+			<Item id="PersonalPhoneBookView" iconCls="menu-personal-phoneBook"
+				text="个人通讯簿" />
+
+			<Item id="SharedPhoneBookView" iconCls="menu-phonebook-shared"
+				text="共享通讯录" />
+		</Items>
+		<Item id="MessageManageView" iconCls="menu-message" text="内部信息" />
+		<Item id="SmsMobileView" iconCls="menu-mobile" text="手机短信" />
+	</Items>
+	<Items id="Document" text="网络硬盘" iconCls="menu-document" isPublic="true">
+		<Item id="PersonalDocumentView" iconCls="menu-personal-doc" text="个人文档" />
+		<Item id="DocumentSharedView" iconCls="menu-folder-shared" text="共享文档" />
+		<Item id="DocFolderMoveForm" iconCls="menu-folder-go" text="文件夹转移" />
+		<Item id="FindPublicDocumentView" iconCls="menu-find-doc" text="查看公共文档" />
+	</Items>
+	<Items id="Task" text="任务管理" iconCls="menu-task" isPublic="true">
+		<Item id="AppointmentView" text="我的约会" iconCls="menu-appointment" />
+		<Item id="MyPlanTaskView" text="今日常务" iconCls="menu-cal-plan" />
+		<!-- <Item id="" text="新建日程"></Item> -->
+		<Item id="CalendarPlanView" text="日程管理" iconCls="menu-cal-plan-view" />
+		<Item id="DiaryView" text="工作日志" iconCls="menu-diary" />
+		<Items id="Plan" text="任务计划" iconCls="menu-workPlan">
+			<Item id="WorkPlanView" text="计划管理" iconCls="menu-planmanage" />
+
+			<Item id="NewWorkPlanForm" text="新建任务计划" iconCls="menu-newplan" />
+
+			<Item id="PersonalWorkPlanView" text="我的计划" iconCls="menu-myplan" />
+
+			<Item id="DepWorkPlanView" text="科室计划" iconCls="menu-depplan" />
+
+		</Items>
+	</Items>
+	<Items id="Flow" text="流程管理" iconCls="menu-flow" isPublic="true">
+
+		<Item id="NewProcess" text="新建流程" iconCls="menu-flowNew" />
+		<Item id="MyTaskView" text="待办事项" iconCls="menu-flowWait" />
+		<Item id="MyProcessRunView" text="我参与的流程" iconCls="menu-flowPr" />
+		<Item id="ProcessRunView" text="我的申请流程" iconCls="menu-flowMine" />
+		<Item id="ProcessRunFinishView" text="已办结流程" iconCls="menu-flowEnd" />
+	</Items>
+	<Items id="Arch" text="档案管理" iconCls="menu-arch">
+		<Item id="ArchFondView" text="全宗管理" iconCls="" />
+		<Item id="ArchRollView" text="案卷管理" iconCls="" />
+		<Item id="RollFileView" text="卷内文件管理" iconCls="" />
+		<Item id="TidyFileView" text="归档文件管理" iconCls="" />
+
+		<Item id="NewBorrowRecordFormPan" text="借阅申请" iconCls="" />
+		<Item id="MyBorrowRecordView" text="我的借阅" iconCls="" />
+		<Item id="CheckBorrowRecordView" text="借阅审批" iconCls="" />
+
+		<Item id="archSetingManager" text="档案系统设置" iconCls="" />
+
+		<Items id="" text="档案统计" iconCls="">
+			<Item id="StatisticsArchYearReportPanel" text="年度统计" iconCls="" />
+			<Item id="StatisticsArchRollReportPanel" text="案卷统计" iconCls="" />
+			<Item id="StatisticsArchFileReportPanel" text="文件统计" iconCls="" />
+		</Items>
+	</Items>
+</Menus>

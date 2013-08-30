@@ -1,0 +1,1 @@
+var FCKToolbarBreak=function(){};FCKToolbarBreak.prototype.Create=function(a){var b=a.ownerDocument.createElement("div");b.style.clear=b.style.cssFloat=FCKLang.Dir=="rtl"?"right":"left";a.appendChild(b);};

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+</head>
+<body>
+	 导航&nbsp;:&nbsp;<a href='index.do'>首页</a> &gt;&gt;我的流程
+	<h2>
+		某司发文流程--科室审核
+	</h2>
+	<form action="saveNextMobileTask.do" method="post">
+		<input type="hidden" name="taskId" value="${taskId}">
+		<input type="hidden" name="taskName" value="${taskName}">
+		<input type="hidden" name="signalName" value="" id="signalName">
+		<table class="info">
+			<tr>
+				<td>审批意见</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea name="officeOption" rows="3" cols="16"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+				#foreach ($tran in $outTrans)
+					<input type="submit" name="${tran.name}" value="${tran.name}" onclick="javascript:document.getElementById('signalName').value=this.value;">
+					&nbsp;
+				#end
+				</td>
+			</tr>
+		</table>	
+	</form>
+</body>
+</html>

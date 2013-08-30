@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="readFeedback" label="阅读处理意见:" type="varchar" length="320" isShowed="true"/>
+</fields>

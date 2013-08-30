@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+	<title>启动流程-${processName}</title>
+	<style type="text/css">
+		body {
+			font-size: small;
+			line-height: 1.4em;
+		}
+		form {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+           导航&nbsp;:&nbsp;<a href='index.do'>首页</a> &gt;&gt;我的流程
+    <h2>
+    	启动流程(流程名称：${processName}-->任务：${taskName})
+    </h2>
+	<form action="saveStartMobileTask.do" method="POST">
+		<input type="hidden" name="defId" value="${defId}"/>
+		<input type="hidden" name="startFlow" value="true"/>
+		<table cellspacing="1" cellpadding="0" border="0" class="info">
+			<tr>
+				<td>备注</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea name="notes" cols="20" rows="3"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="提交"/>
+					&nbsp;
+					<input type="reset" value="重置"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+body,h2{
+	font-family: '宋体';
+	font-size:12px;
+}
+
+h2{
+	color:green;
+	}
+
+.text{
+	border:solid 1px blue;
+}
+
+
+.info{
+	/*border:solid 1px #ccc;*/
+	/*background-color: #ccc;*/
+}
+
+.info thead{
+	background-color:lime;
+	color:blue;
+}
+
+.info th{
+	text-align:left;
+	font-size:12px;
+	font-weight: bold;
+}
+
+.info tr{
+	background-color: white;
+	height:22px;
+	paddinng:2px 2px 2px 2px;
+}
+
+.info td{
+	font-size:12px;
+	padding-left:4px;
+	padding-right:4px;
+}

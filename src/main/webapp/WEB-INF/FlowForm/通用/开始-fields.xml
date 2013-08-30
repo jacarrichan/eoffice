@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="note" label="备注" type="varchar" length="512"/>
+</fields>

@@ -1,0 +1,535 @@
+ArchivesRecFormVm = Ext.extend(Ext.Panel, {
+	defId:null,
+	// 内嵌FormPanel
+	formPanel : null,
+	
+	setDefId:function(vId){
+		this.defId=vId;
+	},
+	
+	getDefId:function(){
+		return this.defId;
+	},
+	setArchDepId:function(archDepId){
+		this.archDepId=archDepId;
+	},
+	// 构造函数
+	constructor : function(_cfg) {
+		if (_cfg == null) {
+			_cfg = {};
+		}
+		Ext.apply(this, _cfg);
+		// 必须先初始化组件
+		this.initComponents();
+		ArchivesRecFormVm.superclass.constructor.call(this, {
+			//id : 'ArchivesRecFormVm',
+			layout : 'form',
+			items : this.formPanel,
+			modal : true,
+			width:700,
+			tbar : this.toolbar,
+			maximizable : true,
+			title : '公文详细信息'
+				// buttonAlign : 'center',
+				// buttons:this.buttons
+			});
+	},// end of the constructor
+	// 初始化组件
+	initComponents : function() {
+		this.formPanel = new Ext.FormPanel({
+			layout : 'form',
+			columnWidth:1,
+			bodyStyle : 'padding:10px 10px 10px 10px',
+			border : false,
+			url : __ctxPath + '/archive/saveArchives.do',
+			id : 'ArchivesRecFormVmPanel',
+			defaults : {
+				anchor : '98%,98%'
+			},
+			autoScroll : true,
+			reader : new Ext.data.JsonReader({
+					root : 'data'
+				}, [
+					{name:'ArchivesRecFormVm.archivesId',mapping:'archivesId'},
+					{name:'ArchivesRecFormVm.archType',mapping:'archType'},
+					{name:'ArchivesRecFormVm.depId',mapping:'depId'},
+					{name:'ArchivesRecFormVm.status',mapping:'status'},
+					{name:'ArchivesRecFormVm.recTypeId',mapping:'recTypeId'},
+					{name:'ArchivesRecFormVm.archivesNo',mapping:'archivesNo'},
+					{name:'ArchivesRecFormVm.issueDep',mapping:'issueDep'},
+					{name:'ArchivesRecFormVm.subject',mapping:'subject'},
+					{name:'ArchivesRecFormVm.keywords',mapping:'keywords'},
+					{name:'ArchivesRecFormVm.sources',mapping:'sources'},
+					{name:'ArchivesRecFormVm.createtime',mapping:'createtime'},
+					{name:'ArchivesRecFormVm.urgentLevel',mapping:'urgentLevel'},
+					{name:'ArchivesRecFormVm.privacyLevel',mapping:'privacyLevel'},
+					{name:'ArchivesRecFormVm.shortContent',mapping:'shortContent'},
+					{name : 'ArchivesRecFormVm.orgArchivesId',mapping : 'orgArchivesId'},
+					{name:'ArchivesRecFormVm.depSignNo',mapping:'depSignNo'},
+					{name:'ArchivesRecFormVm.handlerUnames',mapping:'handlerUnames'},
+					{name:'ArchivesRecFormVm.handelUIds',mapping:'handelUIds'}
+					]),
+			defaultType : 'textfield',
+			items : [{
+						name : 'archives.archivesId',
+						id : 'ArchivesRecFormVm.archivesId',
+						xtype : 'hidden',
+						value : this.archivesId == null ? '' : this.archivesId
+					}, {
+						fieldLabel : '公文类型',
+						name : 'archives.archType',
+						xtype : 'hidden',
+						id : 'ArchivesRecFormVm.archType',
+						value : 1
+						// 1表示为收文
+				}	, {
+						fieldLabel : '发文部门ID',
+						name : 'archives.depId',
+						xtype : 'hidden',
+						id : 'ArchivesRecFormVm.depId'
+					}, {
+						fieldLabel : '公文状态',
+						xtype : 'hidden',
+						name : 'archives.status',
+						id : 'ArchivesRecFormVm.status'
+					},{
+						fieldLabel : '来文分类',
+						hiddenName : 'archives.archRecType.recTypeId',
+						id : 'ArchivesRecFormVm.recTypeId',
+						xtype : 'combo',
+						mode : 'local',
+						anchor : '74%',
+						allowBlank : false,
+						editable : false,
+						valueField : 'id',
+						displayField : 'name',
+						triggerAction : 'all',
+						store : new Ext.data.SimpleStore({
+									autoLoad : true,
+									url : __ctxPath
+											+ '/archive/comboArchRecType.do',
+									fields : ['id', 'name'],
+									listeners:{
+										scope:this,
+										load:function(){
+											var cmp=Ext.getCmp('ArchivesRecFormVm.recTypeId');
+											if(cmp.hiddenField.value)
+											cmp.setValue(cmp.hiddenField.value);
+										}
+									}
+								})
+					}, {
+						xtype : 'container',
+						layout : 'column',
+						items : [{
+									xtype : 'label',
+									style : 'padding-left:0px',
+									text : '拟办人员',
+									width : 105
+								}, {
+									xtype : 'textarea',
+									width : 400,
+									readOnly : true,
+									id : 'ArchivesRecFormVm.handlerUnames',
+									name : 'archives.handlerUnames',
+									allowBlank:false,
+									blankText:'请选择拟办人员'
+								}, {
+									xtype : 'hidden',
+									id : 'ArchivesRecFormVm.handelUIds',
+									name : 'signUserIds'
+								}, {
+									xtype : 'button',
+									iconCls:'btn-mail_recipient',
+									text : '选择拟办人员',
+									handler : function() {
+										UserSelector.getView(
+												function(id, name) {
+													Ext
+															.getCmp('ArchivesRecFormVm.handlerUnames')
+															.setValue(name);
+													Ext
+															.getCmp('ArchivesRecFormVm.handelUIds')
+															.setValue(id);
+												}).show();
+
+									}
+								}]
+
+					}, {
+						xtype : 'fieldset',
+						title : '公文基本信息',
+						defaults : {
+							anchor : '98%,98%'
+						},
+						layout : 'form',
+						items : [{
+							xtype : 'container',
+							border : true,
+
+							layout : 'column',
+							defaultType : 'textfield',
+							items : [{
+										xtype : 'container',
+										style : 'padding-left:0px;',
+										columnWidth : .65,
+										defaults : {
+											anchor : '100%,100%'
+										},
+										defaultType : 'textfield',
+										layout : 'form',
+										items : [{
+													fieldLabel : '发文字号',
+													name : 'archives.archivesNo',
+													id : 'ArchivesRecFormVm.archivesNo',
+													allowBlank:false
+												},{
+												    fieldLabel : '公文自编号',
+													name : 'archives.depSignNo',
+													id : 'ArchivesRecFormVm.depSignNo',
+													allowBlank:false
+												}, {
+													fieldLabel : '发文机关或部门',
+													name : 'archives.issueDep',
+													id : 'ArchivesRecFormVm.issueDep'
+												}, {
+													fieldLabel : '文件标题',
+													name : 'archives.subject',
+													id : 'ArchivesRecFormVm.subject',
+													allowBlank:false
+												}, {
+													fieldLabel : '主题词',
+													name : 'archives.keywords',
+													id : 'ArchivesRecFormVm.keywords'
+												}, {
+													fieldLabel : '公文来源',
+													name : 'archives.sources',
+													id : 'ArchivesRecFormVm.sources'
+												}]
+									}, {
+										xtype : 'container',
+										columnWidth : .35,
+										defaults : {
+											anchor : '100%,100%'
+										},
+										defaultType : 'textfield',
+										layout : 'form',
+										items : [{
+													fieldLabel : '创建日期',
+													name : 'archives.createtime',
+													xtype : 'datefield',
+													format : 'Y-m-d',
+													id : 'ArchivesRecFormVm.createtime',
+													allowBlank:false
+												},{
+													fieldLabel : '紧急程度',
+													name : 'archives.urgentLevel',
+													id : 'ArchivesRecFormVm.urgentLevel',
+													xtype : 'combo',
+													mode : 'local',
+													allowBlank : false,
+													editable : false,
+													triggerAction : 'all',
+													store : ['普通', '紧急', '特急',
+															'特提']
+												}, {
+													fieldLabel : '秘密等级',
+													name : 'archives.privacyLevel',
+													id : 'ArchivesRecFormVm.privacyLevel',
+													xtype : 'combo',
+													mode : 'local',
+													allowBlank : false,
+													editable : false,
+													triggerAction : 'all',
+													store : ['普通', '秘密', '机密',
+															'绝密']
+
+												}]
+									}]
+
+						}, {
+							fieldLabel : '内容简介',
+							name : 'archives.shortContent',
+							xtype : 'textarea',
+							id : 'ArchivesRecFormVm.shortContent'
+						}]
+					}, {
+						xtype : 'fieldset',
+						title : '公文正文',
+						layout : 'column',
+						items : [{
+									columnWidth : .8,
+									layout : 'form',
+									items : [{
+												xtype : 'panel',
+												id : 'archivesRecFilePanel',
+												height : 50,
+												border : false,
+												name:'archivesRecFilePanel',
+												autoScroll : true,
+												html : ''
+											}]
+								}, {
+									columnWidth : .2,
+									border : false,
+									items : [{
+										xtype : 'button',
+										text : '添加附件',
+										iconCls : 'menu-attachment',
+										handler : function() {
+											var dialog = App
+													.createUploadDialog({
+														file_cat : 'hrm',
+														callback : function(
+																data) {
+															var fileIds = Ext
+																	.getCmp("archivesRecfileIds");
+															var filePanel = Ext
+																	.getCmp('archivesRecFilePanel');
+
+															for (var i = 0; i < data.length; i++) {
+																if (fileIds
+																		.getValue() != '') {
+																	fileIds
+																			.setValue(fileIds
+																					.getValue()
+																					+ ',');
+																}
+																fileIds
+																		.setValue(fileIds
+																				.getValue()
+																				+ data[i].fileId);
+																Ext.DomHelper
+																		.append(
+																				filePanel.body,
+																				'<span><a href="#" onclick="FileAttachDetail.show('
+																						+ data[i].fileId
+																						+ ')">'
+																						+ data[i].filename
+																						+ '</a> <img class="img-delete" src="'
+																						+ __ctxPath
+																						+ '/images/system/delete.gif" onclick="ArchivesRecFormVm.removeFile(this,'
+																						+ data[i].fileId
+																						+ ')"/>&nbsp;|&nbsp;</span>');
+															}
+														}
+													});
+											dialog.show(this);
+										}
+									}, {
+										xtype : 'button',
+										text : '清除附件',
+										iconCls : 'reset',
+										handler : function() {
+											var fileAttaches = Ext
+													.getCmp("archivesRecfileIds");
+											var filePanel = Ext
+													.getCmp('archivesRecFilePanel');
+
+											filePanel.body.update('');
+											fileAttaches.setValue('');
+										}
+									}, {
+										xtype : 'hidden',
+										id : 'archivesRecfileIds',
+										name : 'archivesRecfileIds'
+									}]
+								}]
+					}
+
+			]
+		});
+		// 加载表单对应的数据
+		if (this.archivesId != null && this.archivesId != 'undefined') {
+			this.formPanel.getForm().load({
+				deferredRender : false,
+				url : __ctxPath + '/archive/getArchives.do?archivesId='
+						+ this.archivesId,
+				waitMsg : '正在载入数据...',
+				success : function(form, action) {
+					var res = Ext.util.JSON
+							.decode(action.response.responseText).data[0];
+					Ext.getCmp('ArchivesRecFormVm.handelUIds').setValue(res.handlerUids);
+					//
+					Ext.getCmp('ArchivesRecFormVm.createtime')
+							.setValue(new Date(getDateFromFormat(
+									res.createtime, "yyyy-MM-dd HH:mm:ss")));
+					var docs = res.archivesDocs;
+					var filePanel = Ext.getCmp('archivesRecFilePanel');
+					var fileIds = Ext.getCmp("archivesRecfileIds");
+					
+					for (var i = 0; i < docs.length; i++) {
+						if (fileIds.getValue() != '') {
+							fileIds.setValue(fileIds.getValue() + ',');
+						}
+						fileIds.setValue(fileIds.getValue()
+								+ docs[i].fileAttach.fileId);
+						Ext.DomHelper
+								.append(
+										filePanel.body,
+										'<span><a href="#" onclick="FileAttachDetail.show('
+												+ docs[i].fileAttach.fileId
+												+ ')">'
+												+ docs[i].fileAttach.fileName
+												+ '</a><img class="img-delete" src="'
+												+ __ctxPath
+												+ '/images/system/delete.gif" onclick="ArchivesRecFormVm.removeFile(this,'
+												+ docs[i].fileAttach.fileId
+												+ ')"/>&nbsp;|&nbsp;</span>');
+					}
+				},
+				failure : function(form, action) {
+				}
+			});
+		}
+		// 初始化功能按钮
+		this.toolbar = new Ext.Toolbar({
+					id : 'ArchivesRecFormVmToolbar',
+					items : [{
+						text : '提交发送',
+						iconCls : 'btn-save',
+						handler : this.submit.createCallback(this.formPanel,
+								this)
+					}, '-',{
+						text : '暂存',
+						iconCls : 'btn-save',
+						handler : this.save.createCallback(this.formPanel,this)
+					},'-', {
+						text : '重置',
+						iconCls : 'btn-reset',
+						handler : this.reset.createCallback(this)
+					}, '-',{
+						text : '取消',
+						iconCls : 'btn-cancel',
+						handler : this.cancel.createCallback(this)
+					}]
+				});
+	},// end of the initcomponents
+
+	/**
+	 * 重置
+	 * 
+	 * @param {}
+	 *            formPanel
+	 */
+	reset : function(panel) {
+	    //alert(panel.defId);
+		panel.formPanel.getForm().reset();
+		Ext.getCmp('archivesRecFilePanel').body.update('');
+	},
+	/**
+	 * 取消
+	 * 
+	 * @param {}
+	 *            window
+	 */
+	cancel : function(panel) {
+		AppUtil.removeTab(topPanel.getId());
+	},
+	/**
+	 * 保存记录
+	 */
+
+	save : function(formPanel, panel) {
+		Ext.getCmp('ArchivesRecFormVm.status').setValue(0);// 0表示为收文草稿
+		var fileId = Ext.getCmp('archivesRecfileIds').getValue();
+		if (fileId != '' && fileId != null && fileId != 'undefined') {
+			if (formPanel.getForm().isValid()) {
+				formPanel.getForm().submit({
+							method : 'POST',
+							waitMsg : '正在提交数据...',
+							success : function(fp, action) {
+								Ext.ux.Toast.msg('操作信息', '成功保存信息！');
+								AppUtil.removeTab(topPanel.getId());
+								var runGrid=Ext.getCmp('ProcessRunGrid');
+								if(runGrid!=null){
+									runGrid.getStore().reload();
+								}
+							},
+							failure : function(fp, action) {
+								Ext.MessageBox.show({
+											title : '操作信息',
+											msg : '信息保存出错，请联系管理员！',
+											buttons : Ext.MessageBox.OK,
+											icon : Ext.MessageBox.ERROR
+										});
+								       AppUtil.removeTab(topPanel.getId());
+										var runGrid=Ext.getCmp('ProcessRunGrid');
+										if(runGrid!=null){
+											runGrid.getStore().reload();
+										}
+							}
+						});
+			}
+		} else {
+
+			Ext.ux.Toast.msg('操作信息', '请上传公文！');
+		}
+	},// end of save
+	submit : function(formPanel, panel) {
+		Ext.getCmp('ArchivesRecFormVm.status').setValue(1);// 1表示为提交收文
+		var fileId = Ext.getCmp('archivesRecfileIds').getValue();
+		if (fileId != '' && fileId != null && fileId != 'undefined') {
+			if (formPanel.getForm().isValid()) {
+				formPanel.getForm().submit({
+							method : 'POST',
+							waitMsg : '正在提交数据...',
+							success : function(fp, action) {
+							    var archivesId=action.result.archivesId;
+							    Ext.getCmp('ArchivesRecFormVm.archivesId').setValue(archivesId);
+							    formPanel.getForm().submit({
+							        url : __ctxPath + '/flow/saveProcessActivity.do',
+									waitMsg : '正在提交流程表单信息...',
+									params:{
+										defId:panel.defId,
+										//runId:this.runId,
+										//activityName:this.activityName,
+										//启动工作流
+										startFlow:true
+									},
+									method : 'POST',
+									success : function(fp, action) {
+									    Ext.ux.Toast.msg('操作信息', '保存成功！');
+									    AppUtil.removeTab(topPanel.getId());
+										var runGrid=Ext.getCmp('ProcessRunGrid');
+										if(runGrid!=null){
+											runGrid.getStore().reload();
+										}
+									},
+									failure : function(fp, action) {
+									    Ext.MessageBox.show({
+											title : '操作信息',
+											msg : '信息保存出错，请联系管理员！',
+											buttons : Ext.MessageBox.OK,
+											icon : Ext.MessageBox.ERROR
+										});
+										AppUtil.removeTab(topPanel.getId());
+										var runGrid=Ext.getCmp('ProcessRunGrid');
+										if(runGrid!=null){
+											runGrid.getStore().reload();
+										}
+									}
+							    });
+								
+							},
+							failure : function(fp, action) {
+								Ext.MessageBox.show({
+											title : '操作信息',
+											msg : '信息保存出错，请联系管理员！',
+											buttons : Ext.MessageBox.OK,
+											icon : Ext.MessageBox.ERROR
+										});
+								        AppUtil.removeTab(topPanel.getId());
+										var runGrid=Ext.getCmp('ProcessRunGrid');
+										if(runGrid!=null){
+											runGrid.getStore().reload();
+										}
+							}
+						});
+			}
+		} else {
+
+			Ext.ux.Toast.msg('操作信息', '请上传公文！');
+		}
+	}// end of save
+})

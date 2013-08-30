@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process name="ArchiveSendFlow" xmlns="http://jbpm.org/4.0/jpdl">
+   <start g="55,108,48,48" name="开始">
+      <transition g="-21,-13" name="流程启动" to="发文核稿"/>
+   </start>
+   <task g="187,103,92,52" name="发文核稿">
+      <transition g="-13,-14" name="核稿" to="科室审核"/>
+   </task>
+   <task g="363,103,92,52" name="科室审核">
+      <transition g="-28,-12" name="审核" to="主管领导审批"/>
+   </task>
+   <task g="365,234,92,52" name="主管领导审批">
+      <transition g="-34,-14" name="审批" to="分管领导签发"/>
+   </task>
+   <task g="365,357,92,52" name="分管领导签发">
+      <transition g="-4,-13" name="签发" to="发文校对"/>
+   </task>
+   <task g="181,357,92,52" name="发文校对">
+      <transition g="-29,0" name="校对" to="发文分发"/>
+   </task>
+   <task g="182,235,92,52" name="发文分发">
+      <transition g="-13,-13" name="分发" to="归档"/>
+   </task>
+   <end g="57,239,48,48" name="归档"/>
+</process>

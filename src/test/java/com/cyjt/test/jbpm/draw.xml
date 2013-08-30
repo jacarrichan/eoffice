@@ -1,0 +1,96 @@
+<drawing id="0">
+	<figures>
+		<task id="1" name="&#x4efb;&#x52a1;1" x="237" y="170" w="40" h="40">
+			<a>
+				<text>
+					<string>&#x4efb;&#x52a1;1</string>
+				</text>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</task>
+		<task id="2" name="&#x4efb;&#x52a1;2" x="418" y="180" w="40" h="40">
+			<a>
+				<text>
+					<string>&#x4efb;&#x52a1;2</string>
+				</text>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</task>
+		<decision id="3" x="320" y="40" w="48" h="48" name="&#x5206;&#x652f;">
+			<a>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+			<conditions>
+				<condition to="t1" expr="#{11}" />
+				<condition to="t2" expr="#{32}" />
+			</conditions>
+		</decision>
+		<transition id="4" g="-36,-16" name="t1">
+			<points>
+				<p colinear="true" x="327.0142857142857" y="88.6" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+				<p colinear="true" x="271.2238095238095" y="169.4" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="5">
+					<Owner>
+						<decision ref="3" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="6">
+					<Owner>
+						<task ref="1" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip id="7" angle="0.35" innerRadius="11.3"
+						outerRadius="12" isFilled="true" isStroked="false" isSolid="true" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+		<transition id="8" g="-36,-16" name="t2">
+			<points>
+				<p colinear="true" x="361.0029411764706" y="88.6" c1x="-2.0029411764705856"
+					c1y="-0.4000000000000057" c2x="-2.0029411764705856" c2y="-0.4000000000000057" />
+				<p colinear="true" x="423.76176470588234" y="179.4" c1x="-2.0029411764705856"
+					c1y="-0.4000000000000057" c2x="-2.0029411764705856" c2y="-0.4000000000000057" />
+			</points>
+			<startConnector>
+				<rConnector id="9">
+					<Owner>
+						<decision ref="3" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="a">
+					<Owner>
+						<task ref="2" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip ref="7" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+	</figures>
+</drawing>

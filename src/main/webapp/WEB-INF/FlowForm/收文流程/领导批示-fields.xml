@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="cruArchDepId" label="部门签收" type="long" isShowed="false"/>
+	<field name="leaderOpinion" label="领导批示" type="varchar" length="320" isShowed="true"/>
+</fields>

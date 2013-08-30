@@ -1,0 +1,145 @@
+ArchivesHandleForm = Ext.extend(Ext.Panel, {
+			taskId:null,
+			setTaskId:function(vId){
+			   this.taskId=vId;
+			},
+			getTaskId:function(){
+			   return this.taskId;
+			},
+			// 内嵌FormPanel
+			formPanel : null,
+			// 内嵌FormPanel
+			displayPanel : null,
+			// 构造函数
+			constructor : function(_cfg) {
+				Ext.applyIf(this, _cfg);
+				// 必须先初始化组件
+				this.initUIComponents();
+				ArchivesHandleForm.superclass.constructor.call(this, {
+							//id : 'ArchivesHandleFormWin',
+							layout : 'form',
+							items : [this.displayPanel,this.formPanel],
+							modal : true,
+							height : 400,
+							width : 600,
+							maximizable : true,
+							buttonAlign : 'center',
+							buttons : this.buttons
+						});
+			},// end of the constructor
+			// 初始化组件
+			initUIComponents : function() {
+				this.displayPanel=new Ext.Panel({
+				      id:'ArchivesHandleDisplayPanel',
+				      autoScroll : true,
+				      height:280,
+				      border:false,
+				      autoLoad:{url:__ctxPath+'/pages/archive/archivedetail.jsp?archiveId=${archives_archivesId}',nocache:true}
+				});
+				this.formPanel = new Ext.FormPanel({
+							layout : 'form',
+							bodyStyle : 'padding:10px 10px 10px 10px',
+							border : false,
+							url : __ctxPath + '/archive/saveArchivesHandle.do',
+							id : 'ArchivesHandleForm',
+							defaults : {
+								anchor : '98%,98%'
+							},
+							items : [{
+								   xtype:'hidden',
+								   name:'archiveId',
+								   value:'${archives_archivesId}'
+								},{
+								   xtype:'hidden',
+								   name:'handlerUserIds',
+								   value:'${signUserIds}'
+								},{
+								    xtype:'hidden',
+								    name:'cruArchDepId',
+								    value:'${cruArchDepId}'
+								},{
+								fieldLabel : '拟办意见',
+								name : 'handleOpinion',
+								xtype:'textarea'
+							    },{
+								fieldLabel : '0=初始化状态',
+								name : 'isPass',
+								xtype:'hidden',
+								value:1
+							    }
+							]
+						});
+				// 初始化功能按钮
+				this.buttons = [
+				            #set ($count=0)
+							#foreach ($v in $nextTrans)
+								#if($count>0)
+								,
+								#end
+								new Ext.Button({
+								   iconCls:'btn-transition',
+								   text:'转至[${v.destination}]',
+								   handler:this.save.createCallback(this.formPanel,this,'${v.name}','${v.source}')
+								})
+								#set ($count=$count+1)
+							#end
+				];
+			},// end of the initcomponents
+			/**
+			 * 保存记录
+			 */
+			save : function(formPanel, panel,signalName,activityName){
+				if (formPanel.getForm().isValid()) {
+					formPanel.getForm().submit({
+								method : 'POST',
+								waitMsg : '正在提交数据...',
+								success : function(fp, action) {
+									formPanel.getForm().submit({
+								            url:__ctxPath+ "/flow/nextProcessActivity.do",
+											method:'post',
+											params:{taskId:panel.taskId,signalName:signalName,activityName:activityName},
+											success : function(fp, action) {
+											    Ext.ux.Toast.msg('操作信息','成功保存！');
+											    AppUtil.removeTab('ProcessForm'+panel.taskId);
+												var myTaskView=Ext.getCmp("MyTaskGrid");
+												var appHomeTaskGrid=Ext.getCmp("appHomeTaskGrid");
+												if(appHomeTaskGrid!=null){
+													appHomeTaskGrid.getStore().reload();
+												}
+												if(myTaskView!=null){
+													//AppUtil.activateTab(taskView);
+													myTaskView.getStore().reload();
+												}
+											},
+											failure : function(fp, action) {
+												Ext.ux.Toast.msg('操作信息','操作出错，请联系管理员！');
+											}
+								    });
+									var gridPanel = Ext
+											.getCmp('ArchivesHandleGrid');
+									if (gridPanel != null) {
+										gridPanel.getStore().reload();
+									}
+								},
+								failure : function(fp, action) {
+									Ext.MessageBox.show({
+												title : '操作信息',
+												msg : '信息保存出错，请联系管理员！',
+												buttons : Ext.MessageBox.OK,
+												icon : Ext.MessageBox.ERROR
+											});
+									            AppUtil.removeTab('ProcessForm'+panel.taskId);
+												var myTaskView=Ext.getCmp("MyTaskGrid");
+												var appHomeTaskGrid=Ext.getCmp("appHomeTaskGrid");
+												if(appHomeTaskGrid!=null){
+													appHomeTaskGrid.getStore().reload();
+												}
+												if(myTaskView!=null){
+													//AppUtil.activateTab(taskView);
+													myTaskView.getStore().reload();
+												}
+								}
+							});
+				}
+			}// end of save
+		})

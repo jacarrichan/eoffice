@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="undertakeIds" label="处理人员" type="varchar" length="320" isShowed="false"/>
+	<field name="readerIds" label="阅读人员" type="varchar" length="320" isShowed="false"/>
+	<field name="signUserIds" label="阅读处理人员" type="varchar" length="320" isShowed="false"/>
+	<field name="cruArchDepId" label="部门签收" type="long" isShowed="false"/>
+	<field name="readFeedback" label="分发意见" type="varchar" length="320" isShowed="true"/>
+</fields>

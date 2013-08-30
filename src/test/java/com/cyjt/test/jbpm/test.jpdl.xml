@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<process name="testSign" xmlns="http://jbpm.org/4.0/jpdl">
+   <start g="165,20,48,48" name="start1">
+      <transition g="-47,-17" name="to 会签" to="会签"/>
+   </start>
+   <task g="144,129,92,52" name="会签">
+      <transition g="7,-14" name="to end1" to="end1"/>
+      <transition g="254,84;313,72;335,119:1,-9" name="to error1" to="error1"/>
+      <transition g="312,226:-65,-17" name="to cancel1" to="cancel1"/>
+   </task>
+   <end g="167,244,48,48" name="end1"/>
+   <end-cancel g="390,176,48,48" name="cancel1"/>
+   <end-error g="398,73,48,48" name="error1"/>
+</process>

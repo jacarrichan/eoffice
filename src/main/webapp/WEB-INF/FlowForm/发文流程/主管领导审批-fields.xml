@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="leaderRead.readId" label="primaryKey" type="long" isShowed="false" />
+    <field name="leaderRead.leaderOpinion" label="审批意见" type="varchar" length="1024"/>
+	<field name="archives.archivesId" label="所属公文ID" type="long" isShowed="false"/>
+</fields>

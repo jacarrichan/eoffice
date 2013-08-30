@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<process xmlns="http://jbpm.org/4.0/jpdl" name="pd5947566372721156386">
+	<start name="开始" g="229,27,53,63">
+		<transition name="流程启动" to="发文分发" g="-24,-16" />
+	</start>
+	<end name="归档" g="234,261,53,63" />
+	<task name="发文分发" g="211,136,93,70">
+		<transition name="分发" to="归档" g="-24,-16" />
+	</task>
+</process>

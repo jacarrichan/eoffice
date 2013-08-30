@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{font-family:Arial, Helvetica, sans-serif,"宋体"; font-size:12px; color:#696B6C; padding:0; margin:0 auto; background:#F2F9FF }
+div,p,ul,ol,li,h1,h2,h3,h4,h5,h6,table,tr,td,iframe,form,input,p,dl,dd,dt{font-family:"宋体";padding:0;margin:0;}
+table,td{border-collapse:collapse;}
+select,input{vertical-align:middle;}
+img{border:0;padding:0;margin:0;}
+ul,ol{list-style:none;}
+.copyright{ line-height:30px; color:#005DB1; float:right; width:500px;}
+/*--办公--*/
+.work_big_pic{ width:1004px; height:620px; background:url(../images/work_out_bj.jpg) no-repeat 0  0; margin:0 auto;}
+.work_table_out{ margin:0 auto; width:100%; padding-top:214px;}
+.work_table{ width:508px; height:268px; background:url(../images/work_table_bj.jpg) no-repeat 0 0; margin:0 auto; vertical-align:middle;}
+.work_form_table  td{ height:30px;}
+.work_form_table{ width:163px; height:150px; float:left; display:inline; margin-left:65px;}
+.body_out_work{ width:100%; height:100%; background:url(../images/work_big_bj.jpg)  repeat-x 0  0;}
+/*--母亲--*/
+.login_big_pic{ width:1004px; height:618px; background:url(../imgage/mom_bj.jpg) #EBF5FF no-repeat 0  0 ; margin: 0  auto;}
+.login_table_out{ margin:0 auto; width:100%; padding-top:211px;}
+.lgoin_table{ width:506px; height:268px; background:url(../imgage/mom_table_bj.jpg) no-repeat 0 0; margin:0 auto; vertical-align:middle;}
+.mar_left30{ padding-left:30px; float:left; padding-top:7px;}
+.login_img_show{ padding-left:10px; margin-bottom:2px; float:left;}
+.login_form_table  td{ height:28px;}
+.login_form_table{ width:163px; height:150px; float:left; display:inline;margin-left:50px;}
+.input1{ width:163px; height:20px; border:1px solid #71B2E8; line-height:20px; color:#333; }
+.input2{ width:65px; height:20px; border:1px solid #71B2E8; line-height:20px; color:#333; }
+.body_out_mom{ width:100%; height:100%; background:url(../imgage/mom_big_bj.jpg)  repeat-x 0  0;}

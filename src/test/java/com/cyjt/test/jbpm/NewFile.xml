@@ -1,0 +1,317 @@
+<drawing id="0">
+	<figures>
+		<start id="1" x="151" y="8" w="48" h="48" name="&#x5f00;&#x59cb;">
+			<a>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</start>
+		<end id="2" x="492" y="423" w="48" h="48" name="&#x7ed3;&#x675f;1">
+			<a>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</end>
+		<task id="3" name="&#x516c;&#x6587;&#x62df;&#x7a3f;" x="123" y="107"
+			w="101" h="39">
+			<a>
+				<text>
+					<string>&#x516c;&#x6587;&#x62df;&#x7a3f;</string>
+				</text>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</task>
+		<transition id="4" g="-24,-16" name="&#x51c6;&#x5907;">
+			<points>
+				<p colinear="true" x="174.6095238095238" y="56.6" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+				<p colinear="true" x="173.81904761904764" y="106.4" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="5">
+					<Owner>
+						<start ref="1" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="6">
+					<Owner>
+						<task ref="3" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip id="7" angle="0.35" innerRadius="11.3"
+						outerRadius="12" isFilled="true" isStroked="false" isSolid="true" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+		<fork id="8" x="150" y="204" w="48" h="48"
+			name="&#x540c;&#x6b65;&#x4efb;&#x52a1;">
+			<a>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</fork>
+		<transition id="9" g="-24,-16" name="&#x540c;&#x6b65;">
+			<points>
+				<p colinear="true" x="173.5990147783251" y="146.60000000000002"
+					c1x="0" c1y="0" c2x="0" c2y="0" />
+				<p colinear="true" x="173.87881773399016" y="203.4" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="a">
+					<Owner>
+						<task ref="3" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="b">
+					<Owner>
+						<fork ref="8" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip ref="7" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+		<task id="c" name="&#x5ba1;&#x6838;" x="301" y="166" w="108" h="41">
+			<a>
+				<text>
+					<string>&#x5ba1;&#x6838;</string>
+				</text>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</task>
+		<task id="d" name="&#x5370;&#x7ae0;&#x51c6;&#x5907;" x="305" y="282"
+			w="111" h="42">
+			<a>
+				<text>
+					<string>&#x5370;&#x7ae0;&#x51c6;&#x5907;</string>
+				</text>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</task>
+		<transition id="e" g="-24,-16" name="&#x4efb;&#x52a1;">
+			<points>
+				<p colinear="true" x="198.60000000000002" y="222.3596685082873"
+					c1x="0" c1y="0" c2x="0" c2y="0" />
+				<p colinear="true" x="300.4" y="199.01878453038674" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="f">
+					<Owner>
+						<fork ref="8" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="10">
+					<Owner>
+						<task ref="c" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip ref="7" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+		<transition id="11" g="-24,-16" name="&#x51c6;&#x5907;">
+			<points>
+				<p colinear="true" x="198.60000000000002" y="237.89276139410188"
+					c1x="0" c1y="0" c2x="0" c2y="0" />
+				<p colinear="true" x="306.78799999999995" y="281.4" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="12">
+					<Owner>
+						<fork ref="8" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="13">
+					<Owner>
+						<task ref="d" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip ref="7" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+		<join id="14" x="488" y="209" w="48" h="48"
+			name="&#x6c47;&#x96c6;&#x4efb;&#x52a1;">
+			<a>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</join>
+		<transition id="15" g="-24,-16" name="&#x63d0;&#x4ea4;">
+			<points>
+				<p colinear="true" x="409.59999999999997" y="202.67133757961784"
+					c1x="0" c1y="0" c2x="0" c2y="0" />
+				<p colinear="true" x="487.4" y="225.7140127388535" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="16">
+					<Owner>
+						<task ref="c" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="17">
+					<Owner>
+						<join ref="14" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip ref="7" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+		<transition id="18" g="-24,-16" name="&#x63d0;&#x4ea4;">
+			<points>
+				<p colinear="true" x="407.2485714285714" y="281.4" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+				<p colinear="true" x="487.4" y="244.36633663366337" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="19">
+					<Owner>
+						<task ref="d" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="1a">
+					<Owner>
+						<join ref="14" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip ref="7" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+		<task id="1b" name="&#x5b9a;&#x7a3f;" x="456" y="327" w="119" h="45">
+			<a>
+				<text>
+					<string>&#x5b9a;&#x7a3f;</string>
+				</text>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</task>
+		<transition id="1c" g="-24,-16" name="&#x63d0;&#x4ea4;">
+			<points>
+				<p colinear="true" x="512.7390557939914" y="257.6" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+				<p colinear="true" x="514.806008583691" y="326.4" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="1d">
+					<Owner>
+						<join ref="14" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="1e">
+					<Owner>
+						<task ref="1b" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip ref="7" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+		<transition id="1f" g="-24,-16" name="1">
+			<points>
+				<p colinear="true" x="515.6184615384616" y="372.59999999999997"
+					c1x="0" c1y="0" c2x="0" c2y="0" />
+				<p colinear="true" x="515.8738461538461" y="422.4" c1x="0" c1y="0"
+					c2x="0" c2y="0" />
+			</points>
+			<startConnector>
+				<rConnector id="20">
+					<Owner>
+						<task ref="1b" />
+					</Owner>
+				</rConnector>
+			</startConnector>
+			<endConnector>
+				<rConnector id="21">
+					<Owner>
+						<end ref="2" />
+					</Owner>
+				</rConnector>
+			</endConnector>
+			<a>
+				<endDecoration>
+					<arrowTip ref="7" />
+				</endDecoration>
+				<strokeColor>
+					<color rgba="#ff000000" />
+				</strokeColor>
+			</a>
+		</transition>
+	</figures>
+</drawing>

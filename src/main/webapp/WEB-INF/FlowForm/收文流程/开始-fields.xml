@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="archives.archivesId" label="primaryKey" type="long" isShowed="false" />
+    <field name="cruArchDepId" label="部门签收" type="long" isShowed="false"/>
+    <field name="signUserIds" label="流程人员" type="varchar" isShowed="false" />
+    <field name="archives.archivesNo" label="发文字号" type="varchar" length="320"/>
+    <field name="archives.subject" label="文件标题" type="varchar" length="320"/>
+    <field name="archives.issueDep" label="发文部门" type="varchar" length="320"/>
+	<field name="archives.shortContent" label="内容简介" type="varchar" length="512"/>
+	<field name="archives.createtime" label="创建日期" type="date" length="20"/>
+</fields>

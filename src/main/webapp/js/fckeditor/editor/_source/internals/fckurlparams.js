@@ -1,0 +1,1 @@
+var FCKURLParams=new Object();(function(){var d=document.location.search.substr(1).split("&");for(var c=0;c<d.length;c++){var e=d[c].split("=");var b=decodeURIComponent(e[0]);var a=decodeURIComponent(e[1]);FCKURLParams[b]=a;}})();

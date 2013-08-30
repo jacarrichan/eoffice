@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<field name="archives.archivesId" label="primaryKey" type="long" isShowed="false" />
+    <field name="distributeOpinion" label="分发意见" type="varchar" length="1024"/>
+</fields>

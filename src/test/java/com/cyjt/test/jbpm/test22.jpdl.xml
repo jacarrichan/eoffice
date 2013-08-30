@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<process name="pd5488030096391804075">
+	<task name="任务1" g="199,186,50,50">
+		<transition name="连线2" to="结束1" g="-24,-16" />
+	</task>
+	<end name="结束1" g="212,326,58,58" />
+	<start name="开始" g="194,58,58,58">
+		<transition name="连线1" to="任务1" g="-24,-16" />
+	</start>
+</process>

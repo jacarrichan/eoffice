@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process name="ArchivesRecFlow" xmlns="http://jbpm.org/4.0/jpdl">
+   <start g="121,49,48,48" name="开始">
+      <transition g="-71,-17" name="提交拟办" to="登记拟办"/>
+   </start>
+   <task g="98,159,92,52" name="登记拟办">
+      <transition g="-71,-17" name="提交领导批示" to="领导批示"/>
+   </task>
+   <task g="99,261,92,52" name="领导批示">
+      <transition g="-71,-17" name="提交公文分发" to="公文分发"/>
+   </task>
+   <task g="328,262,92,52" name="公文分发">
+      <transition g="-71,-17" name="提交承办传阅" to="承办传阅"/>
+   </task>
+   <task g="328,151,92,52" name="承办传阅">
+      <transition g="-47,-17" name="结束" to="结束"/>
+   </task>
+   <end g="349,53,48,48" name="结束"/>
+</process>

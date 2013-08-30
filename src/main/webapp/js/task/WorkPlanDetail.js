@@ -1,0 +1,1 @@
+var WorkPlanDetail=function(c,a){var b=new Ext.Window({title:a+"--详细信息",iconCls:"menu-planmanage",autoHeight:true,x:280,y:100,modal:true,width:600,layout:"form",buttonAlign:"center",autoLoad:{url:__ctxPath+"/task/showWorkPlan.do?planId="+c},buttons:[{text:"关闭",iconCls:"btn-cancel",handler:function(){b.close();}}]});b.show();};

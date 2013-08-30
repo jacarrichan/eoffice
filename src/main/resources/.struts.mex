@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="system" location="0,0" size="0,0">
+    <action name="fileAttachDetail" location="0,0" size="0,0">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="fileUploadImageDetailView.jsp" />
+      </result>
+    </action>
+    <action name="*AppUser" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="grantXmlAppRole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*AppRole" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Department" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*FileAttach" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Company" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Diary" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="check" />
+      <result name="display" />
+    </action>
+    <action name="*ReportTemplate" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ReportParam" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Region" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*UserSub" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*SysConfig" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Dictionary" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*IndexDisplay" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*SystemLog" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*GlobalType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*OutMailSet" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="communicate" location="0,0" size="0,0">
+    <action name="*PhoneGroup" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*PhoneBook" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="detail" />
+    </action>
+    <action name="*MailFolder" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Mail" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="detail" />
+      <result name="display" />
+    </action>
+    <action name="*OutMailUserSeting" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*OutMailFolder_" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*OutMail_" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="detail" />
+    </action>
+  </package>
+  <package name="info" location="0,0" size="0,0">
+    <action name="*News" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="display" />
+      <result name="image" />
+    </action>
+    <action name="*NewsType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Notice" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="display" />
+      <result name="scroller" />
+    </action>
+    <action name="*ShortMessage" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*InMessage" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="display" />
+      <result name="detail" />
+    </action>
+    <action name="*NewsComment" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*AppTips" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*SuggestBox" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="document" location="0,0" size="0,0">
+    <action name="*DocFolder" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Document" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="detail" />
+      <result name="publicDetail" />
+      <result name="display" />
+    </action>
+    <action name="*DocPrivilege" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*PaintTemplate" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Seal" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="flow" location="0,0" size="0,0">
+    <action name="*ProType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ProDefinition" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ProUserAssign" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ProcessActivity" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ProcessRun" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*FormDef" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Task" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="display" />
+    </action>
+    <action name="processRunDetail" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="processDetail" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="admin" location="0,0" size="0,0">
+    <action name="*ConfPrivilege" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*BoardRoo" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*BoardType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Conference" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="display" />
+      <result name="displayApply" />
+    </action>
+    <action name="conferenceDetail" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ConfSummary" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="display" />
+    </action>
+    <action name="confSummaryDetail" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*OfficeGoods" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*GoodsApply" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*InStock" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*OfficeGoodsType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Book" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*BookType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*BookSn" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*BookBorRet" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Car" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*CartRepair" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*CarApply" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*AssetsType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*DepreType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*FixedAssets" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*DepreRecord" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="customer" location="0,0" size="0,0">
+    <action name="*Customer" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*CusLinkman" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*CusConnection" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Project" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Contract" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ContractConfig" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Provider" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Product" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="send" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="loadVm" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="task" location="0,0" size="0,0">
+    <action name="*Appointment" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="display" />
+    </action>
+    <action name="*CalendarPlan" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="display" />
+    </action>
+    <action name="*PlanType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*WorkPlan" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="show" />
+      <result name="display" />
+      <result name="displayDep" />
+    </action>
+  </package>
+  <package name="personal" location="0,0" size="0,0">
+    <action name="*HolidayRecord" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*DutySection" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*DutySystem" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Duty" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*DutyRegister" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ErrandsRegister" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="archive" location="0,0" size="0,0">
+    <action name="*ArchivesType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchTemplate" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*Archives" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchivesDep" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchivesDoc" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*DocHistory" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchRecType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchivesHandle" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*LeaderRead" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchDispatch" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchivesAttend" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchFlowConf" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchRecUser" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="hrm" location="0,0" size="0,0">
+    <action name="*StandSalaryItem" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*UserContract" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ContractEvent" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*SalaryItem" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*StandSalary" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*HireIssue" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="load" />
+    </action>
+    <action name="*Resume" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*JobChange" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="load" />
+    </action>
+    <action name="*Job" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*EmpProfile" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*SalaryPayoff" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="arch" location="0,0" size="0,0">
+    <action name="*ArchFond" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchRoll" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*RollFile" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*RollFileList" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*BorrowFileList" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*BorrowRecord" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchType" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*ArchReport" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="default" location="0,0" size="0,0">
+    <action name="defaultAction" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="mobile" location="0,0" size="0,0">
+    <action name="signIn" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="input" />
+    </action>
+    <action name="index" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="*MobileTask" location="0,0" size="0,0">
+      <result name="success" />
+      <result name="next" />
+      <result name="start" />
+      <result name="list" />
+    </action>
+    <action name="*MobileProDef" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="/" location="0,0" size="0,0">
+    <action name="login" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="modelsMenu" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="itemsMenu" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="panelTreeMenu" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="check" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+    <action name="fileDetail" location="0,0" size="0,0">
+      <result name="success" />
+    </action>
+  </package>
+  <webResource name="fileUploadImageDetailView.jsp" path="/pages/system/fileUploadImageDetailView.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+

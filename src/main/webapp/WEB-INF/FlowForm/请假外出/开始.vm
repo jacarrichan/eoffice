@@ -1,0 +1,63 @@
+Ext.MyForm=Ext.extend(Ext.form.FormPanel ,{
+	title:"表单面板",
+	labelWidth:100,
+	labelAlign:"left",
+	layout:"form",
+	width:400,
+	height:350,
+	padding:"10px",
+	initComponent: function(){
+		this.items=[
+			{
+							fieldLabel : '事项描述',
+							xtype:'textarea',
+							name : 'errandsRegister.descp',
+							allowBlank : false,
+							id : 'descp',
+							anchor:"100%",
+							height:180
+						},
+			{
+				fieldLabel:'开始时间',
+				name : 'errandsRegister.startTime',
+							xtype:'datetimefield',
+							format:'Y-m-d H:i:s',
+							allowBlank : false,				
+							anchor:"100%"
+			},
+			{
+				fieldLabel : '结束时间',
+							name : 'errandsRegister.endTime',
+							xtype:'datetimefield',
+							format:'Y-m-d H:i:s',
+							allowBlank : false,
+							id : 'endTime',
+							anchor:"100%"
+            },
+            {
+            	name:'errandsRegister.approvalId',
+            	xtype:'hidden',
+            	value:curUserInfo.userId
+            },
+			{
+				name:'errandsRegister.approvalName',
+				xtype:"textfield",
+				value:curUserInfo.fullname,
+				anchor:"100%"
+			}
+		]
+		Ext.MyForm.superclass.initComponent.call(this);
+	},
+	save:function(){
+		var formPanel=this;
+		if(formPanel.getForm().isValid()){
+			formPanel.getForm().submit({
+				url : __ctxPath + '/personal/saveErrandsRegister.do',
+				success:function(action,option){
+					return true;
+				}
+			});
+		}
+		return true;
+	}
+})

@@ -1,0 +1,38 @@
+MyPanel=Ext.extend(Ext.form.FormPanel,{
+	constructor:function(){
+		var textOptions=new Ext.form.TextArea({
+					fieldLabel:'审批意见',
+					xtype:'textarea',
+					height:140,
+					name:'superOption',
+					allowBlank:false,
+					anchor:'90%',
+                    value:''
+		});
+		MyPanel.superclass.constructor.call(this,{
+			id:'MyPanelDD',
+			title:'上级审批',
+			bodyStyle:'padding:5px',
+			height:230,
+			width:480,
+			items:[
+				{
+					fieldLabel:'快速回复',
+					xtype:'combo',
+					mode : 'local',
+					editable : false,
+					anchor:'90%,90%',
+					triggerAction : 'all',
+					store :['同意','不同意','太多工作要进行，目前不同意请假'],
+					listeners:
+						{
+							'select':function(field,record,index){ 
+								textOptions.setValue(field.getValue());
+							}
+						}
+				},
+				textOptions
+			]
+		});
+	}
+})

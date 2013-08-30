@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process key="ReqHolidayOut" name="ReqHolidayOutFlow" xmlns="http://jbpm.org/4.0/jpdl">
+   <start g="138,35,48,48" name="开始">
+      <transition g="-71,-17" name="提交申请" to="上级审批"/>
+   </start>
+   <task g="117,135,92,52" name="上级审批">
+      <transition g="-90,-14" name="通过审批" to="申请人查看结果">
+	      <event-listener class="com.cyjt.oa.workflow.event.HolidayApprovalListener">
+	        <field name="choice"><short value="1"/></field>
+	      </event-listener>
+      </transition>
+      <transition g="-47,-17" name="驳回请求" to="取消">
+      	<event-listener class="com.cyjt.oa.workflow.event.HolidayApprovalListener">
+	        <field name="choice"><short value="2"/></field>
+	      </event-listener>
+      </transition>
+   </task>
+   <task g="102,241,120,52" name="申请人查看结果">
+      <transition g="-47,-17" name="结束" to="结束"/>
+   </task>
+   <end-cancel g="317,136,48,48" name="取消"/>
+   <end g="139,361,48,48" name="结束"/>
+</process>

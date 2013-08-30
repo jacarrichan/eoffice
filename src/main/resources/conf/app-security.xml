@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd   
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd
+						http://www.springframework.org/schema/mvc  http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+	<security:http auto-config="true" access-denied-page="/403.jsp"
+		lowercase-comparisons="true" access-decision-manager-ref="accessDecisionManager">
+		<security:intercept-url pattern="/images/**" filters="none" />
+		<security:intercept-url pattern="/css/**" filters="none" />
+		<security:intercept-url pattern="/js/**" filters="none" />
+		<security:intercept-url pattern="/403*" filters="none" />
+		<security:intercept-url pattern="/404*" filters="none" />
+		<security:intercept-url pattern="/500*" filters="none" />
+		<security:intercept-url pattern="/ext3/**" filters="none" />
+		<security:intercept-url pattern="/fckeditor/**" filters="none" />
+		<security:intercept-url pattern="/info/*SuggestBox.do" filters="none" />
+		<security:form-login default-target-url="/index.jsp"
+			login-page="/login.jsp" authentication-failure-url="/login.jsp?error=true"
+			login-processing-url="/j_security_check" />
+		<security:logout logout-url="/j_logout.do" logout-success-url="/login.jsp" />
+		<security:remember-me key="RememberAppUser" />
+		<security:custom-filter ref="securityInterceptorFilter" after="FILTER_SECURITY_INTERCEPTOR" />
+	</security:http>
+
+	<bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="allowIfAllAbstainDecisions" value="false" />
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.access.vote.RoleVoter">
+					<property name="rolePrefix" value="" />
+				</bean>
+				<bean class="org.springframework.security.access.vote.AuthenticatedVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider
+			user-service-ref="appUserDao">
+			<security:password-encoder hash="sha-256"
+				base64="true" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<security:global-method-security
+		pre-post-annotations="enabled">
+	</security:global-method-security>
+
+
+	<bean id="securityInterceptorFilter" class="com.cyjt.core.web.filter.SecurityInterceptorFilter">
+		<property name="securityDataSource" ref="securityDataSource" />
+	</bean>
+
+	<bean id="securityDataSource" class="com.cyjt.core.security.SecurityDataSource">
+		<property name="appRoleService" ref="appRoleService" />
+		<property name="anonymousUrls">
+			<set>
+				<value>/login.do</value>
+				<value>/check.do</value>
+				<value>/mobile/signIn.do</value>
+				<value>/info/suggest.do</value>
+			</set>
+		</property>
+		<!-- 公共URL 每个角色都会分配到这些权限 -->
+		<property name="publicUrls">
+			<set>
+				<value>/panelTreeMenu.do</value>
+				<value>/file-upload</value>
+				<value>/index.jsp</value>
+				<value>/communicate/listPhoneBook.do</value>
+				<value>/communicate/listPhoneGroup.do</value>
+				<value>/communicate/savePhoneGroup.do</value>
+				<value>/communicate/multiDelPhoneGroup.do</value>
+				<value>/communicate/movePhoneGroup.do</value>
+				<value>/communicate/savePhoneBook.do</value>
+				<value>/communicate/getPhoneBook.do</value>
+				<value>/communicate/sharePhoneBook.do</value>
+				<value>/communicate/detailPhoneBook.do</value>
+				<value>/communicate/saveMailFolder.do</value>
+				<value>/communicate/getMailFolder.do</value>
+				<value>/communicate/saveMail.do</value>
+				<value>/communicate/getMail.do</value>
+				<value>/communicate/optMail.do</value>
+				<value>/communicate/attachMail.do</value>
+				<value>/communicate/listMail.do</value>
+				<value>/communicate/multiDelMail.do</value>
+				<value>/communicate/moveMail.do</value>
+				<value>/communicate/listMailFolder.do</value>
+				<value>/communicate/removeMailFolder.do</value>
+				<value>/communicate/searchMail.do</value>
+
+				<value>/communicate/displayMail.do</value>
+				<value>/communicate/getOutMailUserSeting.do</value>
+				<value>/communicate/listOutMail_.do</value>
+				<value>/communicate/listOutMailFolder_.do</value>
+				<value>/communicate/optOutMail_.do</value>
+				<value>/communicate/saveOutMailUserSeting.do</value>
+				<value>/communicate/getOutMail_.do</value>
+				<value>/communicate/saveOutMail_.do</value>
+
+				<value>/info/detailInMessage.do</value>
+				<value>/info/sendShortMessage.do</value>
+				<value>/info/listShortMessage.do</value>
+				<value>/info/listInMessage.do</value>
+				<value>/info/replyInMessage.do</value>
+				<value>/info/knowInMessage.do</value>
+				<value>/info/multiRemoveInMessage.do</value>
+				<value>/info/readInMessage.do</value>
+				<value>/info/countInMessage.do</value>
+				<value>/info/showNotice.do</value>
+				<value>/info/showNews.do</value>
+				<value>/info/showShortMessage.do</value>
+				<value>/info/listNews.do</value>
+				<value>/info/getNews.do</value>
+				<value>/info/listNotice.do</value>
+				<value>/info/getNotice.do</value>
+				<value>/info/searchNotice.do</value>
+				<value>/info/searchNews.do</value>
+				<value>/info/listNewsComment.do</value>
+				<value>/info/saveNewsComment.do</value>
+
+				<value>/document/saveDocFolder.do</value>
+				<value>/document/moveDocFolder.do</value>
+				<value>/document/getDocFolder.do</value>
+				<value>/document/selectDocFolder.do</value>
+				<value>/document/listDocFolder.do</value>
+				<value>/document/saveDocument.do</value>
+				<value>/document/getDocument.do</value>
+				<value>/document/shareDocument.do</value>
+				<value>/document/removeDocFolder</value>
+				<value>/document/listDocument.do</value>
+				<value>/document/shareListDocument.do</value>
+				<value>/document/detailDocument.do</value>
+				<value>/document/treeDocFolder.do</value>
+				<value>/document/publicListDocument.do</value>
+				<value>/document/rightDocument.do</value>
+				<value>/document/publicDetailDocument.do</value>
+				<value>/document/saveDocument.do</value>
+				<value>/document/searchDocument.do</value>
+
+				<value>/task/saveAppointment.do</value>
+				<value>/task/getAppointment.do</value>
+				<value>/task/listAppointment.do</value>
+				<value>/task/multiDelAppointment.do</value>
+				<value>/task/saveCalendarPlan.do</value>
+				<value>/task/getCalendarPlan.do</value>
+				<value>/task/listCalendarPlan.do</value>
+				<value>/task/multiDelCalendarPlan.do</value>
+				<value>/task/todayCalendarPlan.do</value>
+				<value>/task/myCalendarPlan.do</value>
+				<value>/task/showCalendarPlan.do</value>
+				<value>/task/showAppointment.do</value>
+				<value>/task/listWorkPlan.do</value>
+				<value>/task/comboPlanType.do</value>
+				<value>/task/saveWorkPlan.do</value>
+				<value>/task/getWorkPlan.do</value>
+				<value>/task/multiDelWorkPlan.do</value>
+				<value>/task/personalWorkPlan.do</value>
+				<value>/task/departmentWorkPlan.do</value>
+				<value>/task/showWorkPlan.do</value>
+
+				<value>/fileDetail.do</value>
+				<value>/personal/todayDutyRegister.do</value>
+				<value>/personal/listErrandsRegister.do</value>
+				<value>/personal/signInDutyRegister.do</value>
+				<value>/personal/signOffDutyRegister.do</value>
+				<value>/personal/multiDelErrandsRegister.do</value>
+				<value>/personal/saveErrandsRegister.do</value>
+				<value>/personal/getErrandsRegister.do</value>
+				<value>/personal/personDutyRegister.do</value>
+				<value>/hrm/personalSalaryPayoff.do</value>
+
+				<value>/system/listDiary.do</value>
+				<value>/system/multiDelDiary.do</value>
+				<value>/system/saveDiary.do</value>
+				<value>/system/getDiary.do</value>
+				<value>/system/treeAppRole.do</value>
+				<value>/system/listDepartment.do</value>
+				<value>/system/treeAppRole.do</value>
+				<value>/system/getCurrentAppUser.do</value>
+				<value>/system/onlineAppUser.do</value>
+				<value>/system/multiDelFileAttach.do</value>
+				<value>/system/treeRegion.do</value>
+				<value>/system/subAdepartmentAppUser.do</value>
+				<value>/system/subAroleAppUser.do</value>
+				<value>/system/onlineAsubAppUser.do</value>
+				<value>/system/listUserSub.do</value>
+				<value>/system/multiDelUserSub.do</value>
+				<value>/system/saveUserSub.do</value>
+				<value>/system/subUserDiary.do</value>
+				<value>/system/comboUserSub.do</value>
+				<value>/system/getAppUser.do</value>
+				<value>/system/selectAppUser.do</value>
+				<value>/system/upUserAppUser.do</value>
+				<value>/system/resetPasswordAppUser.do</value>
+				<value>/system/saveAppUser.do</value>
+				<value>/system/getAppUser.do</value>
+				<value>/system/checkDiary.do</value>
+				<value>/system/selectDepartment.do</value>
+				<value>/system/listAppRole.do</value>
+				<value>/system/loadDictionary.do</value>
+				<value>/system/agentAppUser.do</value>
+				<value>/system/unAgentAppUser.do</value>
+				<value>/system/saveAgentAppUser.do</value>
+				<value>/system/profileAppUser.do</value>
+
+				<value>/flow/processImage.do</value>
+				<value>/flow/listTask.do</value>
+				<value>/flow/listProcessRun.do</value>
+				<value>/flow/processRunDetail.do</value>
+				<value>/flow/multiDelProcessRun.do</value>
+				<value>/flow/transProcessActivity.do</value>
+				<value>/flow/listProDefinition.do</value>
+				<value>/flow/nextProcessActivity.do</value>
+				<value>/flow/changeTask.do</value>
+				<value>/flow/rootProType.do</value>
+				<value>/flow/saveProcessActivity.do</value>
+				<value>/flow/startProcessActivity.do</value>
+				<value>/flow/getProcessActivity.do</value>
+				<value>/flow/lockTask.do</value>
+				<value>/flow/processDetail.do</value>
+				<value>/flow/unlockTask.do</value>
+				<value>/flow/checkTask.do</value>
+				<value>/flow/freeTransProcessActivity.do</value>
+				<value>/flow/myProcessRun.do</value>
+
+				<value>/archive/saveArchives.do</value>
+				<value>/archive/saveArchivesHandle.do</value>
+				<value>/archive/saveLeaderRead.do</value>
+				<value>/archive/saveArchDispatch.do</value>
+				<value>/archive/comboArchRecType.do</value>
+				<value>/archive/comboArchivesType.do</value>
+				<value>/archive/saveIssueArchives.do</value>
+				<value>/archive/listArchTemplate.do</value>
+				<value>/archive/treeArchivesType.do</value>
+				<value>/archive/saveArchivesDoc.do</value>
+				<value>/archive/listArchTemplate.do</value>
+				<value>/archive/saveArchTemplate.do</value>
+				<value>/archive/getArchTemplate.do</value>
+				<value>/archive/saveDepLeaderRead.do</value>
+				<value>/archive/saveArchivesAttend.do</value>
+				<value>/archive/handOutArchives.do</value>
+				<value>/archive/listArchivesDoc.do</value>
+				<value>/archive/getIssueArchives.do</value>
+				<value>/archive/getArchivesDoc.do</value>
+				<value>/archive/listDocHistory.do</value>
+				<value>/archive/copyArchivesDoc.do</value>
+				<value>/archive/multiDelArchivesDoc.do</value>
+
+				<value>/system/displayDiary.do</value>
+				<value>/info/displayNews.do</value>
+				<value>/info/displayInMessage.do</value>
+				<value>/info/displayNotice.do</value>
+				<value>/flow/displayTask.do</value>
+				<value>/info/imageNews.do</value>
+				<value>/info/scrollerNotice.do</value>
+				<value>/task/displayAppointment.do</value>
+				<value>/task/displayCalendarPlan.do</value>
+				<value>/task/displayWorkPlan.do</value>
+				<value>/system/saveIndexDisplay.do</value>
+				<value>/document/displayDocument.do</value>
+
+				<value>/task/displayDepWorkPlan.do</value>
+				<value>/admin/checkGoodsApply.do</value>
+				<value>/admin/checkCarApply.do</value>
+
+				<value>/info/listAppTips.do</value>
+				<value>/info/saveAppTips.do</value>
+				<value>/info/multiDelAppTips.do</value>
+				<value>/admin/scanRegulation.do</value>
+			</set>
+		</property>
+	</bean>
+</beans>
