@@ -4,9 +4,9 @@
 %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.hrm.StandSalaryService"%>
-<%@page import="com.cyjt.oa.model.hrm.StandSalary"%><table class="table-info" cellpadding="0" cellspacing="1" width="98%" align="center">
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.hrm.StandSalaryService"%>
+<%@page import="com.palmelf.eoffice.model.hrm.StandSalary"%><table class="table-info" cellpadding="0" cellspacing="1" width="98%" align="center">
 	
 <%
 	String standardId = request.getParameter("standardId");

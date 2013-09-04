@@ -52,11 +52,11 @@
 	</security:global-method-security>
 
 
-	<bean id="securityInterceptorFilter" class="com.cyjt.core.web.filter.SecurityInterceptorFilter">
+	<bean id="securityInterceptorFilter" class="com.palmelf.core.web.filter.SecurityInterceptorFilter">
 		<property name="securityDataSource" ref="securityDataSource" />
 	</bean>
 
-	<bean id="securityDataSource" class="com.cyjt.core.security.SecurityDataSource">
+	<bean id="securityDataSource" class="com.palmelf.core.security.SecurityDataSource">
 		<property name="appRoleService" ref="appRoleService" />
 		<property name="anonymousUrls">
 			<set>

@@ -4,7 +4,7 @@ FlowDesignerWindow = Ext
 				{
 					constructor : function(c) {
 						Ext.applyIf(this, c);
-						var d = '<APPLET codebase="." id="processEditor" ARCHIVE="' + __ctxPath + '/js/flowDesign/workflow.jar" ' + 'code="com.cyjt.jbpm.designer.ProcessApplet.class" width="100%" height="100%"></APPLET>';
+						var d = '<APPLET codebase="." id="processEditor" ARCHIVE="' + __ctxPath + '/js/flowDesign/workflow.jar" ' + 'code="com.palmelf.jbpm.designer.ProcessApplet.class" width="100%" height="100%"></APPLET>';
 						var b = new Ext.Panel( {
 							columnWidth : 0.79,
 							height : 485,

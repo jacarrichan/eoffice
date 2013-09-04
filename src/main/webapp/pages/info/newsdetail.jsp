@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.info.NewsService"%>
-<%@page import="com.cyjt.oa.service.info.impl.NewsServiceImpl"%>
-<%@page import="com.cyjt.core.web.paging.PagingBean"%>
-<%@page import="com.cyjt.oa.model.info.News"%>
-<%@page import="com.cyjt.oa.model.info.NewsType"%>
-<%@page import="com.cyjt.oa.service.info.NewsTypeService"%>
-<%@page import="com.cyjt.core.command.QueryFilter"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.NewsService"%>
+<%@page import="com.palmelf.eoffice.service.info.impl.NewsServiceImpl"%>
+<%@page import="com.palmelf.core.web.paging.PagingBean"%>
+<%@page import="com.palmelf.eoffice.model.info.News"%>
+<%@page import="com.palmelf.eoffice.model.info.NewsType"%>
+<%@page import="com.palmelf.NewsTypeService"%>
+<%@page import="com.palmelf.core.command.QueryFilter"%>
 <%@page import="java.util.List"%>
 <%
 	Long newsId = null;

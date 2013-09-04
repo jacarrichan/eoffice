@@ -4,10 +4,10 @@
 %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="com.cyjt.core.util.AppUtil"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
 
-<%@page import="com.cyjt.oa.service.hrm.SalaryPayoffService"%>
-<%@page import="com.cyjt.oa.model.hrm.SalaryPayoff"%>
+<%@page import="com.palmelf.eoffice.service.hrm.SalaryPayoffService"%>
+<%@page import="com.palmelf.eoffice.model.hrm.SalaryPayoff"%>
 <%
 	String recordId = request.getParameter("recordId");
 	SalaryPayoffService salaryPayoffService = (SalaryPayoffService)AppUtil.getBean("salaryPayoffService");

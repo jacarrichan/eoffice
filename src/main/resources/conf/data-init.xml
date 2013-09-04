@@ -4,7 +4,7 @@
 -->
 <set>
 	<!--
-	<model class="com.cyjt.oa.model.system.ReportTemplate" primary-key="reportId" key-type="java.lang.Long"  service="reportTemplateService" 
+	<model class="com.palmelf.eoffice.model.system.ReportTemplate" primary-key="reportId" key-type="java.lang.Long"  service="reportTemplateService" 
 		description="部门考勤统计模板">
 		<property name="title"     		type="java.lang.String"	value="部门考勤情况"/>
 		<property name="descp" 			type="java.lang.String"	value="部门考勤统计"/>
@@ -14,7 +14,7 @@
 		<property name="isDefaultIn"	type="java.lang.Short" 	value="1" />
 		<property name="reportKey"		type="java.lang.String" value="dutyReport" />
 		<set>
-			<model class="com.cyjt.oa.model.system.ReportParam" service="reportParamService" 
+			<model class="com.palmelf.eoffice.model.system.ReportParam" service="reportParamService" 
 				description="	报表参数1">
 				<property name="reportId" 		type="java.lang.Long" 	foreign-key="true"/>
 				<property name="paramName" 		type="java.lang.String" value="部门"/>
@@ -23,7 +23,7 @@
 				<property name="sn" 			type="java.lang.Integer" value="1"/>
 				<property name="paramTypeStr" 	type="java.lang.String" value="{'fieldLabel':'缺省值','name':'reportParam.defaultVal','id':'defaultVal','xtype':'textfield','allowBlank':true}"/>
 			</model>
-			<model class="com.cyjt.oa.model.system.ReportParam" service="reportParamService" 
+			<model class="com.palmelf.eoffice.model.system.ReportParam" service="reportParamService" 
 				description="	报表参数2">
 				<property name="reportId" 		type="java.lang.Long" 	foreign-key="true"/>
 				<property name="paramName" 		type="java.lang.String" value="  时间  从"/>
@@ -32,7 +32,7 @@
 				<property name="sn" 			type="java.lang.Integer" value="2"/>
 				<property name="paramTypeStr" 	type="java.lang.String" value="{'fieldLabel':'缺省值','name':'reportParam.defaultVal','id':'defaultVal','xtype':'datefield','format':'Y-m-d','allowBlank':true}"/>
 			</model>
-			<model class="com.cyjt.oa.model.system.ReportParam" service="reportParamService" 
+			<model class="com.palmelf.eoffice.model.system.ReportParam" service="reportParamService" 
 				description="	报表参数3">
 				<property name="reportId" 		type="java.lang.Long" 	foreign-key="true"/>
 				<property name="paramName" 		type="java.lang.String" value="  到"/>
@@ -43,7 +43,7 @@
 			</model>
 		</set>
 	</model>
-	<model class="com.cyjt.oa.model.system.ReportTemplate" primary-key="reportId" key-type="java.lang.Long"  service="reportTemplateService" 
+	<model class="com.palmelf.eoffice.model.system.ReportTemplate" primary-key="reportId" key-type="java.lang.Long"  service="reportTemplateService" 
 		description="员工考勤统计">
 		<property name="title"     		type="java.lang.String"	value="员工考勤情况"/>
 		<property name="descp" 			type="java.lang.String"	value="员工考勤统计"/>
@@ -53,7 +53,7 @@
 		<property name="isDefaultIn"	type="java.lang.Short" 	value="1" />
 		<property name="reportKey"		type="java.lang.String" value="userDutyReport" />
 		<set>
-			<model class="com.cyjt.oa.model.system.ReportParam" service="reportParamService" 
+			<model class="com.palmelf.eoffice.model.system.ReportParam" service="reportParamService" 
 				description="	员工考勤统计参数1">
 				<property name="reportId" 		type="java.lang.Long" 	foreign-key="true"/>
 				<property name="paramName" 		type="java.lang.String" value="姓名"/>
@@ -62,7 +62,7 @@
 				<property name="sn" 			type="java.lang.Integer" value="1"/>
 				<property name="paramTypeStr" 	type="java.lang.String" value="{'fieldLabel':'缺省值','name':'reportParam.defaultVal','id':'defaultVal','xtype':'textfield','allowBlank':true}"/>
 			</model>
-			<model class="com.cyjt.oa.model.system.ReportParam" service="reportParamService" 
+			<model class="com.palmelf.eoffice.model.system.ReportParam" service="reportParamService" 
 				description="	员工考勤统计参数2">
 				<property name="reportId" 		type="java.lang.Long" 	foreign-key="true"/>
 				<property name="paramName" 		type="java.lang.String" value="  时间  从"/>
@@ -71,7 +71,7 @@
 				<property name="sn" 			type="java.lang.Integer" value="2"/>
 				<property name="paramTypeStr" 	type="java.lang.String" value="{'fieldLabel':'缺省值','name':'reportParam.defaultVal','id':'defaultVal','xtype':'datefield','format':'Y-m-d','allowBlank':true}"/>
 			</model>
-			<model class="com.cyjt.oa.model.system.ReportParam" service="reportParamService" 
+			<model class="com.palmelf.eoffice.model.system.ReportParam" service="reportParamService" 
 				description="	员工考勤统计参数3">
 				<property name="reportId" 		type="java.lang.Long" 	foreign-key="true"/>
 				<property name="paramName" 		type="java.lang.String" value="  到"/>
@@ -85,7 +85,7 @@
 	
 	-->
 	<!-- XuXuebin Add 2011-8-20 16:25:25 系统配置信息 -->
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="host"/>
 		<property name="configName"	type="java.lang.String" 	value="主机Host"/>
 		<property name="configDesc"	type="java.lang.String" 	value="主机IP"/>
@@ -95,7 +95,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="mailConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="username"/>
 		<property name="configName"	type="java.lang.String" 	value="用户名"/>
 		<property name="configDesc"	type="java.lang.String" 	value="邮件发送的邮箱用户名"/>
@@ -105,7 +105,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="mailConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="password"/>
 		<property name="configName"	type="java.lang.String" 	value="密码"/>
 		<property name="configDesc"	type="java.lang.String" 	value="邮件发送的邮箱密码"/>
@@ -115,7 +115,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="mailConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="from"/>
 		<property name="configName"	type="java.lang.String" 	value="来自"/>
 		<property name="configDesc"	type="java.lang.String" 	value="发送人的邮箱或用户名"/>
@@ -125,7 +125,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="mailConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="goodsStockUser"/>
 		<property name="configName"	type="java.lang.String" 	value="用户帐号"/>
 		<property name="configDesc"	type="java.lang.String" 	value="当库存产生警报时，接收消息的人员"/>
@@ -135,7 +135,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="adminConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="codeConfig"/>
 		<property name="configName"	type="java.lang.String" 	value="验证码"/>
 		<property name="configDesc"	type="java.lang.String" 	value="登录时是否需要验证码"/>
@@ -145,7 +145,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="codeConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="suggestId"/>
 		<property name="configName"	type="java.lang.String" 	value="意见接收人ID"/>
 		<property name="configDesc"	type="java.lang.String" 	value="意见接收人ID"/>
@@ -155,7 +155,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="suggestConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="suggestName"/>
 		<property name="configName"	type="java.lang.String" 	value="意见接收人"/>
 		<property name="configDesc"	type="java.lang.String" 	value="意见接收人"/>
@@ -165,7 +165,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="suggestConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="commentConfig"/>
 		<property name="configName"	type="java.lang.String" 	value="新闻评论配置"/>
 		<property name="configDesc"	type="java.lang.String" 	value="新闻评论配置"/>
@@ -175,7 +175,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="commentConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="deviceName"/>
 		<property name="configName"	type="java.lang.String" 	value="设备名称"/>
 		<property name="configDesc"	type="java.lang.String" 	value="GMS设备名称"/>
@@ -185,7 +185,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="smsConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
+	<model class="com.palmelf.eoffice.model.system.SysConfig" primary-key="configId" key-type="java.lang.Long" service="sysConfigService" description="系统参数">
 		<property name="configKey"	type="java.lang.String" 	value="baudRate"/>
 		<property name="configName"	type="java.lang.String" 	value="设备波特率"/>
 		<property name="configDesc"	type="java.lang.String" 	value="设备波特率"/>
@@ -195,7 +195,7 @@
 		<property name="typeKey"	type="java.lang.String" 	value="smsConfig"/>
 	</model>
 	
-	<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+	<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 		description="档案系统设置">
 		<property name="typeName"	type="java.lang.String" 	value="档案系统设置"/>
 		<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -205,7 +205,7 @@
 		<property name="depth"		type="java.lang.Integer" 	value="1"/>
 		<property name="sn"			type="java.lang.Integer" 	value="0"/>
 		<set>
-			<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+			<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 				description="	案卷管理设置">
 				<property name="typeName"	type="java.lang.String" 	value="案卷管理设置"/>
 				<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -215,7 +215,7 @@
 				<property name="depth"		type="java.lang.Integer" 	value="2"/>
 				<property name="sn"			type="java.lang.Integer" 	value="0"/>
 				<set>
-					<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+					<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 						description="		案卷保管期限">
 						<property name="typeName"	type="java.lang.String" 	value="案卷保管期限"/>
 						<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -225,7 +225,7 @@
 						<property name="depth"		type="java.lang.Integer" 	value="3"/>
 						<property name="sn"			type="java.lang.Integer" 	value="0"/>
 						<set>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			案卷保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="案卷保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="暂时"/>
@@ -233,7 +233,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			案卷保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="案卷保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="长期"/>
@@ -241,7 +241,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			案卷保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="案卷保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="长久"/>
@@ -249,7 +249,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			案卷保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="案卷保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="永久"/>
@@ -259,7 +259,7 @@
 							</model>
 						</set>
 					</model>
-					<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+					<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 						description="		案卷开放形式">
 						<property name="typeName"	type="java.lang.String" 	value="案卷开放形式"/>
 						<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -269,7 +269,7 @@
 						<property name="depth"		type="java.lang.Integer" 	value="3"/>
 						<property name="sn"			type="java.lang.Integer" 	value="0"/>
 						<set>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			案卷开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="案卷开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="不开放"/>
@@ -277,7 +277,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			案卷开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="案卷开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="对内开放"/>
@@ -285,7 +285,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			案卷开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="案卷开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="对外开放"/>
@@ -297,7 +297,7 @@
 					</model>
 				</set>
 			</model>
-			<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+			<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 				description="	文件管理设置">
 				<property name="typeName"	type="java.lang.String" 	value="文件管理设置"/>
 				<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -307,7 +307,7 @@
 				<property name="depth"		type="java.lang.Integer" 	value="2"/>
 				<property name="sn"			type="java.lang.Integer" 	value="0"/>
 				<set>
-					<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+					<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 						description="		文件保管期限">
 						<property name="typeName"	type="java.lang.String" 	value="文件保管期限"/>
 						<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -317,7 +317,7 @@
 						<property name="depth"		type="java.lang.Integer" 	value="3"/>
 						<property name="sn"			type="java.lang.Integer" 	value="0"/>
 						<set>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="文件保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="二年"/>
@@ -325,7 +325,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="文件保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="五年"/>
@@ -333,7 +333,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="文件保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="十年"/>
@@ -341,7 +341,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="文件保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="二十年"/>
@@ -349,7 +349,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件保管期限">
 								<property name="itemName"	type="java.lang.String" 	value="文件保管期限"/>
 								<property name="itemValue"	type="java.lang.String" 	value="五十年"/>
@@ -359,7 +359,7 @@
 							</model>
 						</set>
 					</model>
-					<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+					<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 						description="		文件开放形式">
 						<property name="typeName"	type="java.lang.String" 	value="文件开放形式"/>
 						<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -369,7 +369,7 @@
 						<property name="depth"		type="java.lang.Integer" 	value="3"/>
 						<property name="sn"			type="java.lang.Integer" 	value="0"/>
 						<set>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="文件开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="对内开放"/>
@@ -377,7 +377,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="文件开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="对外开放"/>
@@ -385,7 +385,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="文件开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="不开放"/>
@@ -395,7 +395,7 @@
 							</model>
 						</set>
 					</model>
-					<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+					<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 						description="		文件密级">
 						<property name="typeName"	type="java.lang.String" 	value="文件密级"/>
 						<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -405,7 +405,7 @@
 						<property name="depth"		type="java.lang.Integer" 	value="3"/>
 						<property name="sn"			type="java.lang.Integer" 	value="0"/>
 						<set>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件密级">
 								<property name="itemName"	type="java.lang.String" 	value="文件密级"/>
 								<property name="itemValue"	type="java.lang.String" 	value="公开资料"/>
@@ -413,7 +413,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件密级">
 								<property name="itemName"	type="java.lang.String" 	value="文件密级"/>
 								<property name="itemValue"	type="java.lang.String" 	value="内部资料"/>
@@ -421,7 +421,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件密级">
 								<property name="itemName"	type="java.lang.String" 	value="文件密级"/>
 								<property name="itemValue"	type="java.lang.String" 	value="秘密"/>
@@ -429,7 +429,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件密级">
 								<property name="itemName"	type="java.lang.String" 	value="文件密级"/>
 								<property name="itemValue"	type="java.lang.String" 	value="机密"/>
@@ -437,7 +437,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			文件密级">
 								<property name="itemName"	type="java.lang.String" 	value="文件密级"/>
 								<property name="itemValue"	type="java.lang.String" 	value="绝密"/>
@@ -449,7 +449,7 @@
 					</model>
 				</set>
 			</model>
-			<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+			<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 				description="	全宗管理设置">
 				<property name="typeName"	type="java.lang.String" 	value="全宗管理设置"/>
 				<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -459,7 +459,7 @@
 				<property name="depth"		type="java.lang.Integer" 	value="2"/>
 				<property name="sn"			type="java.lang.Integer" 	value="0"/>
 				<set>
-					<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+					<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 						description="		全宗开放形式">
 						<property name="typeName"	type="java.lang.String" 	value="全宗开放形式"/>
 						<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -469,7 +469,7 @@
 						<property name="depth"		type="java.lang.Integer" 	value="3"/>
 						<property name="sn"			type="java.lang.Integer" 	value="0"/>
 						<set>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			全宗开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="全宗开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="对内开放"/>
@@ -477,7 +477,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			全宗开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="全宗开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="对外开放"/>
@@ -485,7 +485,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			全宗开放形式">
 								<property name="itemName"	type="java.lang.String" 	value="全宗开放形式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="不开放"/>
@@ -497,7 +497,7 @@
 					</model>
 				</set>
 			</model>
-			<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+			<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 				description="	借阅设置">
 				<property name="typeName"	type="java.lang.String" 	value="借阅设置"/>
 				<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -507,7 +507,7 @@
 				<property name="depth"		type="java.lang.Integer" 	value="2"/>
 				<property name="sn"			type="java.lang.Integer" 	value="0"/>
 				<set>
-					<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+					<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 						description="		借阅方式">
 						<property name="typeName"	type="java.lang.String" 	value="借阅方式"/>
 						<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -517,7 +517,7 @@
 						<property name="depth"		type="java.lang.Integer" 	value="3"/>
 						<property name="sn"			type="java.lang.Integer" 	value="0"/>
 						<set>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			借阅方式">
 								<property name="itemName"	type="java.lang.String" 	value="借阅方式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="线上借阅"/>
@@ -525,7 +525,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			借阅方式">
 								<property name="itemName"	type="java.lang.String" 	value="借阅方式"/>
 								<property name="itemValue"	type="java.lang.String" 	value="实物借阅"/>
@@ -535,7 +535,7 @@
 							</model>
 						</set>
 					</model>
-					<model class="com.cyjt.oa.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
+					<model class="com.palmelf.eoffice.model.system.GlobalType" primary-key="proTypeId" key-type="java.lang.Long"  service="globalTypeService" 
 						description="		借阅目的">
 						<property name="typeName"	type="java.lang.String" 	value="借阅目的"/>
 						<property name="nodeKey"	type="java.lang.String" 	value="arch"/>
@@ -545,7 +545,7 @@
 						<property name="depth"		type="java.lang.Integer" 	value="3"/>
 						<property name="sn"			type="java.lang.Integer" 	value="0"/>
 						<set>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			借阅目的">
 								<property name="itemName"	type="java.lang.String" 	value="借阅目的"/>
 								<property name="itemValue"	type="java.lang.String" 	value="学术研究"/>
@@ -553,7 +553,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			借阅目的">
 								<property name="itemName"	type="java.lang.String" 	value="借阅目的"/>
 								<property name="itemValue"	type="java.lang.String" 	value="经济建设"/>
@@ -561,7 +561,7 @@
 								<property name="descp"		type="java.lang.String" 	value="arch"/>
 								<property name="proTypeId"	type="java.lang.Long" 		foreign-key="true"/>
 							</model>
-							<model class="com.cyjt.oa.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
+							<model class="com.palmelf.eoffice.model.system.Dictionary" primary-key="dicId" key-type="java.lang.Long"  service="dictionaryService" 
 								description="			借阅目的">
 								<property name="itemName"	type="java.lang.String" 	value="借阅目的"/>
 								<property name="itemValue"	type="java.lang.String" 	value="工作考察"/>

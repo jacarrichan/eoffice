@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@ page import="com.cyjt.core.util.AppUtil"%>
+<%@ page import="com.palmelf.core.util.AppUtil"%>
 <%@ page
-	import="com.cyjt.oa.model.admin.ConfSummary,com.cyjt.oa.service.admin.ConfSummaryService"%>
+	import="com.palmelf.eoffice.model.admin.ConfSummary,com.palmelf.eoffice.service.admin.ConfSummaryService"%>
 <!-- 
 	description : 会议纪要详细信息展示
 	author : YHZ

@@ -1,5 +1,5 @@
-﻿<%@page pageEncoding="UTF-8"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
+<%@page pageEncoding="UTF-8"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
 
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="java.util.Enumeration"%>

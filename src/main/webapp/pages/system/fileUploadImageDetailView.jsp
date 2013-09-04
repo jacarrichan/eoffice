@@ -1,6 +1,6 @@
 <%@ page pageEncoding="UTF-8"
-	import="com.cyjt.oa.model.system.FileAttach,com.cyjt.oa.service.system.FileAttachService"%>
-<%@ page import="com.cyjt.core.util.AppUtil"%>
+	import="com.palmelf.eoffice.model.system.FileAttach,com.palmelf.eoffice.service.system.FileAttachService"%>
+<%@ page import="com.palmelf.core.util.AppUtil"%>
 <%@ page import="java.util.Properties,java.io.FileInputStream,java.io.InputStreamReader,java.io.Reader" %>
 <!-- 
 	description : 图片详细信息展示

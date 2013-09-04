@@ -4,9 +4,9 @@
 %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.hrm.JobChangeService"%>
-<%@page import="com.cyjt.oa.model.hrm.JobChange"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.hrm.JobChangeService"%>
+<%@page import="com.palmelf.eoffice.model.hrm.JobChange"%>
 <%
 	String changeId = request.getParameter("changeId");
 	JobChangeService jobChangeService = (JobChangeService)AppUtil.getBean("jobChangeService");

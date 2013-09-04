@@ -1,9 +1,9 @@
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.personal.ErrandsRegisterService"%>
-<%@page import="com.cyjt.oa.model.personal.ErrandsRegister"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.personal.ErrandsRegisterService"%>
+<%@page import="com.palmelf.eoffice.model.personal.ErrandsRegister"%>
 <%
 	ErrandsRegisterService erService=(ErrandsRegisterService)AppUtil.getBean("errandsRegisterService");
 	String dateId=request.getParameter("dateId");

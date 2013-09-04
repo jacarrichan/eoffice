@@ -6,7 +6,7 @@
 <%@ page import="net.sf.jasperreports.engine.*" %>
 
 <%@page import="org.apache.lucene.store.jdbc.support.JdbcTemplate"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
 <%@page import="javax.sql.DataSource"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

@@ -26,7 +26,7 @@
 	<!-- 不进行缓存 -->
 	<filter>
 		<filter-name>NoCache</filter-name>
-		<filter-class>com.cyjt.core.web.filter.ResponseHeaderFilter</filter-class>
+		<filter-class>com.palmelf.core.web.filter.ResponseHeaderFilter</filter-class>
 		<init-param>
 			<param-name>Cache-Control</param-name>
 			<param-value>no-cache, must-revalidate</param-value>
@@ -34,7 +34,7 @@
 	</filter>
 	<filter>
 		<filter-name>GzipJsFilter</filter-name>
-		<filter-class>com.cyjt.core.web.filter.GzipJsFilter</filter-class>
+		<filter-class>com.palmelf.core.web.filter.GzipJsFilter</filter-class>
 		<init-param>
 			<param-name>headers</param-name>
 			<param-value>Content-Encoding=gzip</param-value>
@@ -109,14 +109,14 @@
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 	<listener>
-		<listener-class>com.cyjt.core.web.listener.StartupListener</listener-class>
+		<listener-class>com.palmelf.core.web.listener.StartupListener</listener-class>
 	</listener>
 	<!-- Spring 刷新Introspector防止内存泄露 -->
 	<listener>
 		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
 	</listener>
 	<listener>
-		<listener-class>com.cyjt.core.web.listener.UserSessionListener</listener-class>
+		<listener-class>com.palmelf.core.web.listener.UserSessionListener</listener-class>
 	</listener>
 	<servlet>
 		<servlet-name>ConnectorServlet</servlet-name>
@@ -125,34 +125,34 @@
 	</servlet>
 	<servlet>
 		<servlet-name>SimpleCaptcha</servlet-name>
-		<servlet-class>com.cyjt.core.web.servlet.SimpleCaptchaServlet</servlet-class>
+		<servlet-class>com.palmelf.core.web.servlet.SimpleCaptchaServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>fileUpload</servlet-name>
-		<servlet-class>com.cyjt.core.web.servlet.FileUploadServlet</servlet-class>
+		<servlet-class>com.palmelf.core.web.servlet.FileUploadServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>jasperUpload</servlet-name>
-		<servlet-class>com.cyjt.core.web.servlet.JasperUploadServlet</servlet-class>
+		<servlet-class>com.palmelf.core.web.servlet.JasperUploadServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<servlet-name>fileDownload</servlet-name>
-		<servlet-class>com.cyjt.core.web.servlet.FileDownloadServlet</servlet-class>
+		<servlet-class>com.palmelf.core.web.servlet.FileDownloadServlet</servlet-class>
 	</servlet>
 	<!-- 文件下载 -->
 	<servlet>
 		<servlet-name>fileDownLoad</servlet-name>
-		<servlet-class>com.cyjt.oa.action.system.FileDownloadServlet</servlet-class>
+		<servlet-class>com.palmelf.eoffice.action.system.FileDownloadServlet</servlet-class>
 	</servlet>
 	<servlet>
 		<display-name>ReportServlet</display-name>
 		<servlet-name>ReportServlet</servlet-name>
-		<servlet-class>com.cyjt.core.web.servlet.ReportServlet</servlet-class>
+		<servlet-class>com.palmelf.core.web.servlet.ReportServlet</servlet-class>
 	</servlet>
 	<!-- 工作流图形显示 -->
 	<servlet>
 		<servlet-name>JpdlImageServlet</servlet-name>
-		<servlet-class>com.cyjt.core.jbpm.servlet.JpdlImageServlet</servlet-class>
+		<servlet-class>com.palmelf.core.jbpm.servlet.JpdlImageServlet</servlet-class>
 	</servlet>
 	<!--解决HTML报表中图片不显示的问题 -->
 	<servlet>

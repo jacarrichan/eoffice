@@ -2,11 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page import="java.util.*"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.task.AppointmentService"%>
-<%@page import="com.cyjt.oa.service.task.impl.AppointmentServiceImpl"%>
-<%@page import="com.cyjt.core.web.paging.PagingBean"%>
-<%@page import="com.cyjt.oa.model.task.Appointment"%>
+<%@page import="com.palmelf.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.task.AppointmentService"%>
+<%@page import="com.palmelf.eoffice.service.task.impl.AppointmentServiceImpl"%>
+<%@page import="com.palmelf.core.web.paging.PagingBean"%>
+<%@page import="com.palmelf.eoffice.model.task.Appointment"%>
 <%
 	Long appointId = null;
 	String strId = request.getParameter("appointId");
@@ -55,8 +55,8 @@
 	request.setAttribute("appointment",appointment);
 %>
 
-<%@page import="com.cyjt.core.util.ContextUtil"%>
-<%@page import="com.cyjt.core.command.QueryFilter"%><table class="table-info" width="98%" cellpadding="0" cellspacing="1">
+<%@page import="com.palmelf.ContextUtil"%>
+<%@page import="com.palmelf.core.command.QueryFilter"%><table class="table-info" width="98%" cellpadding="0" cellspacing="1">
 	<tr>
 		<td width="20%">主题：</td>
 		<td width="80%">

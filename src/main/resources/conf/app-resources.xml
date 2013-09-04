@@ -10,7 +10,7 @@
 
 	<bean id="sitemeshFilterBean" class="com.opensymphony.sitemesh.webapp.SiteMeshFilter" />
 
-	<bean id="appUtil" class="com.cyjt.core.util.AppUtil" />
+	<bean id="appUtil" class="com.palmelf.core.util.AppUtil" />
 
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -69,7 +69,7 @@
 		</property>
 		<property name="packagesToScan">
 			<list>
-				<value>com.cyjt.oa.model</value>
+				<value>com.palmelf.eoffice.model</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -112,7 +112,7 @@
 		</property>
 	</bean>
 
-	<bean id="flowVelocityEngine" class="com.cyjt.core.jbpm.FlowVelocityEngine">
+	<bean id="flowVelocityEngine" class="com.palmelf.core.jbpm.FlowVelocityEngine">
 		<property name="templatePath" value="WEB-INF/FlowForm/" />
 		<property name="velocityProperties">
 			<props>
@@ -129,7 +129,7 @@
 	</bean>
 
 	<!-- =================================================================== -->
-	<bean id="mailEngine" class="com.cyjt.core.engine.MailEngine">
+	<bean id="mailEngine" class="com.palmelf.core.engine.MailEngine">
 		<property name="velocityEngine" ref="velocityEngine" />
 		<property name="mailSender" ref="mailSender" />
 		<property name="from" value="${mail.from}" />

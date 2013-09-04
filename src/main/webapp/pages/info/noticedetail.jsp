@@ -3,12 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page import="java.util.*"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.info.NoticeService"%>
-<%@page import="com.cyjt.oa.service.info.impl.NoticeServiceImpl"%>
-<%@page import="com.cyjt.core.web.paging.PagingBean"%>
-<%@page import="com.cyjt.oa.model.info.Notice"%>
-<%@page import="com.cyjt.core.command.QueryFilter"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.info.NoticeService"%>
+<%@page import="com.palmelf.eoffice.service.info.impl.NoticeServiceImpl"%>
+<%@page import="com.palmelf.core.web.paging.PagingBean"%>
+<%@page import="com.palmelf.eoffice.model.info.Notice"%>
+<%@page import="com.palmelf.core.command.QueryFilter"%>
 <%
 	Long noticeId = null;
 	String strId = request.getParameter("noticeId");

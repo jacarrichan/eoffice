@@ -1,9 +1,9 @@
 
 <%@page import="java.net.URLDecoder"%>
-<%@page import="com.cyjt.oa.model.system.ReportParam"%>
-<%@page import="com.cyjt.oa.service.system.ReportParamService"%>
+<%@page import="com.palmelf.ReportParam"%>
+<%@page import="com.palmelf.eoffice.service.system.ReportParamService"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
-<%@page import="com.cyjt.core.command.ReportFilter"%><%@page
+<%@page import="com.palmelf.ReportFilter"%><%@page
 	language="java" contentType="text/html;charset=utf-8"
 	pageEncoding="UTF-8"%>
 <%@page import="net.sf.jasperreports.engine.JRRuntimeException"%>
@@ -25,10 +25,10 @@
 <%@page import="net.sf.jasperreports.engine.export.JRHtmlExporter"%>
 <%@page import="net.sf.jasperreports.j2ee.servlets.*"%>
 <%@page import="org.apache.lucene.store.jdbc.support.JdbcTemplate"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
+<%@page import="com.palmelf.AppUtil"%>
 <%@page import="javax.sql.DataSource"%>
-<%@page import="com.cyjt.oa.model.system.ReportTemplate"%>
-<%@page import="com.cyjt.oa.service.system.ReportTemplateService"%>
+<%@page import="com.palmelf.ReportTemplate"%>
+<%@page import="com.palmelf.eoffice.service.system.ReportTemplateService"%>
 
 
 <%

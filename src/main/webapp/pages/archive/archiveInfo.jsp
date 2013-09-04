@@ -5,9 +5,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.archive.ArchivesService"%>
-<%@page import="com.cyjt.oa.model.archive.Archives"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.archive.ArchivesService"%>
+<%@page import="com.palmelf.eoffice.model.archive.Archives"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%
 	String archivesId = request.getParameter("archivesId");

@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8"
-	import="com.cyjt.oa.service.admin.ConferenceService"%>
+	import="com.palmelf.eoffice.service.admin.ConferenceService"%>
 <%@ page
-	import="com.cyjt.oa.model.admin.Conference,com.cyjt.oa.model.admin.ConfPrivilege"%>
+	import="com.palmelf.eoffice.model.admin.Conference,com.palmelf.eoffice.model.admin.ConfPrivilege"%>
 <%@ page import="java.util.Set"%>
 <%
 	//作用：用于会议内容的详细信息
@@ -32,7 +32,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
-<%@page import="com.cyjt.core.util.AppUtil"%><table class="table-info"
+<%@page import="com.palmelf.core.util.AppUtil"%><table class="table-info"
 	cellpadding="0" cellspacing="1" width="98%">
 	<tr style="height: 25px;">
 		<th colspan="4">会议信息</th>

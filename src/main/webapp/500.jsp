@@ -1,4 +1,4 @@
-<%@page import="com.cyjt.core.util.RequestUtil" isErrorPage="true"%>
+<%@page import="com.palmelf.core.util.RequestUtil" isErrorPage="true"%>
 <%!private final static transient org.apache.commons.logging.Log logger = org.apache.commons.logging.LogFactory.getLog("500_jsp");%>
 <%
 	String errorUrl = RequestUtil.getErrorUrl(request);

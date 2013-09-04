@@ -5,10 +5,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@page import="com.cyjt.core.util.AppUtil"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
-<%@page import="com.cyjt.oa.service.hrm.UserContractService"%>
-<%@page import="com.cyjt.oa.model.hrm.UserContract"%>
+<%@page import="com.palmelf.eoffice.service.hrm.UserContractService"%>
+<%@page import="com.palmelf.eoffice.model.hrm.UserContract"%>
 	
 <%
 	String contractId = request.getParameter("contractId");

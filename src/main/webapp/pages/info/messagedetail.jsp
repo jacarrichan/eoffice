@@ -2,12 +2,12 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.info.InMessageService"%>
-<%@page import="com.cyjt.oa.model.info.InMessage"%>
-<%@page import="com.cyjt.core.command.QueryFilter"%>
+<%@page import="com.palmelf.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.info.InMessageService"%>
+<%@page import="com.palmelf.eoffice.model.info.InMessage"%>
+<%@page import="com.palmelf.core.command.QueryFilter"%>
 <%@page import="java.util.List"%>
-<%@page import="com.cyjt.core.util.ContextUtil"%>
+<%@page import="com.palmelf.ContextUtil"%>
 <%
 		Long receiveId = null;
 		String strId = request.getParameter("receiveId");

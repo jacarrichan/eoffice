@@ -3,12 +3,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@page import="java.util.*"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.task.CalendarPlanService"%>
-<%@page import="com.cyjt.oa.service.task.impl.CalendarPlanServiceImpl"%>
-<%@page import="com.cyjt.core.web.paging.PagingBean"%>
-<%@page import="com.cyjt.oa.model.task.CalendarPlan"%>
-<%@page import="com.cyjt.core.command.QueryFilter"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.task.CalendarPlanService"%>
+<%@page import="com.palmelf.eoffice.service.task.impl.CalendarPlanServiceImpl"%>
+<%@page import="com.palmelf.core.web.paging.PagingBean"%>
+<%@page import="com.palmelf.eoffice.model.task.CalendarPlan"%>
+<%@page import="com.palmelf.core.command.QueryFilter"%>
 <%
 	Long planId = null;
 	String strId = request.getParameter("planId");

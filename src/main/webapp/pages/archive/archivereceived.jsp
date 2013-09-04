@@ -4,9 +4,9 @@
 %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.service.archive.ArchivesHandleService"%>
-<%@page import="com.cyjt.oa.model.archive.ArchivesHandle"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.eoffice.service.archive.ArchivesHandleService"%>
+<%@page import="com.palmelf.eoffice.model.archive.ArchivesHandle"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%
 	String handleId = request.getParameter("handleId");

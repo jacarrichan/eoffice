@@ -4,10 +4,10 @@
 %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="com.cyjt.core.util.AppUtil"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
 
-<%@page import="com.cyjt.oa.service.hrm.EmpProfileService"%>
-<%@page import="com.cyjt.oa.model.hrm.EmpProfile"%>
+<%@page import="com.palmelf.eoffice.service.hrm.EmpProfileService"%>
+<%@page import="com.palmelf.eoffice.model.hrm.EmpProfile"%>
 
 <%
 	String profileId = request.getParameter("profileId");

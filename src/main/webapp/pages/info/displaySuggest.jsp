@@ -14,9 +14,9 @@
 	request.setAttribute("suggestBox",suggestBox);
 %>
 		
-<%@page import="com.cyjt.oa.service.info.SuggestBoxService"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
-<%@page import="com.cyjt.oa.model.info.SuggestBox"%>
+<%@page import="com.palmelf.eoffice.service.info.SuggestBoxService"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
+<%@page import="com.palmelf.eoffice.model.info.SuggestBox"%>
 <%@page import="org.apache.commons.lang.StringUtils"%><table width="98%" cellpadding="0" cellspacing="1" style="padding:5px 5px 5px 5px;font:12px 宋体;color: black;line-height:24px;">
 			<tr >
 				<td width="10%" style="background-color: #c7e3fa;text-align: center;">

@@ -13,7 +13,7 @@
 	<aop:aspectj-autoproxy />
 	<context:annotation-config />
 
-	<context:component-scan base-package="com.cyjt.oa.service" />
+	<context:component-scan base-package="com.palmelf.eoffice.service" />
 
 	<tx:annotation-driven transaction-manager="txManager" />
 
@@ -22,17 +22,17 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="logAspect" class="com.cyjt.core.log.LogAspect" />
+	<bean id="logAspect" class="com.palmelf.core.log.LogAspect" />
 
 	<aop:config>
 		<aop:pointcut id="servicePointCut"
-			expression="execution(* com.cyjt.oa.service..*(..))" />
+			expression="execution(* com.palmelf.eoffice.service..*(..))" />
 		<aop:pointcut id="servicePointCut2"
-			expression="execution(* com.cyjt.core.service..*(..))" />
+			expression="execution(* com.palmelf.core.service..*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointCut" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="servicePointCut2" />
 		<aop:aspect ref="logAspect">
-			<aop:pointcut id="logPointCut" expression="execution(* com.cyjt.oa.action..*(..))"/>
+			<aop:pointcut id="logPointCut" expression="execution(* com.palmelf.eoffice.action..*(..))"/>
 			<aop:around pointcut-ref="logPointCut" method="doSystemLog"/> 
 		</aop:aspect>
 	</aop:config>
@@ -46,654 +46,654 @@
 		</tx:attributes>
 	</tx:advice>
 
-	<bean id="jbpmService" class="com.cyjt.oa.service.flow.impl.JbpmServiceImpl" />
+	<bean id="jbpmService" class="com.palmelf.eoffice.service.flow.impl.JbpmServiceImpl" />
 
 	<!-- add the bean you define here -->
 
-	<bean id="appUserService" class="com.cyjt.oa.service.system.impl.AppUserServiceImpl">
+	<bean id="appUserService" class="com.palmelf.eoffice.service.system.impl.AppUserServiceImpl">
 		<constructor-arg index="0" ref="appUserDao" />
 	</bean>
 
-	<bean id="newsTypeService" class="com.cyjt.oa.service.info.impl.NewsTypeServiceImpl">
+	<bean id="newsTypeService" class="com.palmelf.eoffice.service.info.impl.NewsTypeServiceImpl">
 		<constructor-arg index="0" ref="newsTypeDao" />
 	</bean>
 
-	<bean id="noticeService" class="com.cyjt.oa.service.info.impl.NoticeServiceImpl">
+	<bean id="noticeService" class="com.palmelf.eoffice.service.info.impl.NoticeServiceImpl">
 		<constructor-arg index="0" ref="noticeDao" />
 	</bean>
-	<bean id="appRoleService" class="com.cyjt.oa.service.system.impl.AppRoleServiceImpl">
+	<bean id="appRoleService" class="com.palmelf.eoffice.service.system.impl.AppRoleServiceImpl">
 		<constructor-arg index="0" ref="appRoleDao" />
 	</bean>
 
-	<bean id="departmentService" class="com.cyjt.oa.service.system.impl.DepartmentServiceImpl">
+	<bean id="departmentService" class="com.palmelf.eoffice.service.system.impl.DepartmentServiceImpl">
 		<constructor-arg index="0" ref="departmentDao" />
 	</bean>
 
-	<bean id="companyService" class="com.cyjt.oa.service.system.impl.CompanyServiceImpl">
+	<bean id="companyService" class="com.palmelf.eoffice.service.system.impl.CompanyServiceImpl">
 		<constructor-arg index="0" ref="companyDao" />
 	</bean>
-	<bean id="shortMessageService" class="com.cyjt.oa.service.info.impl.ShortMessageServiceImpl">
+	<bean id="shortMessageService" class="com.palmelf.eoffice.service.info.impl.ShortMessageServiceImpl">
 		<constructor-arg index="0" ref="shortMessageDao" />
 	</bean>
-	<bean id="inMessageService" class="com.cyjt.oa.service.info.impl.InMessageServiceImpl">
+	<bean id="inMessageService" class="com.palmelf.eoffice.service.info.impl.InMessageServiceImpl">
 		<constructor-arg index="0" ref="inMessageDao" />
 	</bean>
 	<!-- start: Generated for Diary From Template: app-service.xml.beansvm -->
-	<bean id="diaryService" class="com.cyjt.oa.service.system.impl.DiaryServiceImpl">
+	<bean id="diaryService" class="com.palmelf.eoffice.service.system.impl.DiaryServiceImpl">
 		<constructor-arg index="0" ref="diaryDao" />
 	</bean>
 	<!-- end: Generated for Diary From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for FileAttach From Template: app-service.xml.beansvm -->
-	<bean id="fileAttachService" class="com.cyjt.oa.service.system.impl.FileAttachServiceImpl">
+	<bean id="fileAttachService" class="com.palmelf.eoffice.service.system.impl.FileAttachServiceImpl">
 		<constructor-arg index="0" ref="fileAttachDao" />
 	</bean>
 	<!-- end: Generated for FileAttach From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ReportTemplate From Template: app-service.xml.beansvm -->
 	<bean id="reportTemplateService"
-		class="com.cyjt.oa.service.system.impl.ReportTemplateServiceImpl">
+		class="com.palmelf.eoffice.service.system.impl.ReportTemplateServiceImpl">
 		<constructor-arg index="0" ref="reportTemplateDao" />
 	</bean>
 	<!-- end: Generated for ReportTemplate From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for DocFolder From Template: app-service.xml.beansvm -->
 	<bean id="docFolderService"
-		class="com.cyjt.oa.service.document.impl.DocFolderServiceImpl">
+		class="com.palmelf.eoffice.service.document.impl.DocFolderServiceImpl">
 		<constructor-arg index="0" ref="docFolderDao" />
 	</bean>
 	<!-- end: Generated for DocFolder From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Document From Template: app-service.xml.beansvm -->
-	<bean id="documentService" class="com.cyjt.oa.service.document.impl.DocumentServiceImpl">
+	<bean id="documentService" class="com.palmelf.eoffice.service.document.impl.DocumentServiceImpl">
 		<constructor-arg index="0" ref="documentDao" />
 	</bean>
 	<!-- end: Generated for Document From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for News From Template: app-service.xml.beansvm -->
-	<bean id="newsService" class="com.cyjt.oa.service.info.impl.NewsServiceImpl">
+	<bean id="newsService" class="com.palmelf.eoffice.service.info.impl.NewsServiceImpl">
 		<constructor-arg index="0" ref="newsDao" />
 	</bean>
 	<!-- end: Generated for News From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for MailFolder From Template: app-service.xml.beansvm -->
 	<bean id="mailFolderService"
-		class="com.cyjt.oa.service.communicate.impl.MailFolderServiceImpl">
+		class="com.palmelf.eoffice.service.communicate.impl.MailFolderServiceImpl">
 		<constructor-arg index="0" ref="mailFolderDao" />
 	</bean>
 	<!-- end: Generated for MailFolder From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Mail From Template: app-service.xml.beansvm -->
-	<bean id="mailService" class="com.cyjt.oa.service.communicate.impl.MailServiceImpl">
+	<bean id="mailService" class="com.palmelf.eoffice.service.communicate.impl.MailServiceImpl">
 		<constructor-arg index="0" ref="mailDao" />
 	</bean>
 	<!-- end: Generated for Mail From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for MailBox From Template: app-service.xml.beansvm -->
 	<bean id="mailBoxService"
-		class="com.cyjt.oa.service.communicate.impl.MailBoxServiceImpl">
+		class="com.palmelf.eoffice.service.communicate.impl.MailBoxServiceImpl">
 		<constructor-arg index="0" ref="mailBoxDao" />
 	</bean>
 	<!-- end: Generated for MailBox From Template: app-service.xml.beansvm -->
 
 	<!-- start: Generated for PhoneBook From Template: app-service.xml.beansvm -->
 	<bean id="phoneBookService"
-		class="com.cyjt.oa.service.communicate.impl.PhoneBookServiceImpl">
+		class="com.palmelf.eoffice.service.communicate.impl.PhoneBookServiceImpl">
 		<constructor-arg index="0" ref="phoneBookDao" />
 	</bean>
 	<!-- end: Generated for PhoneBook From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for PhoneGroup From Template: app-service.xml.beansvm -->
 	<bean id="phoneGroupService"
-		class="com.cyjt.oa.service.communicate.impl.PhoneGroupServiceImpl">
+		class="com.palmelf.eoffice.service.communicate.impl.PhoneGroupServiceImpl">
 		<constructor-arg index="0" ref="phoneGroupDao" />
 	</bean>
 	<!-- end: Generated for PhoneGroup From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for DocPrivilege From Template: app-service.xml.beansvm -->
 	<bean id="docPrivilegeService"
-		class="com.cyjt.oa.service.document.impl.DocPrivilegeServiceImpl">
+		class="com.palmelf.eoffice.service.document.impl.DocPrivilegeServiceImpl">
 		<constructor-arg index="0" ref="docPrivilegeDao" />
 	</bean>
 	<!-- end: Generated for DocPrivilege From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ProType From Template: app-service.xml.beansvm -->
-	<bean id="proTypeService" class="com.cyjt.oa.service.flow.impl.ProTypeServiceImpl">
+	<bean id="proTypeService" class="com.palmelf.eoffice.service.flow.impl.ProTypeServiceImpl">
 		<constructor-arg index="0" ref="proTypeDao" />
 	</bean>
 	<!-- end: Generated for ProType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ProDefinition From Template: app-service.xml.beansvm -->
 	<bean id="proDefinitionService"
-		class="com.cyjt.oa.service.flow.impl.ProDefinitionServiceImpl">
+		class="com.palmelf.eoffice.service.flow.impl.ProDefinitionServiceImpl">
 		<constructor-arg index="0" ref="proDefinitionDao" />
 	</bean>
 	<!-- end: Generated for ProDefinition From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ProUserAssign From Template: app-service.xml.beansvm -->
 	<bean id="proUserAssignService"
-		class="com.cyjt.oa.service.flow.impl.ProUserAssignServiceImpl">
+		class="com.palmelf.eoffice.service.flow.impl.ProUserAssignServiceImpl">
 		<constructor-arg index="0" ref="proUserAssignDao" />
 	</bean>
 	<!-- end: Generated for ProUserAssign From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ProcessRun From Template: app-service.xml.beansvm -->
-	<bean id="processRunService" class="com.cyjt.oa.service.flow.impl.ProcessRunServiceImpl">
+	<bean id="processRunService" class="com.palmelf.eoffice.service.flow.impl.ProcessRunServiceImpl">
 		<constructor-arg index="0" ref="processRunDao" />
 	</bean>
 	<!-- end: Generated for ProcessRun From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for FormData From Template: app-service.xml.beansvm -->
-	<bean id="formDataService" class="com.cyjt.oa.service.flow.impl.FormDataServiceImpl">
+	<bean id="formDataService" class="com.palmelf.eoffice.service.flow.impl.FormDataServiceImpl">
 		<constructor-arg index="0" ref="formDataDao" />
 	</bean>
 	<!-- end: Generated for FormData From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ProcessForm From Template: app-service.xml.beansvm -->
-	<bean id="processFormService" class="com.cyjt.oa.service.flow.impl.ProcessFormServiceImpl">
+	<bean id="processFormService" class="com.palmelf.eoffice.service.flow.impl.ProcessFormServiceImpl">
 		<constructor-arg index="0" ref="processFormDao" />
 	</bean>
 	<!-- end: Generated for ProcessForm From Template: app-service.xml.beansvm -->
 
-	<bean id="flowTaskService" class="com.cyjt.oa.service.flow.impl.TaskServiceImpl">
+	<bean id="flowTaskService" class="com.palmelf.eoffice.service.flow.impl.TaskServiceImpl">
 		<constructor-arg index="0" ref="taskDao" />
 	</bean>
 	<!-- start: Generated for OfficeGoodsType From Template: app-service.xml.beansvm -->
 	<bean id="officeGoodsTypeService"
-		class="com.cyjt.oa.service.admin.impl.OfficeGoodsTypeServiceImpl">
+		class="com.palmelf.eoffice.service.admin.impl.OfficeGoodsTypeServiceImpl">
 		<constructor-arg index="0" ref="officeGoodsTypeDao" />
 	</bean>
 	<!-- end: Generated for OfficeGoodsType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for OfficeGoods From Template: app-service.xml.beansvm -->
-	<bean id="officeGoodsService" class="com.cyjt.oa.service.admin.impl.OfficeGoodsServiceImpl">
+	<bean id="officeGoodsService" class="com.palmelf.eoffice.service.admin.impl.OfficeGoodsServiceImpl">
 		<constructor-arg index="0" ref="officeGoodsDao" />
 	</bean>
 	<!-- end: Generated for OfficeGoods From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for GoodsApply From Template: app-service.xml.beansvm -->
-	<bean id="goodsApplyService" class="com.cyjt.oa.service.admin.impl.GoodsApplyServiceImpl">
+	<bean id="goodsApplyService" class="com.palmelf.eoffice.service.admin.impl.GoodsApplyServiceImpl">
 		<constructor-arg index="0" ref="goodsApplyDao" />
 	</bean>
 	<!-- end: Generated for GoodsApply From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for InStock From Template: app-service.xml.beansvm -->
-	<bean id="inStockService" class="com.cyjt.oa.service.admin.impl.InStockServiceImpl">
+	<bean id="inStockService" class="com.palmelf.eoffice.service.admin.impl.InStockServiceImpl">
 		<constructor-arg index="0" ref="inStockDao" />
 	</bean>
 	<!-- end: Generated for InStock From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Book From Template: app-service.xml.beansvm -->
-	<bean id="bookService" class="com.cyjt.oa.service.admin.impl.BookServiceImpl">
+	<bean id="bookService" class="com.palmelf.eoffice.service.admin.impl.BookServiceImpl">
 		<constructor-arg index="0" ref="bookDao" />
 	</bean>
 	<!-- end: Generated for Book From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for BookBorRet From Template: app-service.xml.beansvm -->
-	<bean id="bookBorRetService" class="com.cyjt.oa.service.admin.impl.BookBorRetServiceImpl">
+	<bean id="bookBorRetService" class="com.palmelf.eoffice.service.admin.impl.BookBorRetServiceImpl">
 		<constructor-arg index="0" ref="bookBorRetDao" />
 	</bean>
 	<!-- end: Generated for BookBorRet From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for BookSn From Template: app-service.xml.beansvm -->
-	<bean id="bookSnService" class="com.cyjt.oa.service.admin.impl.BookSnServiceImpl">
+	<bean id="bookSnService" class="com.palmelf.eoffice.service.admin.impl.BookSnServiceImpl">
 		<constructor-arg index="0" ref="bookSnDao" />
 	</bean>
 	<!-- end: Generated for BookSn From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for BookType From Template: app-service.xml.beansvm -->
-	<bean id="bookTypeService" class="com.cyjt.oa.service.admin.impl.BookTypeServiceImpl">
+	<bean id="bookTypeService" class="com.palmelf.eoffice.service.admin.impl.BookTypeServiceImpl">
 		<constructor-arg index="0" ref="bookTypeDao" />
 	</bean>
 	<!-- end: Generated for BookType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Region From Template: app-service.xml.beansvm -->
-	<bean id="regionService" class="com.cyjt.oa.service.system.impl.RegionServiceImpl">
+	<bean id="regionService" class="com.palmelf.eoffice.service.system.impl.RegionServiceImpl">
 		<constructor-arg index="0" ref="regionDao" />
 	</bean>
 	<!-- end: Generated for Region From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Customer From Template: app-service.xml.beansvm -->
-	<bean id="customerService" class="com.cyjt.oa.service.customer.impl.CustomerServiceImpl">
+	<bean id="customerService" class="com.palmelf.eoffice.service.customer.impl.CustomerServiceImpl">
 		<constructor-arg index="0" ref="customerDao" />
 	</bean>
 	<!-- end: Generated for Customer From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for CusLinkman From Template: app-service.xml.beansvm -->
 	<bean id="cusLinkmanService"
-		class="com.cyjt.oa.service.customer.impl.CusLinkmanServiceImpl">
+		class="com.palmelf.eoffice.service.customer.impl.CusLinkmanServiceImpl">
 		<constructor-arg index="0" ref="cusLinkmanDao" />
 	</bean>
 	<!-- end: Generated for CusLinkman From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Appointment From Template: app-service.xml.beansvm -->
-	<bean id="appointmentService" class="com.cyjt.oa.service.task.impl.AppointmentServiceImpl">
+	<bean id="appointmentService" class="com.palmelf.eoffice.service.task.impl.AppointmentServiceImpl">
 		<constructor-arg index="0" ref="appointmentDao" />
 	</bean>
 	<!-- end: Generated for Appointment From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for CalendarPlan From Template: app-service.xml.beansvm -->
-	<bean id="calendarPlanService" class="com.cyjt.oa.service.task.impl.CalendarPlanServiceImpl">
+	<bean id="calendarPlanService" class="com.palmelf.eoffice.service.task.impl.CalendarPlanServiceImpl">
 		<constructor-arg index="0" ref="calendarPlanDao" />
 	</bean>
 	<!-- end: Generated for CalendarPlan From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Car From Template: app-service.xml.beansvm -->
-	<bean id="carService" class="com.cyjt.oa.service.admin.impl.CarServiceImpl">
+	<bean id="carService" class="com.palmelf.eoffice.service.admin.impl.CarServiceImpl">
 		<constructor-arg index="0" ref="carDao" />
 	</bean>
 	<!-- end: Generated for Car From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for CartRepair From Template: app-service.xml.beansvm -->
-	<bean id="cartRepairService" class="com.cyjt.oa.service.admin.impl.CartRepairServiceImpl">
+	<bean id="cartRepairService" class="com.palmelf.eoffice.service.admin.impl.CartRepairServiceImpl">
 		<constructor-arg index="0" ref="cartRepairDao" />
 	</bean>
 	<!-- end: Generated for CartRepair From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for CarApply From Template: app-service.xml.beansvm -->
-	<bean id="carApplyService" class="com.cyjt.oa.service.admin.impl.CarApplyServiceImpl">
+	<bean id="carApplyService" class="com.palmelf.eoffice.service.admin.impl.CarApplyServiceImpl">
 		<constructor-arg index="0" ref="carApplyDao" />
 	</bean>
 	<!-- end: Generated for CarApply From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for DepreType From Template: app-service.xml.beansvm -->
-	<bean id="depreTypeService" class="com.cyjt.oa.service.admin.impl.DepreTypeServiceImpl">
+	<bean id="depreTypeService" class="com.palmelf.eoffice.service.admin.impl.DepreTypeServiceImpl">
 		<constructor-arg index="0" ref="depreTypeDao" />
 	</bean>
 	<!-- end: Generated for DepreType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for AssetsType From Template: app-service.xml.beansvm -->
-	<bean id="assetsTypeService" class="com.cyjt.oa.service.admin.impl.AssetsTypeServiceImpl">
+	<bean id="assetsTypeService" class="com.palmelf.eoffice.service.admin.impl.AssetsTypeServiceImpl">
 		<constructor-arg index="0" ref="assetsTypeDao" />
 	</bean>
 	<!-- end: Generated for AssetsType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for FixedAssets From Template: app-service.xml.beansvm -->
-	<bean id="fixedAssetsService" class="com.cyjt.oa.service.admin.impl.FixedAssetsServiceImpl">
+	<bean id="fixedAssetsService" class="com.palmelf.eoffice.service.admin.impl.FixedAssetsServiceImpl">
 		<constructor-arg index="0" ref="fixedAssetsDao" />
 	</bean>
 	<!-- end: Generated for FixedAssets From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for DepreRecord From Template: app-service.xml.beansvm -->
-	<bean id="depreRecordService" class="com.cyjt.oa.service.admin.impl.DepreRecordServiceImpl">
+	<bean id="depreRecordService" class="com.palmelf.eoffice.service.admin.impl.DepreRecordServiceImpl">
 		<constructor-arg index="0" ref="depreRecordDao" />
 	</bean>
 	<!-- end: Generated for DepreRecord From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for CusConnection From Template: app-service.xml.beansvm -->
 	<bean id="cusConnectionService"
-		class="com.cyjt.oa.service.customer.impl.CusConnectionServiceImpl">
+		class="com.palmelf.eoffice.service.customer.impl.CusConnectionServiceImpl">
 		<constructor-arg index="0" ref="cusConnectionDao" />
 	</bean>
 	<!-- end: Generated for CusConnection From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Project From Template: app-service.xml.beansvm -->
-	<bean id="projectService" class="com.cyjt.oa.service.customer.impl.ProjectServiceImpl">
+	<bean id="projectService" class="com.palmelf.eoffice.service.customer.impl.ProjectServiceImpl">
 		<constructor-arg index="0" ref="projectDao" />
 	</bean>
 	<!-- end: Generated for Project From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Contract From Template: app-service.xml.beansvm -->
-	<bean id="contractService" class="com.cyjt.oa.service.customer.impl.ContractServiceImpl">
+	<bean id="contractService" class="com.palmelf.eoffice.service.customer.impl.ContractServiceImpl">
 		<constructor-arg index="0" ref="contractDao" />
 	</bean>
 	<!-- end: Generated for Contract From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ContractConfig From Template: app-service.xml.beansvm -->
 	<bean id="contractConfigService"
-		class="com.cyjt.oa.service.customer.impl.ContractConfigServiceImpl">
+		class="com.palmelf.eoffice.service.customer.impl.ContractConfigServiceImpl">
 		<constructor-arg index="0" ref="contractConfigDao" />
 	</bean>
 	<!-- end: Generated for ContractConfig From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for PlanType From Template: app-service.xml.beansvm -->
-	<bean id="planTypeService" class="com.cyjt.oa.service.task.impl.PlanTypeServiceImpl">
+	<bean id="planTypeService" class="com.palmelf.eoffice.service.task.impl.PlanTypeServiceImpl">
 		<constructor-arg index="0" ref="planTypeDao" />
 	</bean>
 	<!-- end: Generated for PlanType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for WorkPlan From Template: app-service.xml.beansvm -->
-	<bean id="workPlanService" class="com.cyjt.oa.service.task.impl.WorkPlanServiceImpl">
+	<bean id="workPlanService" class="com.palmelf.eoffice.service.task.impl.WorkPlanServiceImpl">
 		<constructor-arg index="0" ref="workPlanDao" />
 	</bean>
 	<!-- end: Generated for WorkPlan From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for AppFunction From Template: app-service.xml.beansvm -->
 	<bean id="appFunctionService"
-		class="com.cyjt.oa.service.system.impl.AppFunctionServiceImpl">
+		class="com.palmelf.eoffice.service.system.impl.AppFunctionServiceImpl">
 		<constructor-arg index="0" ref="appFunctionDao" />
 	</bean>
 	<!-- end: Generated for AppFunction From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for FunUrl From Template: app-service.xml.beansvm -->
-	<bean id="funUrlService" class="com.cyjt.oa.service.system.impl.FunUrlServiceImpl">
+	<bean id="funUrlService" class="com.palmelf.eoffice.service.system.impl.FunUrlServiceImpl">
 		<constructor-arg index="0" ref="funUrlDao" />
 	</bean>
 	<!-- end: Generated for FunUrl From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for HolidayRecord From Template: app-service.xml.beansvm -->
 	<bean id="holidayRecordService"
-		class="com.cyjt.oa.service.personal.impl.HolidayRecordServiceImpl">
+		class="com.palmelf.eoffice.service.personal.impl.HolidayRecordServiceImpl">
 		<constructor-arg index="0" ref="holidayRecordDao" />
 	</bean>
 	<!-- end: Generated for HolidayRecord From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for DutySection From Template: app-service.xml.beansvm -->
 	<bean id="dutySectionService"
-		class="com.cyjt.oa.service.personal.impl.DutySectionServiceImpl">
+		class="com.palmelf.eoffice.service.personal.impl.DutySectionServiceImpl">
 		<constructor-arg index="0" ref="dutySectionDao" />
 	</bean>
 	<!-- end: Generated for DutySection From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for DutySystem From Template: app-service.xml.beansvm -->
 	<bean id="dutySystemService"
-		class="com.cyjt.oa.service.personal.impl.DutySystemServiceImpl">
+		class="com.palmelf.eoffice.service.personal.impl.DutySystemServiceImpl">
 		<constructor-arg index="0" ref="dutySystemDao" />
 	</bean>
 	<!-- end: Generated for DutySystem From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Duty From Template: app-service.xml.beansvm -->
-	<bean id="dutyService" class="com.cyjt.oa.service.personal.impl.DutyServiceImpl">
+	<bean id="dutyService" class="com.palmelf.eoffice.service.personal.impl.DutyServiceImpl">
 		<constructor-arg index="0" ref="dutyDao" />
 	</bean>
 	<!-- end: Generated for Duty From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for DutyRegister From Template: app-service.xml.beansvm -->
 	<bean id="dutyRegisterService"
-		class="com.cyjt.oa.service.personal.impl.DutyRegisterServiceImpl">
+		class="com.palmelf.eoffice.service.personal.impl.DutyRegisterServiceImpl">
 		<constructor-arg index="0" ref="dutyRegisterDao" />
 	</bean>
 	<!-- end: Generated for DutyRegister From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for PlanAttend From Template: app-service.xml.beansvm -->
-	<bean id="planAttendService" class="com.cyjt.oa.service.task.impl.PlanAttendServiceImpl">
+	<bean id="planAttendService" class="com.palmelf.eoffice.service.task.impl.PlanAttendServiceImpl">
 		<constructor-arg index="0" ref="planAttendDao" />
 	</bean>
 	<!-- end: Generated for PlanAttend From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for UserSub From Template: app-service.xml.beansvm -->
-	<bean id="userSubService" class="com.cyjt.oa.service.system.impl.UserSubServiceImpl">
+	<bean id="userSubService" class="com.palmelf.eoffice.service.system.impl.UserSubServiceImpl">
 		<constructor-arg index="0" ref="userSubDao" />
 	</bean>
 	<!-- end: Generated for UserSub From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ErrandsRegister From Template: app-service.xml.beansvm -->
 	<bean id="errandsRegisterService"
-		class="com.cyjt.oa.service.personal.impl.ErrandsRegisterServiceImpl">
+		class="com.palmelf.eoffice.service.personal.impl.ErrandsRegisterServiceImpl">
 		<constructor-arg index="0" ref="errandsRegisterDao" />
 	</bean>
 	<!-- end: Generated for ErrandsRegister From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Provider From Template: app-service.xml.beansvm -->
-	<bean id="providerService" class="com.cyjt.oa.service.customer.impl.ProviderServiceImpl">
+	<bean id="providerService" class="com.palmelf.eoffice.service.customer.impl.ProviderServiceImpl">
 		<constructor-arg index="0" ref="providerDao" />
 	</bean>
 	<!-- end: Generated for Provider From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Product From Template: app-service.xml.beansvm -->
-	<bean id="productService" class="com.cyjt.oa.service.customer.impl.ProductServiceImpl">
+	<bean id="productService" class="com.palmelf.eoffice.service.customer.impl.ProductServiceImpl">
 		<constructor-arg index="0" ref="productDao" />
 	</bean>
 	<!-- end: Generated for Product From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for SysConfig From Template: app-service.xml.beansvm -->
-	<bean id="sysConfigService" class="com.cyjt.oa.service.system.impl.SysConfigServiceImpl">
+	<bean id="sysConfigService" class="com.palmelf.eoffice.service.system.impl.SysConfigServiceImpl">
 		<constructor-arg index="0" ref="sysConfigDao" />
 	</bean>
 	<!-- end: Generated for SysConfig From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for NewsComment From Template: app-service.xml.beansvm -->
-	<bean id="newsCommentService" class="com.cyjt.oa.service.info.impl.NewsCommentServiceImpl">
+	<bean id="newsCommentService" class="com.palmelf.eoffice.service.info.impl.NewsCommentServiceImpl">
 		<constructor-arg index="0" ref="newsCommentDao" />
 	</bean>
 	<!-- end: Generated for NewsComment From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ReportParam From Template: app-service.xml.beansvm -->
 	<bean id="reportParamService"
-		class="com.cyjt.oa.service.system.impl.ReportParamServiceImpl">
+		class="com.palmelf.eoffice.service.system.impl.ReportParamServiceImpl">
 		<constructor-arg index="0" ref="reportParamDao" />
 	</bean>
 	<!-- end: Generated for ReportParam From Template: app-service.xml.beansvm -->
 
 	<!-- start: Generated for Dictionary From Template: app-service.xml.beansvm -->
-	<bean id="dictionaryService" class="com.cyjt.oa.service.system.impl.DictionaryServiceImpl">
+	<bean id="dictionaryService" class="com.palmelf.eoffice.service.system.impl.DictionaryServiceImpl">
 		<constructor-arg index="0" ref="dictionaryDao" />
 	</bean>
 	<!-- end: Generated for Dictionary From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for StandSalary From Template: app-service.xml.beansvm -->
-	<bean id="standSalaryService" class="com.cyjt.oa.service.hrm.impl.StandSalaryServiceImpl">
+	<bean id="standSalaryService" class="com.palmelf.eoffice.service.hrm.impl.StandSalaryServiceImpl">
 		<constructor-arg index="0" ref="standSalaryDao" />
 	</bean>
 	<!-- end: Generated for StandSalary From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for SalaryItem From Template: app-service.xml.beansvm -->
-	<bean id="salaryItemService" class="com.cyjt.oa.service.hrm.impl.SalaryItemServiceImpl">
+	<bean id="salaryItemService" class="com.palmelf.eoffice.service.hrm.impl.SalaryItemServiceImpl">
 		<constructor-arg index="0" ref="salaryItemDao" />
 	</bean>
 	<!-- end: Generated for SalaryItem From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for StandSalaryItem From Template: app-service.xml.beansvm -->
 	<bean id="standSalaryItemService"
-		class="com.cyjt.oa.service.hrm.impl.StandSalaryItemServiceImpl">
+		class="com.palmelf.eoffice.service.hrm.impl.StandSalaryItemServiceImpl">
 		<constructor-arg index="0" ref="standSalaryItemDao" />
 	</bean>
 	<!-- end: Generated for StandSalaryItem From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for HireIssue From Template: app-service.xml.beansvm -->
-	<bean id="hireIssueService" class="com.cyjt.oa.service.hrm.impl.HireIssueServiceImpl">
+	<bean id="hireIssueService" class="com.palmelf.eoffice.service.hrm.impl.HireIssueServiceImpl">
 		<constructor-arg index="0" ref="hireIssueDao" />
 	</bean>
 	<!-- end: Generated for HireIssue From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Resume From Template: app-service.xml.beansvm -->
-	<bean id="resumeService" class="com.cyjt.oa.service.hrm.impl.ResumeServiceImpl">
+	<bean id="resumeService" class="com.palmelf.eoffice.service.hrm.impl.ResumeServiceImpl">
 		<constructor-arg index="0" ref="resumeDao" />
 	</bean>
 	<!-- end: Generated for Resume From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchivesType From Template: app-service.xml.beansvm -->
 	<bean id="archivesTypeService"
-		class="com.cyjt.oa.service.archive.impl.ArchivesTypeServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchivesTypeServiceImpl">
 		<constructor-arg index="0" ref="archivesTypeDao" />
 	</bean>
 	<!-- end: Generated for ArchivesType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchTemplate From Template: app-service.xml.beansvm -->
 	<bean id="archTemplateService"
-		class="com.cyjt.oa.service.archive.impl.ArchTemplateServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchTemplateServiceImpl">
 		<constructor-arg index="0" ref="archTemplateDao" />
 	</bean>
 	<!-- end: Generated for ArchTemplate From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchRecType From Template: app-service.xml.beansvm -->
 	<bean id="archRecTypeService"
-		class="com.cyjt.oa.service.archive.impl.ArchRecTypeServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchRecTypeServiceImpl">
 		<constructor-arg index="0" ref="archRecTypeDao" />
 	</bean>
 	<!-- end: Generated for ArchRecType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for JobChange From Template: app-service.xml.beansvm -->
-	<bean id="jobChangeService" class="com.cyjt.oa.service.hrm.impl.JobChangeServiceImpl">
+	<bean id="jobChangeService" class="com.palmelf.eoffice.service.hrm.impl.JobChangeServiceImpl">
 		<constructor-arg index="0" ref="jobChangeDao" />
 	</bean>
 	<!-- end: Generated for JobChange From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Job From Template: app-service.xml.beansvm -->
-	<bean id="jobService" class="com.cyjt.oa.service.hrm.impl.JobServiceImpl">
+	<bean id="jobService" class="com.palmelf.eoffice.service.hrm.impl.JobServiceImpl">
 		<constructor-arg index="0" ref="jobDao" />
 	</bean>
 	<!-- end: Generated for Job From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for EmpProfile From Template: app-service.xml.beansvm -->
-	<bean id="empProfileService" class="com.cyjt.oa.service.hrm.impl.EmpProfileServiceImpl">
+	<bean id="empProfileService" class="com.palmelf.eoffice.service.hrm.impl.EmpProfileServiceImpl">
 		<constructor-arg index="0" ref="empProfileDao" />
 	</bean>
 	<!-- end: Generated for EmpProfile From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchivesDep From Template: app-service.xml.beansvm -->
 	<bean id="archivesDepService"
-		class="com.cyjt.oa.service.archive.impl.ArchivesDepServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchivesDepServiceImpl">
 		<constructor-arg index="0" ref="archivesDepDao" />
 	</bean>
 	<!-- end: Generated for ArchivesDep From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchivesDoc From Template: app-service.xml.beansvm -->
 	<bean id="archivesDocService"
-		class="com.cyjt.oa.service.archive.impl.ArchivesDocServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchivesDocServiceImpl">
 		<constructor-arg index="0" ref="archivesDocDao" />
 	</bean>
 	<!-- end: Generated for ArchivesDoc From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for DocHistory From Template: app-service.xml.beansvm -->
 	<bean id="docHistoryService"
-		class="com.cyjt.oa.service.archive.impl.DocHistoryServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.DocHistoryServiceImpl">
 		<constructor-arg index="0" ref="docHistoryDao" />
 	</bean>
 	<!-- end: Generated for DocHistory From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for SalaryPayoff From Template: app-service.xml.beansvm -->
-	<bean id="salaryPayoffService" class="com.cyjt.oa.service.hrm.impl.SalaryPayoffServiceImpl">
+	<bean id="salaryPayoffService" class="com.palmelf.eoffice.service.hrm.impl.SalaryPayoffServiceImpl">
 		<constructor-arg index="0" ref="salaryPayoffDao" />
 	</bean>
 	<!-- end: Generated for SalaryPayoff From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for FormDef From Template: app-service.xml.beansvm -->
-	<bean id="formDefService" class="com.cyjt.oa.service.flow.impl.FormDefServiceImpl">
+	<bean id="formDefService" class="com.palmelf.eoffice.service.flow.impl.FormDefServiceImpl">
 		<constructor-arg index="0" ref="formDefDao" />
 	</bean>
 	<!-- end: Generated for FormDef From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Archives From Template: app-service.xml.beansvm -->
-	<bean id="archivesService" class="com.cyjt.oa.service.archive.impl.ArchivesServiceImpl">
+	<bean id="archivesService" class="com.palmelf.eoffice.service.archive.impl.ArchivesServiceImpl">
 		<constructor-arg index="0" ref="archivesDao" />
 	</bean>
 	<!-- end: Generated for Archives From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchivesHandle From Template: app-service.xml.beansvm -->
 	<bean id="archivesHandleService"
-		class="com.cyjt.oa.service.archive.impl.ArchivesHandleServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchivesHandleServiceImpl">
 		<constructor-arg index="0" ref="archivesHandleDao" />
 	</bean>
 	<!-- end: Generated for ArchivesHandle From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for LeaderRead From Template: app-service.xml.beansvm -->
 	<bean id="leaderReadService"
-		class="com.cyjt.oa.service.archive.impl.LeaderReadServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.LeaderReadServiceImpl">
 		<constructor-arg index="0" ref="leaderReadDao" />
 	</bean>
 	<!-- end: Generated for LeaderRead From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchDispatch From Template: app-service.xml.beansvm -->
 	<bean id="archDispatchService"
-		class="com.cyjt.oa.service.archive.impl.ArchDispatchServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchDispatchServiceImpl">
 		<constructor-arg index="0" ref="archDispatchDao" />
 	</bean>
 	<!-- end: Generated for ArchDispatch From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchivesAttend From Template: app-service.xml.beansvm -->
 	<bean id="archivesAttendService"
-		class="com.cyjt.oa.service.archive.impl.ArchivesAttendServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchivesAttendServiceImpl">
 		<constructor-arg index="0" ref="archivesAttendDao" />
 	</bean>
 	<!-- end: Generated for ArchivesAttend From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchFlowConf From Template: app-service.xml.beansvm -->
 	<bean id="archFlowConfService"
-		class="com.cyjt.oa.service.archive.impl.ArchFlowConfServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchFlowConfServiceImpl">
 		<constructor-arg index="0" ref="archFlowConfDao" />
 	</bean>
 	<!-- end: Generated for ArchFlowConf From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchRecUser From Template: app-service.xml.beansvm -->
 	<bean id="archRecUserService"
-		class="com.cyjt.oa.service.archive.impl.ArchRecUserServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchRecUserServiceImpl">
 		<constructor-arg index="0" ref="archRecUserDao" />
 	</bean>
 	<!-- end: Generated for ArchRecUser From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchHasten From Template: app-service.xml.beansvm -->
 	<bean id="archHastenService"
-		class="com.cyjt.oa.service.archive.impl.ArchHastenServiceImpl">
+		class="com.palmelf.eoffice.service.archive.impl.ArchHastenServiceImpl">
 		<constructor-arg index="0" ref="archHastenDao" />
 	</bean>
 	<!-- end: Generated for ArchHasten From Template: app-service.xml.beansvm --><!-- start: Generated for IndexDisplay From Template: app-service.xml.beansvm -->
 	<bean id="indexDisplayService"
-		class="com.cyjt.oa.service.system.impl.IndexDisplayServiceImpl">
+		class="com.palmelf.eoffice.service.system.impl.IndexDisplayServiceImpl">
 		<constructor-arg index="0" ref="indexDisplayDao" />
 	</bean>
 	<!-- end: Generated for IndexDisplay From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for SystemLog From Template: app-service.xml.beansvm -->
-	<bean id="systemLogService" class="com.cyjt.oa.service.system.impl.SystemLogServiceImpl">
+	<bean id="systemLogService" class="com.palmelf.eoffice.service.system.impl.SystemLogServiceImpl">
 		<constructor-arg index="0" ref="systemLogDao" />
 	</bean>
 	<!-- end: Generated for SystemLog From Template: app-service.xml.beansvm -->
-	<bean id="appTipsService" class="com.cyjt.oa.service.info.impl.AppTipsServiceImpl">
+	<bean id="appTipsService" class="com.palmelf.eoffice.service.info.impl.AppTipsServiceImpl">
 		<constructor-arg index="0" ref="appTipsDao" />
 	</bean>
 
 	<!-- start: Generated for OutMailUserSeting From Template: app-service.xml.beansvm -->
 	<bean id="outMailUserSetingService"
-		class="com.cyjt.oa.service.communicate.impl.OutMailUserSetingServiceImpl">
+		class="com.palmelf.eoffice.service.communicate.impl.OutMailUserSetingServiceImpl">
 		<constructor-arg index="0" ref="outMailUserSetingDao" />
 	</bean>
 	<!-- end: Generated for OutMailUserSeting From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for OutMail From Template: app-service.xml.beansvm -->
 	<bean id="outMailService"
-		class="com.cyjt.oa.service.communicate.impl.OutMailServiceImpl">
+		class="com.palmelf.eoffice.service.communicate.impl.OutMailServiceImpl">
 		<constructor-arg index="0" ref="outMailDao" />
 	</bean>
 	<!-- end: Generated for OutMail From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for OutMailFolder From Template: app-service.xml.beansvm -->
 	<bean id="outMailFolderService"
-		class="com.cyjt.oa.service.communicate.impl.OutMailFolderServiceImpl">
+		class="com.palmelf.eoffice.service.communicate.impl.OutMailFolderServiceImpl">
 		<constructor-arg index="0" ref="outMailFolderDao" />
 	</bean>
 	<!-- end: Generated for OutMailFolder From Template: app-service.xml.beansvm -->
 
 	<!-- 新增 行政管理-会议管理-会议室管理 -->
-	<bean id="boardRooService" class="com.cyjt.oa.service.admin.impl.BoardRooServiceImpl">
+	<bean id="boardRooService" class="com.palmelf.eoffice.service.admin.impl.BoardRooServiceImpl">
 		<constructor-arg index="0" ref="boardRooDao" />
 	</bean>
 	<!-- 新增 行政管理-会议类型设置 -->
-	<bean id="boardTypeService" class="com.cyjt.oa.service.admin.impl.BoardTypeServiceImpl">
+	<bean id="boardTypeService" class="com.palmelf.eoffice.service.admin.impl.BoardTypeServiceImpl">
 		<constructor-arg index="0" ref="boardTypeDao" />
 	</bean>
 
 	<!-- start: Generated for GlobalType From Template: app-service.xml.beansvm -->
-	<bean id="globalTypeService" class="com.cyjt.oa.service.system.impl.GlobalTypeServiceImpl">
+	<bean id="globalTypeService" class="com.palmelf.eoffice.service.system.impl.GlobalTypeServiceImpl">
 		<constructor-arg index="0" ref="globalTypeDao" />
 	</bean>
-	<bean id="confSummaryService" class="com.cyjt.oa.service.admin.impl.ConfSummaryServiceImpl">
+	<bean id="confSummaryService" class="com.palmelf.eoffice.service.admin.impl.ConfSummaryServiceImpl">
 		<constructor-arg index="0" ref="confSummaryDao" />
 	</bean>
 	<!-- end: Generated for GlobalType From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchFond From Template: app-service.xml.beansvm -->
-	<bean id="archFondService" class="com.cyjt.oa.service.arch.impl.ArchFondServiceImpl">
+	<bean id="archFondService" class="com.palmelf.eoffice.service.arch.impl.ArchFondServiceImpl">
 		<constructor-arg index="0" ref="archFondDao" />
 	</bean>
 	<!-- end: Generated for ArchFond From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ArchRoll From Template: app-service.xml.beansvm -->
-	<bean id="archRollService" class="com.cyjt.oa.service.arch.impl.ArchRollServiceImpl">
+	<bean id="archRollService" class="com.palmelf.eoffice.service.arch.impl.ArchRollServiceImpl">
 		<constructor-arg index="0" ref="archRollDao" />
 	</bean>
 	<!-- end: Generated for ArchRoll From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for RollFile From Template: app-service.xml.beansvm -->
-	<bean id="rollFileService" class="com.cyjt.oa.service.arch.impl.RollFileServiceImpl">
+	<bean id="rollFileService" class="com.palmelf.eoffice.service.arch.impl.RollFileServiceImpl">
 		<constructor-arg index="0" ref="rollFileDao" />
 	</bean>
 	<!-- end: Generated for RollFile From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for RollFileList From Template: app-service.xml.beansvm -->
-	<bean id="rollFileListService" class="com.cyjt.oa.service.arch.impl.RollFileListServiceImpl">
+	<bean id="rollFileListService" class="com.palmelf.eoffice.service.arch.impl.RollFileListServiceImpl">
 		<constructor-arg index="0" ref="rollFileListDao" />
 	</bean>
 	<!-- end: Generated for RollFileList From Template: app-service.xml.beansvm -->
 
 	<!-- start: Generated for SuggestBox From Template: app-service.xml.beansvm -->
-	<bean id="suggestBoxService" class="com.cyjt.oa.service.info.impl.SuggestBoxServiceImpl">
+	<bean id="suggestBoxService" class="com.palmelf.eoffice.service.info.impl.SuggestBoxServiceImpl">
 		<constructor-arg index="0" ref="suggestBoxDao" />
 	</bean>
 	<!-- end: Generated for SuggestBox From Template: app-service.xml.beansvm -->
-	<bean id="conferenceSerivce" class="com.cyjt.oa.service.admin.impl.ConferenceServiceImpl">
+	<bean id="conferenceSerivce" class="com.palmelf.eoffice.service.admin.impl.ConferenceServiceImpl">
 		<constructor-arg index="0" ref="conferenceDao" />
 	</bean>
 	<bean id="confPrivilegeService"
-		class="com.cyjt.oa.service.admin.impl.ConfPrivilegeServiceImpl">
+		class="com.palmelf.eoffice.service.admin.impl.ConfPrivilegeServiceImpl">
 		<constructor-arg index="0" ref="confPrivilegeDao" />
 	</bean>
 	<!-- start: Generated for UserAgent From Template: app-service.xml.beansvm -->
-	<bean id="userAgentService" class="com.cyjt.oa.service.system.impl.UserAgentServiceImpl">
+	<bean id="userAgentService" class="com.palmelf.eoffice.service.system.impl.UserAgentServiceImpl">
 		<constructor-arg index="0" ref="userAgentDao" />
 	</bean>
 	<!-- end: Generated for UserAgent From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for MobileMsg From Template: app-service.xml.beansvm -->
 	<bean id="mobileMsgService"
-		class="com.cyjt.oa.service.communicate.impl.MobileMsgServiceImpl">
+		class="com.palmelf.eoffice.service.communicate.impl.MobileMsgServiceImpl">
 		<constructor-arg index="0" ref="mobileMsgDao" />
 	</bean>
 	<!-- end: Generated for MobileMsg From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ContractEvent From Template: app-service.xml.beansvm -->
-	<bean id="contractEventService" class="com.cyjt.oa.service.hrm.impl.ContractEventServiceImpl">
+	<bean id="contractEventService" class="com.palmelf.eoffice.service.hrm.impl.ContractEventServiceImpl">
 		<constructor-arg index="0" ref="contractEventDao" />
 	</bean>
 	<!-- end: Generated for ContractEvent From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for ContractAttach From Template: app-service.xml.beansvm -->
 	<bean id="contractAttachService"
-		class="com.cyjt.oa.service.hrm.impl.ContractAttachServiceImpl">
+		class="com.palmelf.eoffice.service.hrm.impl.ContractAttachServiceImpl">
 		<constructor-arg index="0" ref="contractAttachDao" />
 	</bean>
 	<!-- end: Generated for ContractAttach From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for UserContract From Template: app-service.xml.beansvm -->
-	<bean id="userContractService" class="com.cyjt.oa.service.hrm.impl.UserContractServiceImpl">
+	<bean id="userContractService" class="com.palmelf.eoffice.service.hrm.impl.UserContractServiceImpl">
 		<constructor-arg index="0" ref="userContractDao" />
 	</bean>
 	<!-- end: Generated for UserContract From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for BorrowFileList From Template: app-service.xml.beansvm -->
 	<bean id="borrowFileListService"
-		class="com.cyjt.oa.service.arch.impl.BorrowFileListServiceImpl">
+		class="com.palmelf.eoffice.service.arch.impl.BorrowFileListServiceImpl">
 		<constructor-arg index="0" ref="borrowFileListDao" />
 	</bean>
 	<!-- end: Generated for BorrowFileList From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for BorrowRecord From Template: app-service.xml.beansvm -->
-	<bean id="borrowRecordService" class="com.cyjt.oa.service.arch.impl.BorrowRecordServiceImpl">
+	<bean id="borrowRecordService" class="com.palmelf.eoffice.service.arch.impl.BorrowRecordServiceImpl">
 		<constructor-arg index="0" ref="borrowRecordDao" />
 	</bean>
 	<!-- end: Generated for BorrowRecord From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for Regulation From Template: app-service.xml.beansvm -->
-	<bean id="regulationService" class="com.cyjt.oa.service.admin.impl.RegulationServiceImpl">
+	<bean id="regulationService" class="com.palmelf.eoffice.service.admin.impl.RegulationServiceImpl">
 		<constructor-arg index="0" ref="regulationDao" />
 	</bean>
 	<!-- end: Generated for Regulation From Template: app-service.xml.beansvm -->
 	<!-- start: Generated for PaintTemplate From Template: app-service.xml.beansvm -->
 	<bean id="paintTemplateService"
-		class="com.cyjt.oa.service.document.impl.PaintTemplateServiceImpl">
+		class="com.palmelf.eoffice.service.document.impl.PaintTemplateServiceImpl">
 		<constructor-arg index="0" ref="paintTemplateDao" />
 	</bean>
 	<!-- end: Generated for PaintTemplate From Template: app-service.xml.beansvm -->
 
 	<!-- start: Generated for Seal From Template: app-service.xml.beansvm -->
-	<bean id="sealService" class="com.cyjt.oa.service.document.impl.SealServiceImpl">
+	<bean id="sealService" class="com.palmelf.eoffice.service.document.impl.SealServiceImpl">
 		<constructor-arg index="0" ref="sealDao" />
 	</bean>
 	<!-- end: Generated for Seal From Template: app-service.xml.beansvm -->
 	
 	<!-- app-service.xml start -->
-	<bean id="albumService" class="com.cyjt.oa.service.album.impl.AlbumServiceImpl">
+	<bean id="albumService" class="com.palmelf.eoffice.service.album.impl.AlbumServiceImpl">
 		<constructor-arg index="0" ref="albumDao"/>
 	</bean>
 	<!-- app-service.xml end -->
 	<!-- app-service.xml start -->
-	<bean id="pictureService" class="com.cyjt.oa.service.picture.impl.PictureServiceImpl">
+	<bean id="pictureService" class="com.palmelf.eoffice.service.picture.impl.PictureServiceImpl">
 		<constructor-arg index="0" ref="pictureDao"/>
 	</bean>
 	<!-- app-service.xml end -->
 		<!-- start:  Generated for SmsMobile From Template: app-service.xml.beansvm  -->
-	<bean id="smsMobileService" class="com.cyjt.oa.service.communicate.impl.SmsMobileServiceImpl">
+	<bean id="smsMobileService" class="com.palmelf.eoffice.service.communicate.impl.SmsMobileServiceImpl">
 		<constructor-arg index="0" ref="smsMobileDao"/>
 	</bean>
 	<!-- end:  Generated for SmsMobile From Template: app-service.xml.beansvm  -->
 	<!-- start:  Generated for SmsHistory From Template: app-service.xml.beansvm  -->
-	<bean id="smsHistoryService" class="com.cyjt.oa.service.communicate.impl.SmsHistoryServiceImpl">
+	<bean id="smsHistoryService" class="com.palmelf.eoffice.service.communicate.impl.SmsHistoryServiceImpl">
 		<constructor-arg index="0" ref="smsHistoryDao"/>
 	</bean>
 	<!-- end:  Generated for SmsHistory From Template: app-service.xml.beansvm  -->

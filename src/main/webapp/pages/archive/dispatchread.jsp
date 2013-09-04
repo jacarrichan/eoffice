@@ -4,10 +4,10 @@
 %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page import="com.cyjt.core.util.AppUtil"%>
+<%@page import="com.palmelf.core.util.AppUtil"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
-<%@page import="com.cyjt.oa.service.archive.ArchDispatchService"%>
-<%@page import="com.cyjt.oa.model.archive.ArchDispatch"%>
+<%@page import="com.palmelf.eoffice.service.archive.ArchDispatchService"%>
+<%@page import="com.palmelf.eoffice.model.archive.ArchDispatch"%>
 <%
 	String dispatchId = request.getParameter("dispatchId");
 	ArchDispatchService adService = (ArchDispatchService) AppUtil
