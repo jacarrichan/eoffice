@@ -214,7 +214,4 @@
 		<error-code>500</error-code>
 		<location>/500.jsp</location>
 	</error-page>
-	<login-config>
-		<auth-method>BASIC</auth-method>
-	</login-config>
 </web-app>
