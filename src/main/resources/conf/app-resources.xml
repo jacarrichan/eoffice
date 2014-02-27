@@ -113,7 +113,7 @@
 	</bean>
 
 	<bean id="flowVelocityEngine" class="com.palmelf.core.jbpm.FlowVelocityEngine">
-		<property name="templatePath" value="WEB-INF/FlowForm/" />
+		<property name="templatePath" value="/WEB-INF/FlowForm/" />
 		<property name="velocityProperties">
 			<props>
 				<prop key="input.encoding">UTF-8</prop>
