@@ -381,7 +381,7 @@ CREATE TABLE `app_user` (
 -- ----------------------------
 -- Records of app_user
 -- ----------------------------
-INSERT INTO `app_user` VALUES ('1', '2011-08-20 16:44:36', '', '0', '', 'csx@jee-soft.cn', '', '超级管理员', '', 'a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=', '', '', '', '1', '1', 'admin', '', '1');
+INSERT INTO `app_user` VALUES ('1', '2011-08-20 16:44:36', '', '0', '', 'csx@jee-soft.cn', '', '超级管理员', '', 'jGl25bVBBBW96Qi9Te4V37Fnqchz/Eu4qB9vKrRIqRg=', '', '', '', '1', '1', 'admin', '', '1');
 INSERT INTO `app_user` VALUES ('2', '2011-08-20 16:44:36', '', '1', '', '152@163.com', '', '系统', '', '0', '', '', '', '0', '1', 'system', '', '1');
 INSERT INTO `app_user` VALUES ('3', '2012-06-24 00:00:00', '', '0', null, '772929989@qq.com', '', '陈健', '', 'a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=', '', '', '', '1', '1', 'jacarri', '', '2');
 INSERT INTO `app_user` VALUES ('4', '2012-06-24 00:00:00', '', '0', null, 'fetion1989@163.com', '', '康敬浦', '', 'a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=', '', '', '', '1', '1', 'akang', '', '2');
