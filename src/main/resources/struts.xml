@@ -260,9 +260,9 @@
 		<action name="*DepreRecord" class="DepreRecordAction" method="{1}">
 			<result>${successResultValue}</result>
 		</action>
-		<!--<action name="*Regulation" class="RegulationAction" method="{1}">
+		<action name="*Regulation" class="RegulationAction" method="{1}">
 		    <result>${successResultValue}</result>
-		</action>-->
+		</action> 
 	</package>
 	
 	<package name="customer" extends="struts-default" namespace="/customer">
