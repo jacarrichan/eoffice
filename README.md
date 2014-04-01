@@ -15,3 +15,11 @@ java  struts2 hibernate  jbpm 办公管理系统
 -------------------------
 #清空数据库关闭约束
 	SET FOREIGN_KEY_CHECKS=0;
+	
+	
+	
+	demo
+---------
+
+
+![日程管理](https://raw.githubusercontent.com/jacarrichan/eoffice/master/demo.jpg "")
