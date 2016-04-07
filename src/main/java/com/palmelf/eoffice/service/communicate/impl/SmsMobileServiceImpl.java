@@ -6,10 +6,11 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.apache.commons.lang.StringUtils;
+/*
 import org.smslib.Message.MessageEncodings;
 import org.smslib.OutboundMessage;
 import org.smslib.Service;
-
+*/
 import com.palmelf.core.service.impl.BaseServiceImpl;
 import com.palmelf.core.util.BeanUtil;
 import com.palmelf.core.util.GmsUtil;
@@ -76,7 +77,7 @@ public class SmsMobileServiceImpl extends BaseServiceImpl<SmsMobile> implements 
 	}
 
 	public void send(List<SmsMobile> list) {
-
+/*
 		if (list.size() > 0) {
 			try {
 				Service.getInstance().startService();
@@ -100,6 +101,7 @@ public class SmsMobileServiceImpl extends BaseServiceImpl<SmsMobile> implements 
 				this.logger.error(e);
 			}
 		}
+		*/
 	}
 
 	public List<SmsMobile> getNeedToSend() {
@@ -107,6 +109,7 @@ public class SmsMobileServiceImpl extends BaseServiceImpl<SmsMobile> implements 
 	}
 
 	public void sendOneSms(SmsMobile smsMobile) {
+		/*
 		try {
 			Service.getInstance().startService();
 
@@ -126,5 +129,6 @@ public class SmsMobileServiceImpl extends BaseServiceImpl<SmsMobile> implements 
 		} catch (Exception e) {
 			this.logger.error(e);
 		}
+		*/
 	}
 }

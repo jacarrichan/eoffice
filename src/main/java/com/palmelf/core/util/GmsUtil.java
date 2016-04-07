@@ -1,16 +1,17 @@
 package com.palmelf.core.util;
 
 import java.util.Map;
-
+/*
 import org.smslib.AGateway;
 import org.smslib.IOutboundMessageNotification;
 import org.smslib.OutboundMessage;
 import org.smslib.Service;
 import org.smslib.modem.SerialModemGateway;
-
+*/
 public class GmsUtil {
 
 	public static void init() throws Exception {
+		/*
 		IOutboundMessageNotification outboundNotification = new IOutboundMessageNotification() {
 			public void process(AGateway arg0, OutboundMessage arg1) {
 				System.out.println("Outbound handler called from Gateway: " + arg0.getGatewayId());
@@ -27,5 +28,6 @@ public class GmsUtil {
 		gateway.setSimPin("0000");
 		Service.getInstance().setOutboundMessageNotification(outboundNotification);
 		Service.getInstance().addGateway(gateway);
+		*/
 	}
 }
